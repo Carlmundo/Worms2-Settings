@@ -286,6 +286,50 @@ namespace Worms2_Settings
                     strVolume = "Głośność";
                     strSoundbank = "SoundBank Editor";
                     break;
+                case "pt":
+                    //Credit: rubinho146
+                    strSettings = "Opções";
+                    strDisplay = "Ecrã";
+                    strResolution = "Resolução";
+                    strRecommended = "Utilizar recomendado";
+                    strWidth = "Largura";
+                    strHeight = "Altura";
+                    strMode = "Modo";
+                    strModeWindowed = "Janela";
+                    strModeFullscreen = "Ecrã inteiro";
+                    strModeBorderless = "Ecrã inteiro sem borda";
+                    strZoom = "Zoom";
+                    strMouseSW = "Roda do Rato";
+                    strKeyboard = "Teclado";
+                    strTouchscreen = "Ecrã tátil";
+                    strSave = "Guardar";
+                    strAudio = "Som";
+                    strApplications = "Aplicações";
+                    strVolume = "Volume";
+                    strSoundbank = "Editor de Banco de Vozes";
+                    break;
+                case "pt-br":
+                    //Credit: rubinho146
+                    strSettings = "Opções";
+                    strDisplay = "Tela";
+                    strResolution = "Resolução";
+                    strRecommended = "Usar recomendado";
+                    strWidth = "Largura";
+                    strHeight = "Altura";
+                    strMode = "Modo";
+                    strModeWindowed = "Janela";
+                    strModeFullscreen = "Tela cheia";
+                    strModeBorderless = "Tela cheia sem borda";
+                    strZoom = "Zoom";
+                    strMouseSW = "Roda do Mouse";
+                    strKeyboard = "Teclado";
+                    strTouchscreen = "Tela tátil";
+                    strSave = "Salvar";
+                    strAudio = "Som";
+                    strApplications = "Aplicações";
+                    strVolume = "Volume";
+                    strSoundbank = "Editor de Banco de Vozes";
+                    break;
                 case "ru":
                     strSettings = "Настройки";
                     strDisplay = "Экран";
