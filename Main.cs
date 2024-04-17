@@ -27,7 +27,11 @@ namespace Worms2_Settings
         }
 
         public static class global{
+            //Ready var
             public static bool ready = false;
+            //Set sound effects
+            public static System.Media.SoundPlayer sndOption = new System.Media.SoundPlayer(@"Data\\Wav\\Effects\\CrossImpact.wav");
+            public static System.Media.SoundPlayer sndSave = new System.Media.SoundPlayer(Properties.Resources.yessir);
         }
         public static class screenRes
         {
@@ -135,11 +139,11 @@ namespace Worms2_Settings
             null, tblDesign, new object[] { true });
 
             //Check Language
-            string langIni = "language.ini";
+            string langFile = "language.txt";
             string[] langArr = { "de", "en", "es", "es-419", "fr", "it", "nl", "pl", "pt", "pt-br", "ru", "sv" };
             string langVal;
-            if (File.Exists(langIni)) {
-                langVal = File.ReadAllText(langIni).Trim();
+            if (File.Exists(langFile)) {
+                langVal = File.ReadAllText(langFile).Trim();
                 if (!Array.Exists(langArr, element => element == langVal)) {
                     langVal = "en";
                 }
@@ -149,8 +153,9 @@ namespace Worms2_Settings
             }
             
             //Translation variables
-            string strSettings, strDisplay, strResolution, strRecommended, strWidth, strHeight, strMode, strZoom, strMouseSW, strKeyboard, strTouchscreen, strSave, strAudio, strApplications, strVolume, strSoundbank;
-            strSoundbank = "Sound Bank";
+            string strSettings, strDisplay, strResolution, strRecommended, strWidth, strHeight, strMode, strModeWindowed, strModeFullscreen, strModeBorderless, strVsync, strZoom, strMouseSW, strKeyboard, strTouchscreen, strSave, strAudio, strApplications, strVolume, strSoundbank;
+            strVsync = "V-Sync";
+            strSoundbank = "SoundBank";
             switch (langVal) {
                 case "de":
                     strSettings = "Einstellungen";
@@ -160,35 +165,170 @@ namespace Worms2_Settings
                     strWidth = "Breite";
                     strHeight = "Höhe";
                     strMode = "Betriebsart";
+                    strModeWindowed = "Fenstermodus";
+                    strModeFullscreen = "Vollbild";
+                    strModeBorderless = "Fenster ohne Rand";
+                    strVsync = "Bildschirmsynchronisation";
                     strZoom = "Zoomen";
                     strMouseSW = "Mäusen mit Drehrad";
                     strKeyboard = "Tastatur";
                     strTouchscreen = "Berührungsbildschirm";
                     strSave = "Speichern";
                     strAudio = "Audio";
-                    strApplications = "Anwendung";
+                    strApplications = "Anwendungen";
                     strVolume = "Lautstärke";
+                    strSoundbank = "Stimmenbank";
                     break;
                 case "es":
                 case "es-419":
-                    strSettings = "Ajustes";
+                    strSettings = "Configuraciones";
                     strDisplay = "Pantalla";
                     strResolution = "Resolución";
                     strRecommended = "Usar parámetros recomendados";
                     strWidth = "Anchura";
                     strHeight = "Altura";
                     strMode = "Modo";
+                    strModeWindowed = "Ventana";
+                    strModeFullscreen = "Pantalla completa";
+                    strModeBorderless = "Ventana sin bordes";
                     strZoom = "Zoom";
                     strMouseSW = "Rueda de desplazamiento";
-                    strKeyboard = "Teclado ";
+                    strKeyboard = "Teclado";
                     strTouchscreen = "Pantalla Táctil";
                     strSave = "Guardar Cambios";
                     strAudio = "Sonido";
-                    strApplications = "Aplicación";
+                    strApplications = "Aplicaciones";
                     strVolume = "Volumen";
-                    strSoundbank = "Editor de Sonido";
+                    strSoundbank = "Banco de voces";
                     break;
-                //https://es.wikipedia.org/wiki/Resoluci%C3%B3n_de_pantalla
+                case "fr":
+                    strSettings = "Paramètres";
+                    strDisplay = "Écran";
+                    strResolution = "Résolution";
+                    strRecommended = "Recommander";
+                    strWidth = "Largeur";
+                    strHeight = "Hauteur";
+                    strMode = "Mode";
+                    strModeWindowed = "Fenêtré";
+                    strModeFullscreen = "Plein écran";
+                    strModeBorderless = "Fenêtré sans bordure";
+                    strZoom = "Zoom";
+                    strMouseSW = "Molette de souris";
+                    strKeyboard = "Clavier";
+                    strTouchscreen = "Écran tactile";
+                    strSave = "Sauvegarder les modifications";
+                    strAudio = "Son";
+                    strApplications = "Applications";
+                    strVolume = "Volume";
+                    strSoundbank = "Banque de sons";
+                    break;
+                case "it":
+                    strSettings = "Impostazioni";
+                    strDisplay = "Schermo";
+                    strResolution = "Risoluzione";
+                    strRecommended = "Consigliato";
+                    strWidth = "Larghezza";
+                    strHeight = "Height";
+                    strMode = "Modalità";
+                    strModeWindowed = "A finestra";
+                    strModeFullscreen = "Schermo intero";
+                    strModeBorderless = "Borderless";
+                    strZoom = "Zoom";
+                    strMouseSW = "Rotella scorrimento mouse";
+                    strKeyboard = "Tastiera";
+                    strTouchscreen = "Touch screen";
+                    strSave = "Salva";
+                    strAudio = "Audio";
+                    strApplications = "Applicazioni";
+                    strVolume = "Volume";
+                    strSoundbank = "Banca di voci";
+                    break;
+                case "nl":
+                    strSettings = "Instellingen";
+                    strDisplay = "Scherm";
+                    strResolution = "Resolutie";
+                    strRecommended = "Aanbevolen";
+                    strWidth = "Breedte";
+                    strHeight = "Hoogte";
+                    strMode = "Modus";
+                    strModeWindowed = "Venster";
+                    strModeFullscreen = "Volledig scherm";
+                    strModeBorderless = "Randloos volledig scherm";
+                    strZoom = "Zoom";
+                    strMouseSW = "Scrollwieltje";
+                    strKeyboard = "Toetsenbord";
+                    strTouchscreen = "Aanraakscherm";
+                    strSave = "Opslaan";
+                    strAudio = "Geluid";
+                    strApplications = "Applicaties";
+                    strVolume = "Volume";
+                    //strSoundbank = "SoundBank";
+                    break;
+                case "pl":
+                    //Pending
+                    strSettings = "Ustawienia";
+                    strDisplay = "Obraz";
+                    strResolution = "Rozdzielczość";
+                    strRecommended = "Use recommended";
+                    strWidth = "Width";
+                    strHeight = "Height";
+                    strMode = "Mode";
+                    strModeWindowed = "Okno";
+                    strModeFullscreen = "Pełny ekran";
+                    strModeBorderless = "Pełny ekran bez obramowania";
+                    strZoom = "Zoom";
+                    strMouseSW = "Mouse scroll wheel";
+                    strKeyboard = "Klawiatura";
+                    strTouchscreen = "Touchscreen";
+                    strSave = "Zapisz";
+                    strAudio = "Dźwiek";
+                    strApplications = "Applications";
+                    strVolume = "Głośność";
+                    strSoundbank = "SoundBank Editor";
+                    break;
+                case "ru":
+                    strSettings = "Настройки";
+                    strDisplay = "Экран";
+                    strResolution = "Разрешение экрана";
+                    strRecommended = "сове́товать";
+                    strWidth = "ширину";
+                    strHeight = "высоту";
+                    strMode = "режим";
+                    strModeWindowed = "Оконный";
+                    strModeFullscreen = "Во весь экран";
+                    strModeBorderless = "оконный без рамки";
+                    strVsync = "Вертикальная синхронизация";
+                    strZoom = "давать крупный план";
+                    strMouseSW = "колесом прокрутки";
+                    strKeyboard = "Клавиатура";
+                    strTouchscreen = "Сенсорный экран";
+                    strSave = "Сохранить";
+                    strAudio = "Звук";
+                    strApplications = " программное обеспечение";
+                    strVolume = "Громкость";
+                    //strSoundbank = "SoundBank";
+                    break;
+                case "sv":
+                    strSettings = "Inställningar";
+                    strDisplay = "Skärm";
+                    strResolution = "Upplösning";
+                    strRecommended = "Rekommenderade";
+                    strWidth = "Bredd";
+                    strHeight = "Höjd";
+                    strMode = "Läge";
+                    strModeWindowed = "Fönster";
+                    strModeFullscreen = "Fullskärm";
+                    strModeBorderless = "Borderless";
+                    strZoom = "Zoom";
+                    strMouseSW = "Skrollhjul";
+                    strKeyboard = "Tangentbord";
+                    strTouchscreen = "Pekskärm";
+                    strSave = "Spara";
+                    strAudio = "Ljud";
+                    strApplications = "Tillämpningsprogram";
+                    strVolume = "Volym";
+                    //strSoundbank = "SoundBank";
+                    break;
                 default:
                     strSettings = "Settings";
                     strDisplay = "Display";
@@ -197,6 +337,9 @@ namespace Worms2_Settings
                     strWidth = "Width";
                     strHeight = "Height";
                     strMode = "Mode";
+                    strModeWindowed = "Windowed";
+                    strModeFullscreen = "Fullscreen";
+                    strModeBorderless = "Borderless";
                     strZoom = "Zoom";
                     strMouseSW = "Mouse scroll wheel";
                     strKeyboard = "Keyboard";
@@ -205,7 +348,7 @@ namespace Worms2_Settings
                     strAudio = "Audio";
                     strApplications = "Applications";
                     strVolume = "Volume Settings";
-                    strSoundbank = "Sound Bank Editor";
+                    strSoundbank = "SoundBank Editor";
                     break;
             }
 
@@ -217,6 +360,9 @@ namespace Worms2_Settings
             lblWidth.Text = strWidth;
             lblHeight.Text = strHeight;
             lblMode.Text = strMode;
+            rbDisplayWindowed.Text = strModeWindowed;
+            rbDisplayFullscreen.Text = strModeFullscreen;
+            rbDisplayBorderless.Text = strModeBorderless;
             lblZoom.Text = strZoom;
             cbZoomMouse.Text = strMouseSW;
             cbZoomKeyboard.Text = strKeyboard;
@@ -227,6 +373,7 @@ namespace Worms2_Settings
             btnVolume.Text = strVolume;
             btnSoundbank.Text = strSoundbank;
 
+            //Populate
             populate(true);
             if (!global.ready) {
                 populate(false);
@@ -254,8 +401,6 @@ namespace Worms2_Settings
                 return failString;
             }
         }
-
-
 
         private void populate(bool firstAttempt)
         {
@@ -375,23 +520,27 @@ namespace Worms2_Settings
         }
         private void rbRenderWnd_CheckedChanged(object sender, EventArgs e){
             if (global.ready && rbRenderWnd.Checked){
+                global.ready = false;
                 if (cbRecommended.Checked) {
                     cbRecommended.Checked = false;
                     cbRecommended.Checked = true;
                 }
-                if (rbDisplayFullscreen.Enabled) {
+                if (rbDisplayFullscreen.Checked) {
                     rbDisplayFullscreen.Checked = false;
                     rbDisplayWindowed.Checked = true;
                 }
                 rbDisplayFullscreen.Enabled = false;
                 lblZoom.Enabled = true;
                 flwZoom.Enabled = true;
+                global.ready = true;
+                controlChange(sender, e);
             }
         }
 
         private void rbRenderCNC_CheckedChanged(object sender, EventArgs e)
         {
             if (global.ready && rbRenderCNC.Checked) {
+                global.ready = false;
                 if (cbRecommended.Checked) {
                     cbRecommended.Checked = false;
                     cbRecommended.Checked = true;
@@ -405,6 +554,8 @@ namespace Worms2_Settings
                 cbZoomMouse.Checked = false;
                 cbZoomKeyboard.Checked = false;
                 cbZoomTouch.Checked = false;
+                global.ready = true;
+                controlChange(sender, e);
             }
         }
 
@@ -441,8 +592,19 @@ namespace Worms2_Settings
             Process.Start("Data\\Wav\\BankEditor.exe");
         }
         private void btnSave_Click(object sender, EventArgs e)
-        {
+        {            
             try {
+                //Clean up Resolution input
+                removeLeadingZeroes(txtWidth);
+                removeLeadingZeroes(txtHeight);
+                //Use recommended resolution if either value is not a number
+                if (!int.TryParse(txtWidth.Text, out _) || !int.TryParse(txtHeight.Text, out _)) {
+                    global.ready = false;
+                    cbRecommended.Checked = false;
+                    cbRecommended.Checked = true;
+                    global.ready = true;
+                }
+
                 var parser = new FileIniDataParser();
                 //ReSolution.ini
                 //[Resolution]
@@ -532,9 +694,38 @@ namespace Worms2_Settings
                     parser.WriteFile(ini.CNC, data.CNC);
                 }
                 parser.WriteFile(ini.Res, data.Res);
+                global.sndSave.Play();
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message,"Error");
+            }
+        }
+        private void controlChange(object sender, EventArgs e)
+        {
+            if (global.ready) {
+                if (sender is RadioButton) {
+                    if ((sender as RadioButton).Checked) {
+                        global.sndOption.Play();
+                    }
+                }
+                else if (sender is CheckBox) {
+                    global.sndOption.Play();
+                }
+            }
+        }
+
+        private void txtRes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) {
+                e.Handled = true;
+            }
+        }
+
+        private void removeLeadingZeroes(object sender)
+        {
+            string resVal = (sender as TextBox).Text;
+            if (resVal[0].ToString() == "0") {
+                (sender as TextBox).Text = resVal.TrimStart(new Char[] { '0' });
             }
         }
     }

@@ -139,6 +139,7 @@
             this.rbDisplayWindowed.TabStop = true;
             this.rbDisplayWindowed.Text = "Windowed";
             this.rbDisplayWindowed.UseVisualStyleBackColor = true;
+            this.rbDisplayWindowed.CheckedChanged += new System.EventHandler(this.controlChange);
             // 
             // rbDisplayFullscreen
             // 
@@ -150,6 +151,7 @@
             this.rbDisplayFullscreen.TabIndex = 17;
             this.rbDisplayFullscreen.Text = "Fullscreen";
             this.rbDisplayFullscreen.UseVisualStyleBackColor = true;
+            this.rbDisplayFullscreen.CheckedChanged += new System.EventHandler(this.controlChange);
             // 
             // rbDisplayBorderless
             // 
@@ -161,6 +163,7 @@
             this.rbDisplayBorderless.TabIndex = 18;
             this.rbDisplayBorderless.Text = "Borderless Window";
             this.rbDisplayBorderless.UseVisualStyleBackColor = true;
+            this.rbDisplayBorderless.CheckedChanged += new System.EventHandler(this.controlChange);
             // 
             // lblApplications
             // 
@@ -223,6 +226,7 @@
             this.txtWidth.Size = new System.Drawing.Size(75, 30);
             this.txtWidth.TabIndex = 11;
             this.txtWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtWidth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRes_KeyPress);
             // 
             // lblHeight
             // 
@@ -243,6 +247,7 @@
             this.txtHeight.Size = new System.Drawing.Size(75, 30);
             this.txtHeight.TabIndex = 13;
             this.txtHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRes_KeyPress);
             // 
             // lblResolution
             // 
@@ -327,12 +332,12 @@
             this.lblVsync.AutoSize = true;
             this.lblVsync.BackColor = System.Drawing.Color.Transparent;
             this.lblVsync.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVsync.Location = new System.Drawing.Point(87, 201);
+            this.lblVsync.Location = new System.Drawing.Point(79, 201);
             this.lblVsync.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
             this.lblVsync.Name = "lblVsync";
-            this.lblVsync.Size = new System.Drawing.Size(76, 25);
+            this.lblVsync.Size = new System.Drawing.Size(84, 25);
             this.lblVsync.TabIndex = 19;
-            this.lblVsync.Text = "VSync";
+            this.lblVsync.Text = "V-Sync";
             // 
             // lblZoom
             // 
@@ -370,6 +375,7 @@
             this.cbZoomMouse.TabIndex = 24;
             this.cbZoomMouse.Text = "Mouse scroll wheel";
             this.cbZoomMouse.UseVisualStyleBackColor = true;
+            this.cbZoomMouse.CheckedChanged += new System.EventHandler(this.controlChange);
             // 
             // cbZoomKeyboard
             // 
@@ -380,6 +386,7 @@
             this.cbZoomKeyboard.TabIndex = 25;
             this.cbZoomKeyboard.Text = "Keyboard (+/-)";
             this.cbZoomKeyboard.UseVisualStyleBackColor = true;
+            this.cbZoomKeyboard.CheckedChanged += new System.EventHandler(this.controlChange);
             // 
             // cbZoomTouch
             // 
@@ -390,6 +397,7 @@
             this.cbZoomTouch.TabIndex = 26;
             this.cbZoomTouch.Text = "Touchscreen";
             this.cbZoomTouch.UseVisualStyleBackColor = true;
+            this.cbZoomTouch.CheckedChanged += new System.EventHandler(this.controlChange);
             // 
             // lblHeadingDisplay
             // 
@@ -496,6 +504,7 @@
             this.cbVsync.Size = new System.Drawing.Size(22, 21);
             this.cbVsync.TabIndex = 21;
             this.cbVsync.UseVisualStyleBackColor = true;
+            this.cbVsync.CheckedChanged += new System.EventHandler(this.controlChange);
             // 
             // lblError
             // 

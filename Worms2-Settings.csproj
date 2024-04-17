@@ -96,6 +96,7 @@
   <ItemGroup>
     <Content Include="blowtorch.ico" />
     <Content Include="icon_blowtorch.ico" />
+    <None Include="yessir.wav" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
