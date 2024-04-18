@@ -4,7 +4,6 @@ using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Threading;
 using System.Windows.Forms;
 using IniParser;
 using IniParser.Model;
@@ -12,18 +11,9 @@ using IniParser.Model;
 namespace Worms2_Settings
 {
     public partial class Main : Form{
-        //Unique App Identifier
-        static Mutex mutex = new Mutex(true, "Worms 2 Plus Settings");
+
         public Main(){
-            if (mutex.WaitOne(TimeSpan.Zero, true))
-            {
-                mutex.ReleaseMutex();
-                InitializeComponent();
-            }
-            else
-            {
-                Close();
-            }
+            InitializeComponent();
         }
 
         public static class global{
@@ -265,26 +255,26 @@ namespace Worms2_Settings
                     //strSoundbank = "SoundBank";
                     break;
                 case "pl":
-                    //Pending
+                    //Credit: Dawid8
                     strSettings = "Ustawienia";
                     strDisplay = "Obraz";
                     strResolution = "Rozdzielczość";
-                    strRecommended = "Use recommended";
-                    strWidth = "Width";
-                    strHeight = "Height";
-                    strMode = "Mode";
+                    strRecommended = "Użyj zalecane";
+                    strWidth = "Szerokość";
+                    strHeight = "Wysokość";
+                    strMode = "Tryb";
                     strModeWindowed = "Okno";
                     strModeFullscreen = "Pełny ekran";
                     strModeBorderless = "Pełny ekran bez obramowania";
-                    strZoom = "Zoom";
+                    strZoom = "Przybliżenie";
                     strMouseSW = "Mouse scroll wheel";
                     strKeyboard = "Klawiatura";
-                    strTouchscreen = "Touchscreen";
+                    strTouchscreen = "Ekran dotykowy";
                     strSave = "Zapisz";
                     strAudio = "Dźwiek";
-                    strApplications = "Applications";
+                    strApplications = "Aplikacje";
                     strVolume = "Głośność";
-                    strSoundbank = "SoundBank Editor";
+                    strSoundbank = "Edytor SoundBanków";
                     break;
                 case "pt":
                     //Credit: rubinho146
@@ -633,7 +623,10 @@ namespace Worms2_Settings
         }
         private void btnSoundbank_Click(object sender, EventArgs e)
         {
-            Process.Start("Data\\Wav\\BankEditor.exe");
+            ProcessStartInfo _processStartInfo = new ProcessStartInfo();
+            _processStartInfo.WorkingDirectory = Path.Combine(Environment.CurrentDirectory, "Data\\Wav");
+            _processStartInfo.FileName = Path.Combine(Environment.CurrentDirectory, "Data\\Wav\\BankEditor.exe");
+            Process myProcess = Process.Start(_processStartInfo);
         }
         private void btnSave_Click(object sender, EventArgs e)
         {            
