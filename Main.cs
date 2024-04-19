@@ -408,10 +408,7 @@ namespace Worms2_Settings
             btnSoundbank.Text = strSoundbank;
 
             //Populate
-            populate(true);
-            if (!global.ready) {
-                populate(false);
-            }
+            populate();
         }
 
         private int iniInt(string input)
@@ -436,7 +433,7 @@ namespace Worms2_Settings
             }
         }
 
-        private void populate(bool firstAttempt)
+        private void populate()
         {
             //Define Errors that may not be translated
             string errFilesMissing = "Error: files missing, please reinstall Worms 2 Plus.";
@@ -444,112 +441,130 @@ namespace Worms2_Settings
             //Populate current settings
             //Renderer
             string Renderer = "";
-            if (File.Exists(dll.Res) && File.Exists(ini.Res)) { //Check for ReSolution, required by both renderers
-                if (File.Exists(dll.Wnd) && File.Exists(dll.CNC)) { //Check for conflict with both being enabled
 
-                    File.Move(dll.CNC, "_" + dll.CNC);
-                    if (firstAttempt) {
-                        return;
-                    }
-                    else {
-                        //Renderer = "";
-                    }
+            try {
+                //Check that backup DLLs are present
+                if (!File.Exists("_" + dll.Wnd) && File.Exists(dll.Wnd)) {
+                    //MessageBox.Show("Copy wkWndmode.dll to _wkWndmode.dll");
+                    File.Copy(dll.Wnd, "_" + dll.Wnd, true);
                 }
-                else if (File.Exists(dll.Wnd) && File.Exists(dll.Wnd2) && File.Exists(ini.Wnd)) { //Check for all WndMode files
-                    rbRenderWnd.Checked = true;
-                    Renderer = "WndMode";
+                if (!File.Exists("_" + dll.CNC) && File.Exists(dll.CNC)) {
+                    //MessageBox.Show("Copy ddraw.dll to _ddraw.dll");
+                    File.Copy(dll.CNC, "_" + dll.CNC, true);
                 }
-                else if (File.Exists(dll.CNC) && File.Exists(ini.CNC)) { //Check for all cnc-ddraw files
-                    rbRenderCNC.Checked = true;
-                    Renderer = "cnc-ddraw";
+               
+                //Check and resolve conflict, keep the active WndMode dll if true
+                if (File.Exists(dll.Wnd) && File.Exists(dll.CNC)) {
+                    //MessageBox.Show("Delete ddraw.dll");
+                    File.Delete(dll.CNC);
                 }
-            }
-            if (Renderer == "") { //Show error if a renderer could not be established
-                showError(errFilesMissing, true, false);
-            }
-            else {
-                //Get Resolutions
-                var screen = GetDisplayResolution();
-                screenRes.width = screen.Width;
-                screenRes.height = screen.Height;
+                if (!File.Exists(dll.Wnd) && !File.Exists(dll.CNC) && File.Exists("_" + dll.Wnd)) {
+                    //MessageBox.Show("Copy _wkWndMode.dll to wkWndMode.dll");
+                    File.Copy("_" + dll.Wnd, dll.Wnd, true);
+                }
 
-                //Parse INI data
-                var parser = new FileIniDataParser();
-                IniParser.Model.Configuration.IniParserConfiguration config = parser.Parser.Configuration;
-                config.CommentString = ";";
-                config.SkipInvalidLines = true;
-                config.AllowDuplicateKeys = true;
-                config.AllowDuplicateSections = true;
-                data.Res = parser.ReadFile(ini.Res);
-                data.Wnd = parser.ReadFile(ini.Wnd);
-                data.CNC = parser.ReadFile(ini.CNC);
+                //Check for files from both renderers
+                if (File.Exists(dll.Res) && File.Exists(ini.Res) && File.Exists("_"+dll.Wnd) && File.Exists(dll.Wnd2) && File.Exists(ini.Wnd) && File.Exists("_"+dll.CNC) && File.Exists(ini.CNC)) { 
+                    if (File.Exists(dll.Wnd)) { //Check for active WndMode dll
+                        rbRenderWnd.Checked = true;
+                        Renderer = "WndMode";
+                    }
+                    else if (File.Exists(dll.CNC)) { //Check for active cnc-ddraw dll
+                        rbRenderCNC.Checked = true;
+                        Renderer = "cnc-ddraw";
+                    }
+                }
+                if (Renderer == "") { //Show error if a renderer could not be established
+                    showError(errFilesMissing, true, false);
+                }
+                else {
+                    //Get Resolutions
+                    var screen = GetDisplayResolution();
+                    screenRes.width = screen.Width;
+                    screenRes.height = screen.Height;
 
-                //Get current values
-                int settingWidth = iniInt(data.Res["Resolution"]["ScreenWidth"]);
-                int settingHeight = iniInt(data.Res["Resolution"]["ScreenHeight"]);
-                if (settingWidth == 0) {
-                    settingWidth = screenRes.width;
-                }
-                if (settingHeight == 0) {
-                    settingHeight = screenRes.height;
-                }
-                txtWidth.Text = settingWidth.ToString();
-                txtHeight.Text = settingHeight.ToString();
+                    //Parse INI data
+                    var parser = new FileIniDataParser();
+                    IniParser.Model.Configuration.IniParserConfiguration config = parser.Parser.Configuration;
+                    config.CommentString = ";";
+                    config.SkipInvalidLines = true;
+                    config.AllowDuplicateKeys = true;
+                    config.AllowDuplicateSections = true;
+                    data.Res = parser.ReadFile(ini.Res);
+                    data.Wnd = parser.ReadFile(ini.Wnd);
+                    data.CNC = parser.ReadFile(ini.CNC);
 
-                if (Renderer == "WndMode") {
-                    rbRenderWnd.Checked = true;
-                    rbDisplayFullscreen.Enabled = false;
-                    if (settingWidth == screenRes.width && settingHeight == screenRes.height) {
-                        cbRecommended.Checked = true;
-                        rbDisplayBorderless.Checked = true;
+                    //Get current values
+                    int settingWidth = iniInt(data.Res["Resolution"]["ScreenWidth"]);
+                    int settingHeight = iniInt(data.Res["Resolution"]["ScreenHeight"]);
+                    if (settingWidth == 0) {
+                        settingWidth = screenRes.width;
                     }
-                    int settingVsync = iniInt(data.Wnd["WINDOWMODE"]["VerticalSync"]);
-                    int settingBorder = iniInt(data.Wnd["WINDOWMODE"]["Border"]);
-                    if (settingVsync == 1) {
-                        cbVsync.Checked = true;
+                    if (settingHeight == 0) {
+                        settingHeight = screenRes.height;
                     }
-                    if (settingBorder == 1 && !rbDisplayBorderless.Checked) {
-                        rbDisplayWindowed.Checked = true;
-                    }
-                    int settingZoomEnable = iniInt(data.Res["Zooming"]["Enable"]);
-                    if (settingZoomEnable == 1) {
-                        int settingZoomMouse = iniInt(data.Res["Zooming"]["UseMouseWheel"]);
-                        int settingZoomKeyboard = iniInt(data.Res["Zooming"]["UseKeyboardZoom"]);
-                        int settingZoomTouch = iniInt(data.Res["Zooming"]["UseTouchscreenZoom"]);
-                        if (settingZoomMouse == 1) { cbZoomMouse.Checked = true; }
-                        if (settingZoomKeyboard == 1) { cbZoomKeyboard.Checked = true; }
-                        if (settingZoomTouch == 1) { cbZoomTouch.Checked = true; }
-                    }
-                }
-                else if (Renderer == "cnc-ddraw") {
-                    rbRenderCNC.Checked = true;
-                    if (settingWidth == 1920 && settingHeight == 1080) {
-                        cbRecommended.Checked = true;
-                    }
-                    string settingFullscreen = iniStr(data.CNC["ddraw"]["fullscreen"]);
-                    string settingWindowed = iniStr(data.CNC["ddraw"]["windowed"]);
-                    string settingVsync = iniStr(data.CNC["ddraw"]["vsync"]);
-                    if (settingFullscreen == "true") {
-                        if (settingWindowed == "true") {
+                    txtWidth.Text = settingWidth.ToString();
+                    txtHeight.Text = settingHeight.ToString();
+
+                    if (Renderer == "WndMode") {
+                        rbRenderWnd.Checked = true;
+                        rbDisplayFullscreen.Enabled = false;
+                        if (settingWidth == screenRes.width && settingHeight == screenRes.height) {
+                            cbRecommended.Checked = true;
                             rbDisplayBorderless.Checked = true;
                         }
-                        else {
-                            rbDisplayFullscreen.Checked = true;
+                        int settingVsync = iniInt(data.Wnd["WINDOWMODE"]["VerticalSync"]);
+                        int settingBorder = iniInt(data.Wnd["WINDOWMODE"]["Border"]);
+                        if (settingVsync == 1) {
+                            cbVsync.Checked = true;
+                        }
+                        if (settingBorder == 1 && !rbDisplayBorderless.Checked) {
+                            rbDisplayWindowed.Checked = true;
+                        }
+                        int settingZoomEnable = iniInt(data.Res["Zooming"]["Enable"]);
+                        if (settingZoomEnable == 1) {
+                            int settingZoomMouse = iniInt(data.Res["Zooming"]["UseMouseWheel"]);
+                            int settingZoomKeyboard = iniInt(data.Res["Zooming"]["UseKeyboardZoom"]);
+                            int settingZoomTouch = iniInt(data.Res["Zooming"]["UseTouchscreenZoom"]);
+                            if (settingZoomMouse == 1) { cbZoomMouse.Checked = true; }
+                            if (settingZoomKeyboard == 1) { cbZoomKeyboard.Checked = true; }
+                            if (settingZoomTouch == 1) { cbZoomTouch.Checked = true; }
                         }
                     }
-                    else {
-                        rbDisplayWindowed.Checked = true;
+                    else if (Renderer == "cnc-ddraw") {
+                        rbRenderCNC.Checked = true;
+                        if (settingWidth == 1920 && settingHeight == 1080) {
+                            cbRecommended.Checked = true;
+                        }
+                        string settingFullscreen = iniStr(data.CNC["ddraw"]["fullscreen"]);
+                        string settingWindowed = iniStr(data.CNC["ddraw"]["windowed"]);
+                        string settingVsync = iniStr(data.CNC["ddraw"]["vsync"]);
+                        if (settingFullscreen == "true") {
+                            if (settingWindowed == "true") {
+                                rbDisplayBorderless.Checked = true;
+                            }
+                            else {
+                                rbDisplayFullscreen.Checked = true;
+                            }
+                        }
+                        else {
+                            rbDisplayWindowed.Checked = true;
+                        }
+                        if (settingVsync == "true") {
+                            cbVsync.Checked = true;
+                        }
+                        lblZoom.Enabled = false;
+                        flwZoom.Enabled = false;
                     }
-                    if (settingVsync == "true") {
-                        cbVsync.Checked = true;
-                    }
-                    lblZoom.Enabled = false;
-                    flwZoom.Enabled = false;
+                    processCheck();
+                    this.ActiveControl = lblHeadingDisplay;
+                    global.ready = true;
+                    timerProcess.Enabled = true;
                 }
-                processCheck();
-                this.ActiveControl = lblHeadingDisplay;
-                global.ready = true;
-                timerProcess.Enabled = true;
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+                Close();
             }
         }
         private void rbRenderWnd_CheckedChanged(object sender, EventArgs e){
@@ -677,11 +692,9 @@ namespace Worms2_Settings
                             data.Res["Zooming"]["UseTouchscreenZoom"] = "0";
                         }
                     }
-                    if (File.Exists(dll.CNC)) {
-                        File.Move(dll.CNC, "_" + dll.CNC);
-                    }
-                    if (File.Exists("_" + dll.Wnd)) {
-                        File.Move("_" + dll.Wnd, dll.Wnd);
+                    File.Delete(dll.CNC);
+                    if (!File.Exists(dll.Wnd)) {
+                        File.Copy("_" + dll.Wnd, dll.Wnd, true);
                     }
                     //wndmode.ini
                     if (rbDisplayBorderless.Checked) {
@@ -703,12 +716,10 @@ namespace Worms2_Settings
                     data.Res["Resizing"]["Enable"] = "0";
                     //[Zooming]
                     data.Res["Zooming"]["Enable"] = "0";
-                    if (File.Exists(dll.Wnd)) {
-                        File.Move(dll.Wnd, "_" + dll.Wnd);
-                    }
-                    if (File.Exists("_" + dll.CNC)) {
-                        File.Move("_" + dll.CNC, dll.CNC);
-                    }
+                    File.Delete(dll.Wnd);
+                    if (!File.Exists(dll.CNC)) {
+                        File.Copy("_" + dll.CNC, dll.CNC, true);
+                    }   
                     //ddraw.ini
                     if (rbDisplayWindowed.Checked) {
                         data.CNC["ddraw"]["fullscreen"] = "false";
