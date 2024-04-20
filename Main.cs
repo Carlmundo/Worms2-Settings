@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
 using IniParser;
 using IniParser.Model;
@@ -646,6 +647,9 @@ namespace Worms2_Settings
         private void btnSave_Click(object sender, EventArgs e)
         {            
             try {
+                //Write files as UTF-8 without BOM
+                Encoding UTF8withoutBOM = new UTF8Encoding(false);
+
                 //Clean up Resolution input
                 removeLeadingZeroes(txtWidth);
                 removeLeadingZeroes(txtHeight);
@@ -709,7 +713,7 @@ namespace Worms2_Settings
                     else {
                         data.Wnd["WINDOWMODE"]["VerticalSync"] = "0";
                     }
-                    parser.WriteFile(ini.Wnd, data.Wnd);
+                    parser.WriteFile(ini.Wnd, data.Wnd, UTF8withoutBOM);
                 }
                 else if (rbRenderCNC.Checked) {
                     //[Resizing]
@@ -739,9 +743,9 @@ namespace Worms2_Settings
                     else {
                         data.CNC["ddraw"]["vsync"] = "false";
                     }
-                    parser.WriteFile(ini.CNC, data.CNC);
+                    parser.WriteFile(ini.CNC, data.CNC, UTF8withoutBOM);
                 }
-                parser.WriteFile(ini.Res, data.Res);
+                parser.WriteFile(ini.Res, data.Res, UTF8withoutBOM);
                 global.sndSave.Play();
             }
             catch (Exception ex) {
