@@ -613,8 +613,17 @@ namespace Worms2_Settings
         {
             if (cbRecommended.Checked) {
                 if (rbRenderCNC.Checked) {
-                    txtWidth.Text = "1920";
-                    txtHeight.Text = "1080";
+                    if (screenRes.height >= 1080) {
+                        txtHeight.Text = "1080";
+                        float numMultiplier = (float)screenRes.height / 1080f;
+                        //Calculate width to match an upscaled height of 1080 (rounds down any decimals)
+                        int intWidth = (int)(screenRes.width / numMultiplier);
+                        txtWidth.Text = intWidth.ToString();
+                    }
+                    else {
+                        txtWidth.Text = screenRes.width.ToString();
+                        txtHeight.Text = screenRes.height.ToString();
+                    }
                 }
                 else {
                     txtWidth.Text = screenRes.width.ToString();
