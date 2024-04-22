@@ -105,6 +105,10 @@ namespace Worms2_Settings
             foreach (Control c in tblDesign.Controls) {
                 c.Enabled = true;
             }
+            if (rbRenderCNC.Checked) {
+                lblZoom.Enabled = false;
+                flwZoom.Enabled = false;
+            }
             lblError.Visible = false;
             lblError.Text = "";
         }
