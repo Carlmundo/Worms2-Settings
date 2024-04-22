@@ -540,6 +540,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Worms 2 Settings";
             this.Load += new System.EventHandler(this.Main_Load);
             this.tblDesign.ResumeLayout(false);
