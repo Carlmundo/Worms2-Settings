@@ -23,7 +23,7 @@ namespace Worms2_Settings
                 return;
             }
 
-            Application.EnableVisualStyles();
+            //Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main());
         }
