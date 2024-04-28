@@ -518,13 +518,12 @@ namespace Worms2_Settings
                             cbRecommended.Checked = true;
                             rbDisplayBorderless.Checked = true;
                         }
+                        else {
+                            rbDisplayWindowed.Checked = true;
+                        }
                         int settingVsync = iniInt(data.Wnd["WINDOWMODE"]["VerticalSync"]);
-                        int settingBorder = iniInt(data.Wnd["WINDOWMODE"]["Border"]);
                         if (settingVsync == 1) {
                             cbVsync.Checked = true;
-                        }
-                        if (settingBorder == 1 && !rbDisplayBorderless.Checked) {
-                            rbDisplayWindowed.Checked = true;
                         }
                         int settingZoomEnable = iniInt(data.Res["Zooming"]["Enable"]);
                         if (settingZoomEnable == 1) {
@@ -635,6 +634,7 @@ namespace Worms2_Settings
                 }
                 txtWidth.Enabled = false;
                 txtHeight.Enabled = false;
+                rbDisplayBorderless.Checked = true;
             }
             else {
                 txtWidth.Enabled = true;
@@ -666,6 +666,8 @@ namespace Worms2_Settings
                 //Clean up Resolution input
                 removeLeadingZeroes(txtWidth);
                 removeLeadingZeroes(txtHeight);
+                txtWidth.Text = txtWidth.Text.Trim();
+                txtHeight.Text = txtHeight.Text.Trim();
                 //Use recommended resolution if either value is not a number
                 if (!int.TryParse(txtWidth.Text, out _) || !int.TryParse(txtHeight.Text, out _)) {
                     global.ready = false;
@@ -680,6 +682,12 @@ namespace Worms2_Settings
                 data.Res["Resolution"]["ScreenWidth"] = txtWidth.Text;
                 data.Res["Resolution"]["ScreenHeight"] = txtHeight.Text;
                 if (rbRenderWnd.Checked) {
+                    if (txtWidth.Text == screenRes.width.ToString() && txtHeight.Text == screenRes.height.ToString()) { 
+                        rbDisplayBorderless.Checked = true;
+                    }
+                    else {
+                        rbDisplayWindowed.Checked = true;
+                    }
                     //[Resizing]
                     data.Res["Resizing"]["Enable"] = "1";
                     data.Res["Resizing"]["ProgressiveUpdate"] = "1";
@@ -714,12 +722,6 @@ namespace Worms2_Settings
                         File.Copy("_" + dll.Wnd, dll.Wnd, true);
                     }
                     //wndmode.ini
-                    if (rbDisplayBorderless.Checked) {
-                        data.Wnd["WINDOWMODE"]["Border"] = "0";
-                    }
-                    else {
-                        data.Wnd["WINDOWMODE"]["Border"] = "1";
-                    }
                     if (cbVsync.Checked) {
                         data.Wnd["WINDOWMODE"]["VerticalSync"] = "1";
                     }
@@ -741,14 +743,20 @@ namespace Worms2_Settings
                     if (rbDisplayWindowed.Checked) {
                         data.CNC["ddraw"]["fullscreen"] = "false";
                         data.CNC["ddraw"]["windowed"] = "true";
+                        data.CNC["ddraw"]["toggle_borderless"] = "true";
+                        data.CNC["ddraw"]["toggle_upscaled"] = "false";
                     }
                     else if (rbDisplayFullscreen.Checked) {
                         data.CNC["ddraw"]["fullscreen"] = "true";
                         data.CNC["ddraw"]["windowed"] = "false";
+                        data.CNC["ddraw"]["toggle_borderless"] = "false";
+                        data.CNC["ddraw"]["toggle_upscaled"] = "true";
                     }
                     else if (rbDisplayBorderless.Checked) {
                         data.CNC["ddraw"]["fullscreen"] = "true";
                         data.CNC["ddraw"]["windowed"] = "true";
+                        data.CNC["ddraw"]["toggle_borderless"] = "true";
+                        data.CNC["ddraw"]["toggle_upscaled"] = "false";
                     }
                     if (cbVsync.Checked) {
                         data.CNC["ddraw"]["vsync"] = "true";
