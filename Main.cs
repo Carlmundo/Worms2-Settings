@@ -412,6 +412,12 @@ namespace Worms2_Settings
             btnVolume.Text = strVolume;
             btnSoundbank.Text = strSoundbank;
 
+            //Hide Zoom options for Windows XP
+            if (Environment.OSVersion.Version.Major < 6) {
+                lblZoom.Visible = false;
+                flwZoom.Visible = false;
+            }
+
             //Populate
             populate();
         }
