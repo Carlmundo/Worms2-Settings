@@ -105,10 +105,6 @@ namespace Worms2_Settings
             foreach (Control c in tblDesign.Controls) {
                 c.Enabled = true;
             }
-            if (rbRenderCNC.Checked) {
-                lblZoom.Enabled = false;
-                flwZoom.Enabled = false;
-            }
             lblError.Visible = false;
             lblError.Text = "";
         }
@@ -531,15 +527,6 @@ namespace Worms2_Settings
                         if (settingVsync == 1) {
                             cbVsync.Checked = true;
                         }
-                        int settingZoomEnable = iniInt(data.Res["Zooming"]["Enable"]);
-                        if (settingZoomEnable == 1) {
-                            int settingZoomMouse = iniInt(data.Res["Zooming"]["UseMouseWheel"]);
-                            int settingZoomKeyboard = iniInt(data.Res["Zooming"]["UseKeyboardZoom"]);
-                            int settingZoomTouch = iniInt(data.Res["Zooming"]["UseTouchscreenZoom"]);
-                            if (settingZoomMouse == 1) { cbZoomMouse.Checked = true; }
-                            if (settingZoomKeyboard == 1) { cbZoomKeyboard.Checked = true; }
-                            if (settingZoomTouch == 1) { cbZoomTouch.Checked = true; }
-                        }
                     }
                     else if (Renderer == "cnc-ddraw") {
                         rbRenderCNC.Checked = true;
@@ -563,8 +550,15 @@ namespace Worms2_Settings
                         if (settingVsync == "true") {
                             cbVsync.Checked = true;
                         }
-                        lblZoom.Enabled = false;
-                        flwZoom.Enabled = false;
+                    }
+                    int settingZoomEnable = iniInt(data.Res["Zooming"]["Enable"]);
+                    if (settingZoomEnable == 1) {
+                        int settingZoomMouse = iniInt(data.Res["Zooming"]["UseMouseWheel"]);
+                        int settingZoomKeyboard = iniInt(data.Res["Zooming"]["UseKeyboardZoom"]);
+                        int settingZoomTouch = iniInt(data.Res["Zooming"]["UseTouchscreenZoom"]);
+                        if (settingZoomMouse == 1) { cbZoomMouse.Checked = true; }
+                        if (settingZoomKeyboard == 1) { cbZoomKeyboard.Checked = true; }
+                        if (settingZoomTouch == 1) { cbZoomTouch.Checked = true; }
                     }
                     processCheck();
                     this.ActiveControl = lblHeadingDisplay;
@@ -589,8 +583,6 @@ namespace Worms2_Settings
                     rbDisplayWindowed.Checked = true;
                 }
                 rbDisplayFullscreen.Enabled = false;
-                lblZoom.Enabled = true;
-                flwZoom.Enabled = true;
                 global.ready = true;
                 controlChange(sender, e);
             }
@@ -608,11 +600,6 @@ namespace Worms2_Settings
                     cbRecommended.Checked = true;
                 }
                 rbDisplayFullscreen.Enabled = true;
-                lblZoom.Enabled = false;
-                flwZoom.Enabled = false;
-                cbZoomMouse.Checked = false;
-                cbZoomKeyboard.Checked = false;
-                cbZoomTouch.Checked = false;
                 global.ready = true;
                 controlChange(sender, e);
             }
@@ -687,6 +674,9 @@ namespace Worms2_Settings
                 //[Resolution]
                 data.Res["Resolution"]["ScreenWidth"] = txtWidth.Text;
                 data.Res["Resolution"]["ScreenHeight"] = txtHeight.Text;
+                //[Resizing]
+                data.Res["Resizing"]["ProgressiveUpdate"] = "0";
+
                 if (rbRenderWnd.Checked) {
                     if (txtWidth.Text == screenRes.width.ToString() && txtHeight.Text == screenRes.height.ToString()) { 
                         rbDisplayBorderless.Checked = true;
@@ -696,33 +686,8 @@ namespace Worms2_Settings
                     }
                     //[Resizing]
                     data.Res["Resizing"]["Enable"] = "1";
-                    data.Res["Resizing"]["ProgressiveUpdate"] = "1";
                     data.Res["Resizing"]["AltEnter"] = "1";
-                    //[Zooming]
-                    if (!cbZoomMouse.Checked && !cbZoomKeyboard.Checked && !cbZoomTouch.Checked) {
-                        data.Res["Zooming"]["Enable"] = "0";
-                    }
-                    else {
-                        data.Res["Zooming"]["Enable"] = "1";
-                        if (cbZoomMouse.Checked) {
-                            data.Res["Zooming"]["UseMouseWheel"] = "1";
-                        }
-                        else {
-                            data.Res["Zooming"]["UseMouseWheel"] = "0";
-                        }
-                        if (cbZoomKeyboard.Checked) {
-                            data.Res["Zooming"]["UseKeyboardZoom"] = "1";
-                        }
-                        else {
-                            data.Res["Zooming"]["UseKeyboardZoom"] = "0";
-                        }
-                        if (cbZoomTouch.Checked) {
-                            data.Res["Zooming"]["UseTouchscreenZoom"] = "1";
-                        }
-                        else {
-                            data.Res["Zooming"]["UseTouchscreenZoom"] = "0";
-                        }
-                    }
+
                     File.Delete(dll.CNC);
                     if (!File.Exists(dll.Wnd)) {
                         File.Copy("_" + dll.Wnd, dll.Wnd, true);
@@ -739,8 +704,8 @@ namespace Worms2_Settings
                 else if (rbRenderCNC.Checked) {
                     //[Resizing]
                     data.Res["Resizing"]["Enable"] = "0";
-                    //[Zooming]
-                    data.Res["Zooming"]["Enable"] = "0";
+                    data.Res["Resizing"]["AltEnter"] = "0";
+
                     File.Delete(dll.Wnd);
                     if (!File.Exists(dll.CNC)) {
                         File.Copy("_" + dll.CNC, dll.CNC, true);
@@ -771,6 +736,35 @@ namespace Worms2_Settings
                         data.CNC["ddraw"]["vsync"] = "false";
                     }
                     parser.WriteFile(ini.CNC, data.CNC, UTF8withoutBOM);
+                }
+                
+                //[Zooming]
+                if (!cbZoomMouse.Checked && !cbZoomKeyboard.Checked && !cbZoomTouch.Checked) {
+                    data.Res["Zooming"]["Enable"] = "0";
+                    data.Res["Zooming"]["UseMouseWheel"] = "0";
+                    data.Res["Zooming"]["UseKeyboardZoom"] = "0";
+                    data.Res["Zooming"]["UseTouchscreenZoom"] = "0";
+                }
+                else {
+                    data.Res["Zooming"]["Enable"] = "1";
+                    if (cbZoomMouse.Checked) {
+                        data.Res["Zooming"]["UseMouseWheel"] = "1";
+                    }
+                    else {
+                        data.Res["Zooming"]["UseMouseWheel"] = "0";
+                    }
+                    if (cbZoomKeyboard.Checked) {
+                        data.Res["Zooming"]["UseKeyboardZoom"] = "1";
+                    }
+                    else {
+                        data.Res["Zooming"]["UseKeyboardZoom"] = "0";
+                    }
+                    if (cbZoomTouch.Checked) {
+                        data.Res["Zooming"]["UseTouchscreenZoom"] = "1";
+                    }
+                    else {
+                        data.Res["Zooming"]["UseTouchscreenZoom"] = "0";
+                    }
                 }
                 parser.WriteFile(ini.Res, data.Res, UTF8withoutBOM);
                 global.sndSave.Play();
