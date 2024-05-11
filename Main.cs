@@ -20,6 +20,8 @@ namespace Worms2_Settings
         public static class global{
             //Ready var
             public static bool ready = false;
+            //Windows XP
+            public static bool OSWinXP = false;
             //Set sound effects
             public static System.Media.SoundPlayer sndOption = new System.Media.SoundPlayer(@"Data\\Wav\\Effects\\CrossImpact.wav");
             public static System.Media.SoundPlayer sndSave = new System.Media.SoundPlayer(Properties.Resources.yessir);
@@ -104,6 +106,9 @@ namespace Worms2_Settings
         private void hideError(){
             foreach (Control c in tblDesign.Controls) {
                 c.Enabled = true;
+            }
+            if (global.OSWinXP && rbRenderWnd.Checked) {
+                flwZoom.Enabled = false;
             }
             lblError.Visible = false;
             lblError.Text = "";
@@ -408,10 +413,9 @@ namespace Worms2_Settings
             btnVolume.Text = strVolume;
             btnSoundbank.Text = strSoundbank;
 
-            //Hide Zoom options for Windows XP
+            //Determine if the OS is Windows XP
             if (Environment.OSVersion.Version.Major < 6) {
-                lblZoom.Visible = false;
-                flwZoom.Visible = false;
+                global.OSWinXP = true;
             }
 
             //Populate
@@ -551,14 +555,19 @@ namespace Worms2_Settings
                             cbVsync.Checked = true;
                         }
                     }
-                    int settingZoomEnable = iniInt(data.Res["Zooming"]["Enable"]);
-                    if (settingZoomEnable == 1) {
-                        int settingZoomMouse = iniInt(data.Res["Zooming"]["UseMouseWheel"]);
-                        int settingZoomKeyboard = iniInt(data.Res["Zooming"]["UseKeyboardZoom"]);
-                        int settingZoomTouch = iniInt(data.Res["Zooming"]["UseTouchscreenZoom"]);
-                        if (settingZoomMouse == 1) { cbZoomMouse.Checked = true; }
-                        if (settingZoomKeyboard == 1) { cbZoomKeyboard.Checked = true; }
-                        if (settingZoomTouch == 1) { cbZoomTouch.Checked = true; }
+                    if (global.OSWinXP && Renderer == "WndMode") {
+                        flwZoom.Enabled = false;
+                    }
+                    else {
+                        int settingZoomEnable = iniInt(data.Res["Zooming"]["Enable"]);
+                        if (settingZoomEnable == 1) {
+                            int settingZoomMouse = iniInt(data.Res["Zooming"]["UseMouseWheel"]);
+                            int settingZoomKeyboard = iniInt(data.Res["Zooming"]["UseKeyboardZoom"]);
+                            int settingZoomTouch = iniInt(data.Res["Zooming"]["UseTouchscreenZoom"]);
+                            if (settingZoomMouse == 1) { cbZoomMouse.Checked = true; }
+                            if (settingZoomKeyboard == 1) { cbZoomKeyboard.Checked = true; }
+                            if (settingZoomTouch == 1) { cbZoomTouch.Checked = true; }
+                        }
                     }
                     processCheck();
                     this.ActiveControl = lblHeadingDisplay;
@@ -583,6 +592,12 @@ namespace Worms2_Settings
                     rbDisplayWindowed.Checked = true;
                 }
                 rbDisplayFullscreen.Enabled = false;
+                if (global.OSWinXP) {
+                    flwZoom.Enabled = false;
+                    cbZoomMouse.Checked = false;
+                    cbZoomKeyboard.Checked = false;
+                    cbZoomTouch.Checked = false;
+                }
                 global.ready = true;
                 controlChange(sender, e);
             }
@@ -600,6 +615,9 @@ namespace Worms2_Settings
                     cbRecommended.Checked = true;
                 }
                 rbDisplayFullscreen.Enabled = true;
+                if (global.OSWinXP) {
+                    flwZoom.Enabled = true;
+                }
                 global.ready = true;
                 controlChange(sender, e);
             }
