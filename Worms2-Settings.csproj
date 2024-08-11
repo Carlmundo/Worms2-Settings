@@ -102,7 +102,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="blowtorch.ico" />
     <Content Include="icon_blowtorch.ico" />
     <None Include="yessir.wav" />
   </ItemGroup>
