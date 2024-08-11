@@ -24,7 +24,7 @@ namespace Worms2_Settings
             public static bool OSWinXP = false;
             //Set sound effects
             public static System.Media.SoundPlayer sndOption = new System.Media.SoundPlayer(@"Data\\Wav\\Effects\\CrossImpact.wav");
-            public static System.Media.SoundPlayer sndSave = new System.Media.SoundPlayer(Properties.Resources.yessir);
+            public static System.Media.SoundPlayer sndSave = new System.Media.SoundPlayer(@"Data\\Wav\\Speech\\yessir.wav");
         }
         public static class screenRes
         {
@@ -785,22 +785,25 @@ namespace Worms2_Settings
                     }
                 }
                 parser.WriteFile(ini.Res, data.Res, UTF8withoutBOM);
-                global.sndSave.Play();
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message,"Error");
             }
+            try { global.sndSave.Play(); }
+            catch { }
         }
         private void controlChange(object sender, EventArgs e)
         {
             if (global.ready) {
                 if (sender is RadioButton) {
                     if ((sender as RadioButton).Checked) {
-                        global.sndOption.Play();
+                        try {global.sndOption.Play();}
+                        catch { }
                     }
                 }
                 else if (sender is CheckBox) {
-                    global.sndOption.Play();
+                    try { global.sndOption.Play(); }
+                    catch { }
                 }
             }
         }
