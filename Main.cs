@@ -153,6 +153,27 @@ namespace Worms2_Settings
             strVsync = "V-Sync";
             strSoundbank = "SoundBank";
             switch (langVal) {
+                case "cs":
+                    strSettings = "Nastavení";
+                    strDisplay = "Zobrazení";
+                    strResolution = "Rozlišení";
+                    strRecommended = "Použít doporučené";
+                    strWidth = "Šířka";
+                    strHeight = "Výška";
+                    strMode = "Režim";
+                    strModeWindowed = "V okně";
+                    strModeFullscreen = "Celá obrazovka";
+                    strModeBorderless = "Bez rámečku";
+                    strZoom = "Přiblížení";
+                    strMouseSW = "Skrolováním kolečkem myši";
+                    strKeyboard = "Klávesnicí";
+                    strTouchscreen = "Dotykem obrazovky";
+                    strSave = "Uložit změny";
+                    strAudio = "Audio";
+                    strApplications = "Aplikace";
+                    strVolume = "Nastavení hlasitosti";
+                    strSoundbank = "Editor zvukové banky";
+                    break;
                 case "de":
                     strSettings = "Einstellungen";
                     strDisplay = "Bildschirm";
