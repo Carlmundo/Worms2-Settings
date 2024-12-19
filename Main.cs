@@ -154,6 +154,7 @@ namespace Worms2_Settings
             strSoundbank = "SoundBank";
             switch (langVal) {
                 case "cs":
+                    //Credit: JPEXS
                     strSettings = "Nastavení";
                     strDisplay = "Zobrazení";
                     strResolution = "Rozlišení";
