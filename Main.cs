@@ -136,7 +136,7 @@ namespace Worms2_Settings
 
             //Check Language
             string langFile = "language.txt";
-            string[] langArr = { "de", "en", "es", "es-419", "fr", "it", "nl", "pl", "pt", "pt-br", "ru", "sv" };
+            string[] langArr = { "cs", "de", "en", "es", "es-419", "fr", "it", "nl", "pl", "pt", "pt-br", "ru", "sv" };
             string langVal;
             if (File.Exists(langFile)) {
                 langVal = File.ReadAllText(langFile).Trim();
