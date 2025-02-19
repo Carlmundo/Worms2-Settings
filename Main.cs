@@ -149,7 +149,7 @@ namespace Worms2_Settings
             }
             
             //Translation variables
-            string strSettings, strDisplay, strResolution, strRecommended, strWidth, strHeight, strMode, strModeWindowed, strModeFullscreen, strModeBorderless, strVsync, strZoom, strMouseSW, strKeyboard, strTouchscreen, strSave, strAudio, strApplications, strVolume, strSoundbank;
+            string strSettings, strDisplay, strResolution, strRecommended, strOpen, strCavern, strWidth, strHeight, strMode, strModeWindowed, strModeFullscreen, strModeBorderless, strVsync, strZoom, strMouseSW, strKeyboard, strTouchscreen, strSave, strAudio, strApplications, strVolume, strSoundbank;
             strVsync = "V-Sync";
             strSoundbank = "SoundBank";
             switch (langVal) {
@@ -159,6 +159,8 @@ namespace Worms2_Settings
                     strDisplay = "Zobrazení";
                     strResolution = "Rozlišení";
                     strRecommended = "Použít doporučené";
+                    strOpen = "Otevřený";
+                    strCavern = "Jeskyně";
                     strWidth = "Šířka";
                     strHeight = "Výška";
                     strMode = "Režim";
@@ -180,6 +182,8 @@ namespace Worms2_Settings
                     strDisplay = "Bildschirm";
                     strResolution = "Auflösung";
                     strRecommended = "Empfohlen";
+                    strOpen = "Offen";
+                    strCavern = "Höhle";
                     strWidth = "Breite";
                     strHeight = "Höhe";
                     strMode = "Betriebsart";
@@ -198,11 +202,35 @@ namespace Worms2_Settings
                     strSoundbank = "Stimmenbank";
                     break;
                 case "es":
-                case "es-419":
                     strSettings = "Configuraciones";
                     strDisplay = "Pantalla";
                     strResolution = "Resolución";
                     strRecommended = "Usar parámetros recomendados";
+                    strOpen = "Abrir";
+                    strCavern = "Cueva";
+                    strWidth = "Anchura";
+                    strHeight = "Altura";
+                    strMode = "Modo";
+                    strModeWindowed = "Ventana";
+                    strModeFullscreen = "Pantalla completa";
+                    strModeBorderless = "Ventana sin bordes";
+                    strZoom = "Zoom";
+                    strMouseSW = "Rueda de desplazamiento";
+                    strKeyboard = "Teclado";
+                    strTouchscreen = "Pantalla Táctil";
+                    strSave = "Guardar Cambios";
+                    strAudio = "Sonido";
+                    strApplications = "Aplicaciones";
+                    strVolume = "Volumen";
+                    strSoundbank = "Banco de voces";
+                    break;
+                case "es-419":
+                    strSettings = "Ajustes";
+                    strDisplay = "Pantalla";
+                    strResolution = "Resolución";
+                    strRecommended = "Usar parámetros recomendados";
+                    strOpen = "Al aire libre";
+                    strCavern = "Caverna";
                     strWidth = "Anchura";
                     strHeight = "Altura";
                     strMode = "Modo";
@@ -224,6 +252,8 @@ namespace Worms2_Settings
                     strDisplay = "Écran";
                     strResolution = "Résolution";
                     strRecommended = "Recommander";
+                    strOpen = "Ouvrir";
+                    strCavern = "Souterrain";
                     strWidth = "Largeur";
                     strHeight = "Hauteur";
                     strMode = "Mode";
@@ -245,6 +275,8 @@ namespace Worms2_Settings
                     strDisplay = "Schermo";
                     strResolution = "Risoluzione";
                     strRecommended = "Consigliato";
+                    strOpen = "Apri";
+                    strCavern = "Caverna";
                     strWidth = "Larghezza";
                     strHeight = "Height";
                     strMode = "Modalità";
@@ -266,6 +298,8 @@ namespace Worms2_Settings
                     strDisplay = "Scherm";
                     strResolution = "Resolutie";
                     strRecommended = "Aanbevolen";
+                    strOpen = "Open";
+                    strCavern = "Grot";
                     strWidth = "Breedte";
                     strHeight = "Hoogte";
                     strMode = "Modus";
@@ -288,6 +322,8 @@ namespace Worms2_Settings
                     strDisplay = "Obraz";
                     strResolution = "Rozdzielczość";
                     strRecommended = "Użyj zalecane";
+                    strOpen = "Otwarty";
+                    strCavern = "Jaskinia";
                     strWidth = "Szerokość";
                     strHeight = "Wysokość";
                     strMode = "Tryb";
@@ -310,6 +346,8 @@ namespace Worms2_Settings
                     strDisplay = "Ecrã";
                     strResolution = "Resolução";
                     strRecommended = "Utilizar recomendado";
+                    strOpen = "Aberto";
+                    strCavern = "Caverna";
                     strWidth = "Largura";
                     strHeight = "Altura";
                     strMode = "Modo";
@@ -332,6 +370,8 @@ namespace Worms2_Settings
                     strDisplay = "Tela";
                     strResolution = "Resolução";
                     strRecommended = "Usar recomendado";
+                    strOpen = "Abrir";
+                    strCavern = "Caverna";
                     strWidth = "Largura";
                     strHeight = "Altura";
                     strMode = "Modo";
@@ -353,6 +393,8 @@ namespace Worms2_Settings
                     strDisplay = "Экран";
                     strResolution = "Разрешение экрана";
                     strRecommended = "сове́товать";
+                    strOpen = "Открытый";
+                    strCavern = "Пещера";
                     strWidth = "ширину";
                     strHeight = "высоту";
                     strMode = "режим";
@@ -375,6 +417,8 @@ namespace Worms2_Settings
                     strDisplay = "Skärm";
                     strResolution = "Upplösning";
                     strRecommended = "Rekommenderade";
+                    strOpen = "Öppen";
+                    strCavern = "Grotta";
                     strWidth = "Bredd";
                     strHeight = "Höjd";
                     strMode = "Läge";
@@ -396,6 +440,8 @@ namespace Worms2_Settings
                     strDisplay = "Display";
                     strResolution = "Resolution";
                     strRecommended = "Use recommended";
+                    strOpen = "Open";
+                    strCavern = "Cavern";
                     strWidth = "Width";
                     strHeight = "Height";
                     strMode = "Mode";
@@ -419,8 +465,12 @@ namespace Worms2_Settings
             lblHeadingDisplay.Text = strDisplay;
             lblResolution.Text = strResolution;
             cbRecommended.Text = strRecommended;
-            lblWidth.Text = strWidth;
-            lblHeight.Text = strHeight;
+            lblResOpen.Text = strOpen;
+            lblWidthOpen.Text = strWidth;
+            lblHeightOpen.Text = strHeight;
+            lblResCavern.Text = strCavern;
+            lblWidthCavern.Text = strWidth;
+            lblHeightCavern.Text = strHeight;
             lblMode.Text = strMode;
             rbDisplayWindowed.Text = strModeWindowed;
             rbDisplayFullscreen.Text = strModeFullscreen;
@@ -536,10 +586,13 @@ namespace Worms2_Settings
                     if (settingHeight == 0) {
                         settingHeight = screenRes.height;
                     }
-                    txtWidth.Text = settingWidth.ToString();
-                    txtHeight.Text = settingHeight.ToString();
+                    txtWidthOpen.Text = settingWidth.ToString();
+                    txtHeightOpen.Text = settingHeight.ToString();
 
                     if (Renderer == "WndMode") {
+                        lblResOpen.Visible = false;
+                        lblResCavern.Visible = false;
+                        flwResCavern.Visible = false;
                         rbRenderWnd.Checked = true;
                         rbDisplayFullscreen.Enabled = false;
                         if (settingWidth == screenRes.width && settingHeight == screenRes.height) {
@@ -556,7 +609,19 @@ namespace Worms2_Settings
                     }
                     else if (Renderer == "cnc-ddraw") {
                         rbRenderCNC.Checked = true;
-                        if (settingWidth == 1920 && settingHeight == 1080) {
+
+                        int settingWidthCavern = iniInt(data.Res["Resolution"]["CavernScreenWidth"]);
+                        int settingHeightCavern = iniInt(data.Res["Resolution"]["CavernScreenHeight"]);
+                        if (settingWidthCavern == 0) {
+                            settingWidthCavern = settingWidth;
+                        }
+                        if (settingHeightCavern == 0) {
+                            settingHeightCavern = settingHeight;
+                        }
+                        txtWidthCavern.Text = settingWidthCavern.ToString();
+                        txtHeightCavern.Text = settingHeightCavern.ToString();
+
+                        if (settingWidth == 1920 && settingHeight == 1080 && settingWidthCavern == 1518 && settingHeightCavern == 854) {
                             cbRecommended.Checked = true;
                         }
                         string settingFullscreen = iniStr(data.CNC["ddraw"]["fullscreen"]);
@@ -605,6 +670,11 @@ namespace Worms2_Settings
         private void rbRenderWnd_CheckedChanged(object sender, EventArgs e){
             if (global.ready && rbRenderWnd.Checked){
                 global.ready = false;
+                //Hide additional Resolution controls
+                lblResOpen.Visible = false;
+                lblResCavern.Visible = false;
+                flwResCavern.Visible = false;
+                
                 if (cbRecommended.Checked) {
                     cbRecommended.Checked = false;
                     cbRecommended.Checked = true;
@@ -629,11 +699,16 @@ namespace Worms2_Settings
         {
             if (global.ready && rbRenderCNC.Checked) {
                 global.ready = false;
+                //Show additional Resolution controls
+                lblResOpen.Visible = true;
+                lblResCavern.Visible = true;
+                flwResCavern.Visible = true;
+
                 if (cbRecommended.Checked) {
                     cbRecommended.Checked = false;
                     cbRecommended.Checked = true;
                 }
-                else if (txtWidth.Text == "1920" && txtHeight.Text == "1080") {
+                else if (txtWidthOpen.Text == "1920" && txtHeightOpen.Text == "1080" && txtWidthCavern.Text == "1518" && txtHeightCavern.Text == "854") {
                     cbRecommended.Checked = true;
                 }
                 rbDisplayFullscreen.Enabled = true;
@@ -650,28 +725,43 @@ namespace Worms2_Settings
             if (cbRecommended.Checked) {
                 if (rbRenderCNC.Checked) {
                     if (screenRes.height >= 1080) {
-                        txtHeight.Text = "1080";
+                        txtHeightOpen.Text = "1080";
                         float numMultiplier = (float)screenRes.height / 1080f;
                         //Calculate width to match an upscaled height of 1080 (rounds down any decimals)
                         int intWidth = (int)(screenRes.width / numMultiplier);
-                        txtWidth.Text = intWidth.ToString();
+                        txtWidthOpen.Text = intWidth.ToString();
                     }
                     else {
-                        txtWidth.Text = screenRes.width.ToString();
-                        txtHeight.Text = screenRes.height.ToString();
+                        txtWidthOpen.Text = screenRes.width.ToString();
+                        txtHeightOpen.Text = screenRes.height.ToString();
+                    }
+                    if (screenRes.height >= 854) {
+                        txtHeightCavern.Text = "854";
+                        float numMultiplier = (float)screenRes.height / 854f;
+                        //Calculate width to match an upscaled height of 854 (rounds down any decimals)
+                        int intWidth = (int)(screenRes.width / numMultiplier);
+                        txtWidthCavern.Text = intWidth.ToString();
+                    }
+                    else {
+                        txtWidthCavern.Text = screenRes.width.ToString();
+                        txtHeightCavern.Text = screenRes.height.ToString();
                     }
                 }
                 else {
-                    txtWidth.Text = screenRes.width.ToString();
-                    txtHeight.Text = screenRes.height.ToString();
+                    txtWidthOpen.Text = screenRes.width.ToString();
+                    txtHeightOpen.Text = screenRes.height.ToString();
                 }
-                txtWidth.Enabled = false;
-                txtHeight.Enabled = false;
+                txtWidthOpen.Enabled = false;
+                txtHeightOpen.Enabled = false;
+                txtWidthCavern.Enabled = false;
+                txtHeightCavern.Enabled = false;
                 rbDisplayBorderless.Checked = true;
             }
             else {
-                txtWidth.Enabled = true;
-                txtHeight.Enabled = true;
+                txtWidthOpen.Enabled = true;
+                txtHeightOpen.Enabled = true;
+                txtWidthCavern.Enabled = true;
+                txtHeightCavern.Enabled = true;
             }
         }
 
@@ -697,28 +787,51 @@ namespace Worms2_Settings
                 Encoding UTF8withoutBOM = new UTF8Encoding(false);
 
                 //Clean up Resolution input
-                removeLeadingZeroes(txtWidth);
-                removeLeadingZeroes(txtHeight);
-                txtWidth.Text = txtWidth.Text.Trim();
-                txtHeight.Text = txtHeight.Text.Trim();
+                removeLeadingZeroes(txtWidthOpen);
+                removeLeadingZeroes(txtHeightOpen);
+                txtWidthOpen.Text = txtWidthOpen.Text.Trim();
+                txtHeightOpen.Text = txtHeightOpen.Text.Trim();
+
                 //Use recommended resolution if either value is not a number
-                if (!int.TryParse(txtWidth.Text, out _) || !int.TryParse(txtHeight.Text, out _)) {
+                if (!int.TryParse(txtWidthOpen.Text, out _) || !int.TryParse(txtHeightOpen.Text, out _)) {
                     global.ready = false;
                     cbRecommended.Checked = false;
                     cbRecommended.Checked = true;
                     global.ready = true;
                 }
 
+                if (flwResCavern.Visible) {
+                    removeLeadingZeroes(txtWidthCavern);
+                    removeLeadingZeroes(txtHeightCavern);
+                    txtWidthCavern.Text = txtWidthCavern.Text.Trim();
+                    txtHeightCavern.Text = txtHeightCavern.Text.Trim();
+                    //Use recommended resolution if either value is not a number
+                    if (!int.TryParse(txtWidthCavern.Text, out _) || !int.TryParse(txtHeightCavern.Text, out _)) {
+                        global.ready = false;
+                        cbRecommended.Checked = false;
+                        cbRecommended.Checked = true;
+                        global.ready = true;
+                    }
+                }
+
                 var parser = new FileIniDataParser();
                 //ReSolution.ini
                 //[Resolution]
-                data.Res["Resolution"]["ScreenWidth"] = txtWidth.Text;
-                data.Res["Resolution"]["ScreenHeight"] = txtHeight.Text;
+                data.Res["Resolution"]["ScreenWidth"] = txtWidthOpen.Text;
+                data.Res["Resolution"]["ScreenHeight"] = txtHeightOpen.Text;
+                if (flwResCavern.Visible) {
+                    data.Res["Resolution"]["CavernScreenWidth"] = txtWidthCavern.Text;
+                    data.Res["Resolution"]["CavernScreenHeight"] = txtHeightCavern.Text;
+                }
+                else {
+                    data.Res["Resolution"].RemoveKey("CavernScreenWidth");
+                    data.Res["Resolution"].RemoveKey("CavernScreenHeight");
+                }
                 //[Resizing]
                 data.Res["Resizing"]["ProgressiveUpdate"] = "0";
 
                 if (rbRenderWnd.Checked) {
-                    if (txtWidth.Text == screenRes.width.ToString() && txtHeight.Text == screenRes.height.ToString()) { 
+                    if (txtWidthOpen.Text == screenRes.width.ToString() && txtHeightOpen.Text == screenRes.height.ToString()) { 
                         rbDisplayBorderless.Checked = true;
                     }
                     else {
