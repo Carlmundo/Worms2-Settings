@@ -759,11 +759,18 @@ namespace Worms2_Settings
                         txtHeightOpen.Text = screenRes.height.ToString();
                     }
                     if (screenRes.height >= 854) {
-                        txtHeightCavern.Text = "854";
                         float numMultiplier = (float)screenRes.height / 854f;
                         //Calculate width to match an upscaled height of 854 (rounds down any decimals)
                         int intWidth = (int)(screenRes.width / numMultiplier);
-                        txtWidthCavern.Text = intWidth.ToString();
+                        if (intWidth > 1916) { //Prevent width exceeding 1916
+                            int intHeight = (int)(854f / intWidth * 1916f);
+                            txtWidthCavern.Text = "1916";
+                            txtHeightCavern.Text = intHeight.ToString();
+                        }
+                        else {
+                            txtWidthCavern.Text = intWidth.ToString();
+                            txtHeightCavern.Text = "854";
+                        }
                     }
                     else {
                         txtWidthCavern.Text = screenRes.width.ToString();
