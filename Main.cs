@@ -136,7 +136,7 @@ namespace Worms2_Settings
 
             //Check Language
             string langFile = "language.txt";
-            string[] langArr = { "cs", "de", "en", "es", "es-419", "fr", "it", "nl", "pl", "pt", "pt-br", "ru", "sv" };
+            string[] langArr = { "cs", "de", "en", "es", "es-419", "fr", "it", "nl", "pl", "pt", "pt-br", "ru", "sv", "zh-Hans" };
             string langVal;
             if (File.Exists(langFile)) {
                 langVal = File.ReadAllText(langFile).Trim();
@@ -434,6 +434,29 @@ namespace Worms2_Settings
                     strApplications = "Tillämpningsprogram";
                     strVolume = "Volym";
                     //strSoundbank = "SoundBank";
+                    break;
+                case "zh-Hans":
+                    strSettings = "设置";
+                    strDisplay = "显示";
+                    strResolution = "分辨率";
+                    strRecommended = "使用推荐设置";
+                    strOpen = "打开";
+                    strCavern = "洞穴";
+                    strWidth = "宽度";
+                    strHeight = "高度";
+                    strMode = "模式";
+                    strModeWindowed = "窗口化";
+                    strModeFullscreen = "全屏";
+                    strModeBorderless = "无边框";
+                    strZoom = "缩放";
+                    strMouseSW = "鼠标滚轮";
+                    strKeyboard = "键盘";
+                    strTouchscreen = "触摸屏";
+                    strSave = "保存更改";
+                    strAudio = "音频";
+                    strApplications = "应用程序";
+                    strVolume = "音量设置";
+                    strSoundbank = "音效库编辑器";
                     break;
                 default:
                     strSettings = "Settings";
