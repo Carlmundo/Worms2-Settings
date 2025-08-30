@@ -42,10 +42,18 @@ namespace Worms2_Settings
                     setHeight = screenRes.height;
                 }
                 if (screenRes.height >= 854) {
-                    setHeightCavern = 854;
                     float numMultiplier = (float)screenRes.height / 854f;
                     //Calculate width to match an upscaled height of 854 (rounds down any decimals)
-                    setWidthCavern = (int)(screenRes.width / numMultiplier);
+                    int intWidth = (int)(screenRes.width / numMultiplier);
+                    if (intWidth > 1916) { //Prevent width exceeding 1916
+                        int intHeight = (int)(854f / intWidth * 1916f);
+                        setWidthCavern = 1916;
+                        setHeightCavern = intHeight;
+                    }
+                    else {
+                        setWidthCavern = intWidth;
+                        setHeightCavern = 854;
+                    }
                 }
                 else {
                     setWidthCavern = screenRes.width;
