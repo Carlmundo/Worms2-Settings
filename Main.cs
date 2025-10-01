@@ -734,6 +734,15 @@ namespace Worms2_Settings
                 else if (txtWidthOpen.Text == "1920" && txtHeightOpen.Text == "1080" && txtWidthCavern.Text == "1518" && txtHeightCavern.Text == "854") {
                     cbRecommended.Checked = true;
                 }
+                else if (txtWidthCavern.Text == "" && txtHeightCavern.Text == "") {
+                    //Prevent blank entries for cavern resolution after switching
+                    string curWidthOpen = txtWidthOpen.Text;
+                    string curHeightOpen = txtHeightOpen.Text;
+                    cbRecommended.Checked = true;
+                    txtWidthOpen.Text = curWidthOpen;
+                    txtHeightOpen.Text = curHeightOpen;
+                    cbRecommended.Checked = false;
+                }
                 rbDisplayFullscreen.Enabled = true;
                 if (global.OSWinXP) {
                     flwZoom.Enabled = true;
