@@ -149,8 +149,9 @@ namespace Worms2_Settings
             }
             
             //Translation variables
-            string strSettings, strDisplay, strResolution, strRecommended, strOpen, strCavern, strWidth, strHeight, strMode, strModeWindowed, strModeFullscreen, strModeBorderless, strVsync, strZoom, strMouseSW, strKeyboard, strTouchscreen, strSave, strAudio, strApplications, strVolume, strSoundbank;
+            string strSettings, strDisplay, strResolution, strRecommended, strOpen, strCavern, strWidth, strHeight, strMode, strModeWindowed, strModeFullscreen, strModeBorderless, strShader, strShaderSmooth, strShaderClassic, strVsync, strZoom, strMouseSW, strKeyboard, strTouchscreen, strSave, strAudio, strApplications, strVolume, strSoundbank;
             strVsync = "V-Sync";
+            strShader = "Shader";
             strSoundbank = "SoundBank";
             switch (langVal) {
                 case "cs":
@@ -167,6 +168,8 @@ namespace Worms2_Settings
                     strModeWindowed = "V okně";
                     strModeFullscreen = "Celá obrazovka";
                     strModeBorderless = "Bez rámečku";
+                    strShaderSmooth = "Vyhlazený";
+                    strShaderClassic = "Klasický";
                     strZoom = "Přiblížení";
                     strMouseSW = "Skrolováním kolečkem myši";
                     strKeyboard = "Klávesnicí";
@@ -190,6 +193,8 @@ namespace Worms2_Settings
                     strModeWindowed = "Fenstermodus";
                     strModeFullscreen = "Vollbild";
                     strModeBorderless = "Fenster ohne Rand";
+                    strShaderSmooth = "Geglättet";
+                    strShaderClassic = "Klassisch";
                     strVsync = "Bildschirmsynchronisation";
                     strZoom = "Zoomen";
                     strMouseSW = "Mäusen mit Drehrad";
@@ -214,6 +219,8 @@ namespace Worms2_Settings
                     strModeWindowed = "Ventana";
                     strModeFullscreen = "Pantalla completa";
                     strModeBorderless = "Ventana sin bordes";
+                    strShaderSmooth = "Suavizado";
+                    strShaderClassic = "Clásico";
                     strZoom = "Zoom";
                     strMouseSW = "Rueda de desplazamiento";
                     strKeyboard = "Teclado";
@@ -237,6 +244,8 @@ namespace Worms2_Settings
                     strModeWindowed = "Ventana";
                     strModeFullscreen = "Pantalla completa";
                     strModeBorderless = "Ventana sin bordes";
+                    strShaderSmooth = "Suavizado";
+                    strShaderClassic = "Clásico";
                     strZoom = "Zoom";
                     strMouseSW = "Rueda de desplazamiento";
                     strKeyboard = "Teclado";
@@ -260,6 +269,8 @@ namespace Worms2_Settings
                     strModeWindowed = "Fenêtré";
                     strModeFullscreen = "Plein écran";
                     strModeBorderless = "Fenêtré sans bordure";
+                    strShaderSmooth = "Lissé";
+                    strShaderClassic = "Classique";
                     strZoom = "Zoom";
                     strMouseSW = "Molette de souris";
                     strKeyboard = "Clavier";
@@ -283,6 +294,8 @@ namespace Worms2_Settings
                     strModeWindowed = "A finestra";
                     strModeFullscreen = "Schermo intero";
                     strModeBorderless = "Borderless";
+                    strShaderSmooth = "Smussato";
+                    strShaderClassic = "Classico";
                     strZoom = "Zoom";
                     strMouseSW = "Rotella scorrimento mouse";
                     strKeyboard = "Tastiera";
@@ -306,6 +319,8 @@ namespace Worms2_Settings
                     strModeWindowed = "Venster";
                     strModeFullscreen = "Volledig scherm";
                     strModeBorderless = "Randloos volledig scherm";
+                    strShaderSmooth = "Vloeiend";
+                    strShaderClassic = "Klassiek";
                     strZoom = "Zoom";
                     strMouseSW = "Scrollwieltje";
                     strKeyboard = "Toetsenbord";
@@ -330,6 +345,8 @@ namespace Worms2_Settings
                     strModeWindowed = "Okno";
                     strModeFullscreen = "Pełny ekran";
                     strModeBorderless = "Pełny ekran bez obramowania";
+                    strShaderSmooth = "Wygładzony";
+                    strShaderClassic = "Klasyczny";
                     strZoom = "Przybliżenie";
                     strMouseSW = "Mouse scroll wheel";
                     strKeyboard = "Klawiatura";
@@ -354,6 +371,8 @@ namespace Worms2_Settings
                     strModeWindowed = "Janela";
                     strModeFullscreen = "Ecrã inteiro";
                     strModeBorderless = "Ecrã inteiro sem borda";
+                    strShaderSmooth = "Suavizado";
+                    strShaderClassic = "Clássico";
                     strZoom = "Zoom";
                     strMouseSW = "Roda do Rato";
                     strKeyboard = "Teclado";
@@ -378,6 +397,8 @@ namespace Worms2_Settings
                     strModeWindowed = "Janela";
                     strModeFullscreen = "Tela cheia";
                     strModeBorderless = "Tela cheia sem borda";
+                    strShaderSmooth = "Suavizado";
+                    strShaderClassic = "Clássico";
                     strZoom = "Zoom";
                     strMouseSW = "Roda do Mouse";
                     strKeyboard = "Teclado";
@@ -401,6 +422,9 @@ namespace Worms2_Settings
                     strModeWindowed = "Оконный";
                     strModeFullscreen = "Во весь экран";
                     strModeBorderless = "оконный без рамки";
+                    strShader = "Шейдер";
+                    strShaderSmooth = "Сглаженный";
+                    strShaderClassic = "Классический";
                     strVsync = "Вертикальная синхронизация";
                     strZoom = "давать крупный план";
                     strMouseSW = "колесом прокрутки";
@@ -425,6 +449,8 @@ namespace Worms2_Settings
                     strModeWindowed = "Fönster";
                     strModeFullscreen = "Fullskärm";
                     strModeBorderless = "Borderless";
+                    strShaderSmooth = "Utjämnad";
+                    strShaderClassic = "Klassisk";
                     strZoom = "Zoom";
                     strMouseSW = "Skrollhjul";
                     strKeyboard = "Tangentbord";
@@ -448,6 +474,9 @@ namespace Worms2_Settings
                     strModeWindowed = "窗口化";
                     strModeFullscreen = "全屏";
                     strModeBorderless = "无边框";
+                    strShader = "着色器";
+                    strShaderSmooth = "平滑";
+                    strShaderClassic = "经典";
                     strZoom = "缩放";
                     strMouseSW = "鼠标滚轮";
                     strKeyboard = "键盘";
@@ -471,6 +500,9 @@ namespace Worms2_Settings
                     strModeWindowed = "Windowed";
                     strModeFullscreen = "Fullscreen";
                     strModeBorderless = "Borderless";
+                    strShader = "Shader";
+                    strShaderSmooth = "Smooth";
+                    strShaderClassic = "Original";
                     strZoom = "Zoom";
                     strMouseSW = "Mouse scroll wheel";
                     strKeyboard = "Keyboard";
@@ -498,6 +530,10 @@ namespace Worms2_Settings
             rbDisplayWindowed.Text = strModeWindowed;
             rbDisplayFullscreen.Text = strModeFullscreen;
             rbDisplayBorderless.Text = strModeBorderless;
+            lblShader.Text = strShader;
+            rbShaderBC.Text = strShaderSmooth;
+            rbShaderNN.Text = strShaderClassic;
+            lblVsync.Text = strVsync;
             lblZoom.Text = strZoom;
             cbZoomMouse.Text = strMouseSW;
             cbZoomKeyboard.Text = strKeyboard;
@@ -616,6 +652,8 @@ namespace Worms2_Settings
                         lblResOpen.Visible = false;
                         lblResCavern.Visible = false;
                         flwResCavern.Visible = false;
+                        lblShader.Visible = false;
+                        flwShader.Visible = false;
                         rbRenderWnd.Checked = true;
                         rbDisplayFullscreen.Enabled = false;
                         if (settingWidth == screenRes.width && settingHeight == screenRes.height) {
@@ -650,6 +688,7 @@ namespace Worms2_Settings
                         string settingFullscreen = iniStr(data.CNC["ddraw"]["fullscreen"]);
                         string settingWindowed = iniStr(data.CNC["ddraw"]["windowed"]);
                         string settingVsync = iniStr(data.CNC["ddraw"]["vsync"]);
+                        string settingShader = iniStr(data.CNC["ddraw"]["shader"]);
                         if (settingFullscreen == "true") {
                             if (settingWindowed == "true") {
                                 rbDisplayBorderless.Checked = true;
@@ -663,6 +702,12 @@ namespace Worms2_Settings
                         }
                         if (settingVsync == "true") {
                             cbVsync.Checked = true;
+                        }
+                        if (settingShader == "Nearest neighbor") {
+                            rbShaderNN.Checked = true;
+                        }
+                        else {
+                            rbShaderBC.Checked = true;
                         }
                     }
                     if (global.OSWinXP && Renderer == "WndMode") {
@@ -697,6 +742,8 @@ namespace Worms2_Settings
                 lblResOpen.Visible = false;
                 lblResCavern.Visible = false;
                 flwResCavern.Visible = false;
+                lblShader.Visible = false;
+                flwShader.Visible = false;
                 
                 if (cbRecommended.Checked) {
                     cbRecommended.Checked = false;
@@ -726,6 +773,8 @@ namespace Worms2_Settings
                 lblResOpen.Visible = true;
                 lblResCavern.Visible = true;
                 flwResCavern.Visible = true;
+                lblShader.Visible = true;
+                flwShader.Visible = true;
 
                 if (cbRecommended.Checked) {
                     cbRecommended.Checked = false;
@@ -744,6 +793,7 @@ namespace Worms2_Settings
                     cbRecommended.Checked = false;
                 }
                 rbDisplayFullscreen.Enabled = true;
+                rbShaderBC.Checked = true; //Default shader
                 if (global.OSWinXP) {
                     flwZoom.Enabled = true;
                 }
@@ -926,6 +976,12 @@ namespace Worms2_Settings
                     }
                     else {
                         data.CNC["ddraw"]["vsync"] = "false";
+                    }
+                    if (rbShaderNN.Checked) {
+                        data.CNC["ddraw"]["shader"] = "Nearest neighbor";
+                    }
+                    else {
+                        data.CNC["ddraw"]["shader"] = "Bicubic";
                     }
                     parser.WriteFile(ini.CNC, data.CNC, UTF8withoutBOM);
                 }

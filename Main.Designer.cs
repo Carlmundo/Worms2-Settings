@@ -71,7 +71,11 @@
             this.lblResCavern = new System.Windows.Forms.Label();
             this.flwRes = new System.Windows.Forms.FlowLayoutPanel();
             this.cbRecommended = new System.Windows.Forms.CheckBox();
+            this.lblShader = new System.Windows.Forms.Label();
             this.timerProcess = new System.Windows.Forms.Timer(this.components);
+            this.flwShader = new System.Windows.Forms.FlowLayoutPanel();
+            this.rbShaderBC = new System.Windows.Forms.RadioButton();
+            this.rbShaderNN = new System.Windows.Forms.RadioButton();
             this.tblDesign.SuspendLayout();
             this.flwDisplay.SuspendLayout();
             this.flwRenderer.SuspendLayout();
@@ -81,6 +85,7 @@
             this.flwResOpen.SuspendLayout();
             this.flwResCavern.SuspendLayout();
             this.flwRes.SuspendLayout();
+            this.flwShader.SuspendLayout();
             this.SuspendLayout();
             // 
             // tblDesign
@@ -92,30 +97,32 @@
             this.tblDesign.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tblDesign.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tblDesign.Controls.Add(this.flwDisplay, 1, 5);
-            this.tblDesign.Controls.Add(this.lblApplications, 0, 10);
+            this.tblDesign.Controls.Add(this.lblApplications, 0, 11);
             this.tblDesign.Controls.Add(this.lblResolution, 0, 2);
             this.tblDesign.Controls.Add(this.lblRenderer, 0, 1);
             this.tblDesign.Controls.Add(this.flwRenderer, 1, 1);
             this.tblDesign.Controls.Add(this.lblMode, 0, 5);
             this.tblDesign.Controls.Add(this.lblVsync, 0, 6);
-            this.tblDesign.Controls.Add(this.lblZoom, 0, 7);
-            this.tblDesign.Controls.Add(this.flwZoom, 1, 7);
+            this.tblDesign.Controls.Add(this.lblZoom, 0, 8);
+            this.tblDesign.Controls.Add(this.flwZoom, 1, 8);
             this.tblDesign.Controls.Add(this.lblHeadingDisplay, 0, 0);
-            this.tblDesign.Controls.Add(this.lblHeadingAudio, 0, 9);
-            this.tblDesign.Controls.Add(this.flwAudio, 1, 10);
-            this.tblDesign.Controls.Add(this.btnSave, 1, 8);
+            this.tblDesign.Controls.Add(this.lblHeadingAudio, 0, 10);
+            this.tblDesign.Controls.Add(this.flwAudio, 1, 11);
+            this.tblDesign.Controls.Add(this.btnSave, 1, 9);
             this.tblDesign.Controls.Add(this.flwVsync, 1, 6);
-            this.tblDesign.Controls.Add(this.lblError, 0, 11);
+            this.tblDesign.Controls.Add(this.lblError, 0, 12);
             this.tblDesign.Controls.Add(this.flwResOpen, 1, 3);
             this.tblDesign.Controls.Add(this.flwResCavern, 1, 4);
             this.tblDesign.Controls.Add(this.lblResOpen, 0, 3);
             this.tblDesign.Controls.Add(this.lblResCavern, 0, 4);
             this.tblDesign.Controls.Add(this.flwRes, 1, 2);
+            this.tblDesign.Controls.Add(this.lblShader, 0, 7);
+            this.tblDesign.Controls.Add(this.flwShader, 1, 7);
             this.tblDesign.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblDesign.Location = new System.Drawing.Point(0, 0);
             this.tblDesign.Name = "tblDesign";
             this.tblDesign.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.tblDesign.RowCount = 12;
+            this.tblDesign.RowCount = 13;
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -128,7 +135,8 @@
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblDesign.Size = new System.Drawing.Size(552, 556);
+            this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tblDesign.Size = new System.Drawing.Size(552, 537);
             this.tblDesign.TabIndex = 1;
             // 
             // flwDisplay
@@ -186,11 +194,11 @@
             this.lblApplications.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblApplications.AutoSize = true;
             this.lblApplications.BackColor = System.Drawing.Color.Transparent;
-            this.lblApplications.Location = new System.Drawing.Point(49, 582);
+            this.lblApplications.Location = new System.Drawing.Point(49, 627);
             this.lblApplications.Margin = new System.Windows.Forms.Padding(3);
             this.lblApplications.Name = "lblApplications";
             this.lblApplications.Size = new System.Drawing.Size(144, 29);
-            this.lblApplications.TabIndex = 18;
+            this.lblApplications.TabIndex = 19;
             this.lblApplications.Text = "Applications";
             this.lblApplications.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -290,11 +298,11 @@
             this.lblZoom.AutoSize = true;
             this.lblZoom.BackColor = System.Drawing.Color.Transparent;
             this.lblZoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblZoom.Location = new System.Drawing.Point(16, 335);
+            this.lblZoom.Location = new System.Drawing.Point(16, 380);
             this.lblZoom.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.lblZoom.Name = "lblZoom";
             this.lblZoom.Size = new System.Drawing.Size(177, 29);
-            this.lblZoom.TabIndex = 14;
+            this.lblZoom.TabIndex = 15;
             this.lblZoom.Text = "Zoom Options";
             // 
             // flwZoom
@@ -305,11 +313,11 @@
             this.flwZoom.Controls.Add(this.cbZoomKeyboard);
             this.flwZoom.Controls.Add(this.cbZoomTouch);
             this.flwZoom.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwZoom.Location = new System.Drawing.Point(199, 330);
+            this.flwZoom.Location = new System.Drawing.Point(199, 375);
             this.flwZoom.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.flwZoom.Name = "flwZoom";
             this.flwZoom.Size = new System.Drawing.Size(253, 117);
-            this.flwZoom.TabIndex = 15;
+            this.flwZoom.TabIndex = 16;
             // 
             // cbZoomMouse
             // 
@@ -366,11 +374,11 @@
             this.lblHeadingAudio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblHeadingAudio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblHeadingAudio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeadingAudio.Location = new System.Drawing.Point(16, 515);
+            this.lblHeadingAudio.Location = new System.Drawing.Point(16, 560);
             this.lblHeadingAudio.Margin = new System.Windows.Forms.Padding(3);
             this.lblHeadingAudio.Name = "lblHeadingAudio";
             this.lblHeadingAudio.Size = new System.Drawing.Size(177, 31);
-            this.lblHeadingAudio.TabIndex = 17;
+            this.lblHeadingAudio.TabIndex = 18;
             this.lblHeadingAudio.Text = "Audio";
             this.lblHeadingAudio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -380,10 +388,10 @@
             this.flwAudio.BackColor = System.Drawing.Color.Transparent;
             this.flwAudio.Controls.Add(this.btnVolume);
             this.flwAudio.Controls.Add(this.btnSoundbank);
-            this.flwAudio.Location = new System.Drawing.Point(199, 552);
+            this.flwAudio.Location = new System.Drawing.Point(199, 597);
             this.flwAudio.Name = "flwAudio";
             this.flwAudio.Size = new System.Drawing.Size(261, 90);
-            this.flwAudio.TabIndex = 19;
+            this.flwAudio.TabIndex = 20;
             // 
             // btnVolume
             // 
@@ -422,11 +430,11 @@
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSave.AutoSize = true;
             this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSave.Location = new System.Drawing.Point(268, 450);
+            this.btnSave.Location = new System.Drawing.Point(268, 495);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(10);
             this.btnSave.Size = new System.Drawing.Size(199, 59);
-            this.btnSave.TabIndex = 16;
+            this.btnSave.TabIndex = 17;
             this.btnSave.Text = "Save Changes";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -459,7 +467,7 @@
             this.lblError.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(16, 648);
+            this.lblError.Location = new System.Drawing.Point(16, 693);
             this.lblError.Margin = new System.Windows.Forms.Padding(3);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(520, 29);
@@ -628,10 +636,58 @@
             this.cbRecommended.UseVisualStyleBackColor = true;
             this.cbRecommended.CheckedChanged += new System.EventHandler(this.cbRecommended_CheckedChanged);
             // 
+            // lblShader
+            // 
+            this.lblShader.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblShader.AutoSize = true;
+            this.lblShader.BackColor = System.Drawing.Color.Transparent;
+            this.lblShader.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShader.Location = new System.Drawing.Point(96, 337);
+            this.lblShader.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
+            this.lblShader.Name = "lblShader";
+            this.lblShader.Size = new System.Drawing.Size(97, 29);
+            this.lblShader.TabIndex = 13;
+            this.lblShader.Text = "Shader";
+            // 
             // timerProcess
             // 
             this.timerProcess.Interval = 2000;
             this.timerProcess.Tick += new System.EventHandler(this.timerProcess_Tick);
+            // 
+            // flwShader
+            // 
+            this.flwShader.AutoSize = true;
+            this.flwShader.BackColor = System.Drawing.Color.Transparent;
+            this.flwShader.Controls.Add(this.rbShaderBC);
+            this.flwShader.Controls.Add(this.rbShaderNN);
+            this.flwShader.Location = new System.Drawing.Point(199, 333);
+            this.flwShader.Name = "flwShader";
+            this.flwShader.Size = new System.Drawing.Size(249, 39);
+            this.flwShader.TabIndex = 14;
+            // 
+            // rbShaderBC
+            // 
+            this.rbShaderBC.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rbShaderBC.AutoSize = true;
+            this.rbShaderBC.Location = new System.Drawing.Point(3, 3);
+            this.rbShaderBC.Name = "rbShaderBC";
+            this.rbShaderBC.Size = new System.Drawing.Size(121, 33);
+            this.rbShaderBC.TabIndex = 1;
+            this.rbShaderBC.TabStop = true;
+            this.rbShaderBC.Text = "Smooth";
+            this.rbShaderBC.UseVisualStyleBackColor = true;
+            // 
+            // rbShaderNN
+            // 
+            this.rbShaderNN.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rbShaderNN.AutoSize = true;
+            this.rbShaderNN.Location = new System.Drawing.Point(130, 3);
+            this.rbShaderNN.Name = "rbShaderNN";
+            this.rbShaderNN.Size = new System.Drawing.Size(116, 33);
+            this.rbShaderNN.TabIndex = 1;
+            this.rbShaderNN.TabStop = true;
+            this.rbShaderNN.Text = "Classic";
+            this.rbShaderNN.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -640,7 +696,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(552, 556);
+            this.ClientSize = new System.Drawing.Size(552, 537);
             this.Controls.Add(this.tblDesign);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -668,6 +724,8 @@
             this.flwResCavern.PerformLayout();
             this.flwRes.ResumeLayout(false);
             this.flwRes.PerformLayout();
+            this.flwShader.ResumeLayout(false);
+            this.flwShader.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -717,6 +775,10 @@
         private System.Windows.Forms.TextBox txtHeightCavern;
         private System.Windows.Forms.Label lblResOpen;
         private System.Windows.Forms.Label lblResCavern;
+        private System.Windows.Forms.Label lblShader;
+        private System.Windows.Forms.FlowLayoutPanel flwShader;
+        private System.Windows.Forms.RadioButton rbShaderBC;
+        private System.Windows.Forms.RadioButton rbShaderNN;
     }
 }
 
