@@ -371,7 +371,7 @@ namespace Worms2_Settings
                     strModeWindowed = "Janela";
                     strModeFullscreen = "Ecrã inteiro";
                     strModeBorderless = "Ecrã inteiro sem borda";
-                    strShaderSmooth = "Suavizado";
+                    strShaderSmooth = "Suave";
                     strShaderClassic = "Clássico";
                     strZoom = "Zoom";
                     strMouseSW = "Roda do Rato";
@@ -397,7 +397,7 @@ namespace Worms2_Settings
                     strModeWindowed = "Janela";
                     strModeFullscreen = "Tela cheia";
                     strModeBorderless = "Tela cheia sem borda";
-                    strShaderSmooth = "Suavizado";
+                    strShaderSmooth = "Suave";
                     strShaderClassic = "Clássico";
                     strZoom = "Zoom";
                     strMouseSW = "Roda do Mouse";
