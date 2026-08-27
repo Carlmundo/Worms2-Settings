@@ -18,10 +18,10 @@ namespace Worms2_Settings
         }
 
         public static class global{
+            //Renderer
             //Ready var
+            public static string Renderer = "";
             public static bool ready = false;
-            //Windows XP
-            public static bool OSWinXP = false;
             //Set sound effects
             public static System.Media.SoundPlayer sndOption = new System.Media.SoundPlayer(@"Data\\Wav\\Effects\\CrossImpact.wav");
             public static System.Media.SoundPlayer sndSave = new System.Media.SoundPlayer(@"Data\\Wav\\Speech\\yessir.wav");
@@ -32,17 +32,16 @@ namespace Worms2_Settings
         }
         public static class dll{
             public static string Res = "wkReSolution.dll";
-            public static string Wnd = "wkWndMode.dll";
-            public static string Wnd2 = "wndmode.dll";
             public static string CNC = "ddraw.dll";
+            public static string EO = "wkExtendedOptions.dll";
         }
         public static class ini{
             public static string Res = "ReSolution.ini";
-            public static string Wnd = "wndmode.ini";
             public static string CNC = "ddraw.ini";
+            public static string EO = "ExtendedOptions.ini";
         }
         public static class data{
-            public static IniData Res,Wnd,CNC;
+            public static IniData Res,CNC,EO;
         }
 
         #region DisplayResolution
@@ -107,9 +106,6 @@ namespace Worms2_Settings
             foreach (Control c in tblDesign.Controls) {
                 c.Enabled = true;
             }
-            if (global.OSWinXP && rbRenderWnd.Checked) {
-                flwZoom.Enabled = false;
-            }
             lblError.Visible = false;
             lblError.Text = "";
         }
@@ -149,7 +145,7 @@ namespace Worms2_Settings
             }
             
             //Translation variables
-            string strSettings, strDisplay, strResolution, strRecommended, strOpen, strCavern, strWidth, strHeight, strMode, strModeWindowed, strModeFullscreen, strModeBorderless, strShader, strShaderSmooth, strShaderClassic, strVsync, strZoom, strMouseSW, strKeyboard, strTouchscreen, strSave, strAudio, strApplications, strVolume, strSoundbank;
+            string strSettings, strDisplay, strResolution, strRecommended, strOpen, strCavern, strWidth, strHeight, strMode, strModeWindowed, strModeFullscreen, strModeBorderless, strShader, strShaderSmooth, strShaderClassic, strVsync, strZoom, strMouseSW, strKeyboard, strTouchscreen, strSave, strAudio, strApplications, strVolume, strSoundbank, strGame, strExtendedChat, strBlood;
             strVsync = "V-Sync";
             strShader = "Shader";
             strSoundbank = "SoundBank";
@@ -179,6 +175,9 @@ namespace Worms2_Settings
                     strApplications = "Aplikace";
                     strVolume = "Nastavení hlasitosti";
                     strSoundbank = "Editor zvukové banky";
+                    strGame = "Hra";
+                    strExtendedChat = "Rozšířená editace chatovacího okna";
+                    strBlood = "Krev";
                     break;
                 case "de":
                     strSettings = "Einstellungen";
@@ -205,6 +204,9 @@ namespace Worms2_Settings
                     strApplications = "Anwendungen";
                     strVolume = "Lautstärke";
                     strSoundbank = "Stimmenbank";
+                    strGame = "Spiel";
+                    strExtendedChat = "Erweiterten Chat-Bereich bearbeiten";
+                    strBlood = "Blut";
                     break;
                 case "es":
                     strSettings = "Configuraciones";
@@ -230,6 +232,9 @@ namespace Worms2_Settings
                     strApplications = "Aplicaciones";
                     strVolume = "Volumen";
                     strSoundbank = "Banco de voces";
+                    strGame = "Juego";
+                    strExtendedChat = "Edición extendida chat box";
+                    strBlood = "Sangre";
                     break;
                 case "es-419":
                     strSettings = "Ajustes";
@@ -255,6 +260,9 @@ namespace Worms2_Settings
                     strApplications = "Aplicaciones";
                     strVolume = "Volumen";
                     strSoundbank = "Banco de voces";
+                    strGame = "Juego";
+                    strExtendedChat = "Edición ampliada del recuadro de charla";
+                    strBlood = "Sangre";
                     break;
                 case "fr":
                     strSettings = "Paramètres";
@@ -280,6 +288,9 @@ namespace Worms2_Settings
                     strApplications = "Applications";
                     strVolume = "Volume";
                     strSoundbank = "Banque de sons";
+                    strGame = "Jeu";
+                    strExtendedChat = "Édition des boîtes de conversation";
+                    strBlood = "Sang";
                     break;
                 case "it":
                     strSettings = "Impostazioni";
@@ -305,6 +316,9 @@ namespace Worms2_Settings
                     strApplications = "Applicazioni";
                     strVolume = "Volume";
                     strSoundbank = "Banca di voci";
+                    strGame = "Gioco";
+                    strExtendedChat = "Ingrandisci finestra conversazione";
+                    strBlood = "Sangue";
                     break;
                 case "nl":
                     strSettings = "Instellingen";
@@ -330,6 +344,9 @@ namespace Worms2_Settings
                     strApplications = "Applicaties";
                     strVolume = "Volume";
                     //strSoundbank = "SoundBank";
+                    strGame = "Spel";
+                    strExtendedChat = "Chat box editen";
+                    strBlood = "Bloed";
                     break;
                 case "pl":
                     //Credit: Dawid8
@@ -356,6 +373,9 @@ namespace Worms2_Settings
                     strApplications = "Aplikacje";
                     strVolume = "Głośność";
                     strSoundbank = "Edytor SoundBanków";
+                    strGame = "Gra";
+                    strExtendedChat = "Rozszerzona edycja chatów";
+                    strBlood = "Krew";
                     break;
                 case "pt":
                     //Credit: rubinho146
@@ -382,6 +402,9 @@ namespace Worms2_Settings
                     strApplications = "Aplicações";
                     strVolume = "Volume";
                     strSoundbank = "Editor de Banco de Vozes";
+                    strGame = "Jogo";
+                    strExtendedChat = "Edição alargada da caixa de conversação";
+                    strBlood = "Sangue";
                     break;
                 case "pt-br":
                     //Credit: rubinho146
@@ -408,6 +431,9 @@ namespace Worms2_Settings
                     strApplications = "Aplicações";
                     strVolume = "Volume";
                     strSoundbank = "Editor de Banco de Vozes";
+                    strGame = "Jogo";
+                    strExtendedChat = "Edição de caixa de bate-papo estendida";
+                    strBlood = "Sangue";
                     break;
                 case "ru":
                     strSettings = "Настройки";
@@ -435,6 +461,9 @@ namespace Worms2_Settings
                     strApplications = " программное обеспечение";
                     strVolume = "Громкость";
                     //strSoundbank = "SoundBank";
+                    strGame = "Игра";
+                    strExtendedChat = "Расширенные настройки окна чата";
+                    strBlood = "Кровь";
                     break;
                 case "sv":
                     strSettings = "Inställningar";
@@ -460,6 +489,9 @@ namespace Worms2_Settings
                     strApplications = "Tillämpningsprogram";
                     strVolume = "Volym";
                     //strSoundbank = "SoundBank";
+                    strGame = "Spel";
+                    strExtendedChat = "Utökad chat box editering";
+                    strBlood = "Blod";
                     break;
                 case "zh-Hans":
                     strSettings = "设置";
@@ -486,6 +518,9 @@ namespace Worms2_Settings
                     strApplications = "应用程序";
                     strVolume = "音量设置";
                     strSoundbank = "音效库编辑器";
+                    strGame = "游戏";
+                    strExtendedChat = "扩展聊天框编辑";
+                    strBlood = "血";
                     break;
                 default:
                     strSettings = "Settings";
@@ -512,6 +547,9 @@ namespace Worms2_Settings
                     strApplications = "Applications";
                     strVolume = "Volume Settings";
                     strSoundbank = "SoundBank Editor";
+                    strGame = "Game";
+                    strExtendedChat = "Extended chat box editing";
+                    strBlood = "Blood";
                     break;
             }
 
@@ -543,11 +581,9 @@ namespace Worms2_Settings
             lblApplications.Text = strApplications;
             btnVolume.Text = strVolume;
             btnSoundbank.Text = strSoundbank;
-
-            //Determine if the OS is Windows XP
-            if (Environment.OSVersion.Version.Major < 6) {
-                global.OSWinXP = true;
-            }
+            lblHeadingExtended.Text = strGame;
+            cbExtChat.Text = strExtendedChat;
+            cbExtBlood.Text = strBlood;
 
             //Populate
             populate();
@@ -581,42 +617,13 @@ namespace Worms2_Settings
             string errFilesMissing = "Error: files missing, please reinstall Worms 2 Plus.";
 
             //Populate current settings
-            //Renderer
-            string Renderer = "";
 
             try {
-                //Check that backup DLLs are present
-                if (!File.Exists("_" + dll.Wnd) && File.Exists(dll.Wnd)) {
-                    //MessageBox.Show("Copy wkWndmode.dll to _wkWndmode.dll");
-                    File.Copy(dll.Wnd, "_" + dll.Wnd, true);
+                //Check for all required files
+                if (File.Exists(dll.Res) && File.Exists(ini.Res) && File.Exists(dll.CNC) && File.Exists(ini.CNC)) {
+                    global.Renderer = "cnc-ddraw";
                 }
-                if (!File.Exists("_" + dll.CNC) && File.Exists(dll.CNC)) {
-                    //MessageBox.Show("Copy ddraw.dll to _ddraw.dll");
-                    File.Copy(dll.CNC, "_" + dll.CNC, true);
-                }
-               
-                //Check and resolve conflict, keep the active WndMode dll if true
-                if (File.Exists(dll.Wnd) && File.Exists(dll.CNC)) {
-                    //MessageBox.Show("Delete ddraw.dll");
-                    File.Delete(dll.CNC);
-                }
-                if (!File.Exists(dll.Wnd) && !File.Exists(dll.CNC) && File.Exists("_" + dll.Wnd)) {
-                    //MessageBox.Show("Copy _wkWndMode.dll to wkWndMode.dll");
-                    File.Copy("_" + dll.Wnd, dll.Wnd, true);
-                }
-
-                //Check for files from both renderers
-                if (File.Exists(dll.Res) && File.Exists(ini.Res) && File.Exists("_"+dll.Wnd) && File.Exists(dll.Wnd2) && File.Exists(ini.Wnd) && File.Exists("_"+dll.CNC) && File.Exists(ini.CNC)) { 
-                    if (File.Exists(dll.Wnd)) { //Check for active WndMode dll
-                        rbRenderWnd.Checked = true;
-                        Renderer = "WndMode";
-                    }
-                    else if (File.Exists(dll.CNC)) { //Check for active cnc-ddraw dll
-                        rbRenderCNC.Checked = true;
-                        Renderer = "cnc-ddraw";
-                    }
-                }
-                if (Renderer == "") { //Show error if a renderer could not be established
+                if (global.Renderer == "") { //Show error if a renderer could not be established
                     showError(errFilesMissing, true, false);
                 }
                 else {
@@ -633,7 +640,6 @@ namespace Worms2_Settings
                     config.AllowDuplicateKeys = true;
                     config.AllowDuplicateSections = true;
                     data.Res = parser.ReadFile(ini.Res);
-                    data.Wnd = parser.ReadFile(ini.Wnd);
                     data.CNC = parser.ReadFile(ini.CNC);
 
                     //Get current values
@@ -648,28 +654,8 @@ namespace Worms2_Settings
                     txtWidthOpen.Text = settingWidth.ToString();
                     txtHeightOpen.Text = settingHeight.ToString();
 
-                    if (Renderer == "WndMode") {
-                        lblResOpen.Visible = false;
-                        lblResCavern.Visible = false;
-                        flwResCavern.Visible = false;
-                        lblShader.Visible = false;
-                        flwShader.Visible = false;
-                        rbRenderWnd.Checked = true;
-                        rbDisplayFullscreen.Enabled = false;
-                        if (settingWidth == screenRes.width && settingHeight == screenRes.height) {
-                            cbRecommended.Checked = true;
-                            rbDisplayBorderless.Checked = true;
-                        }
-                        else {
-                            rbDisplayWindowed.Checked = true;
-                        }
-                        int settingVsync = iniInt(data.Wnd["WINDOWMODE"]["VerticalSync"]);
-                        if (settingVsync == 1) {
-                            cbVsync.Checked = true;
-                        }
-                    }
-                    else if (Renderer == "cnc-ddraw") {
-                        rbRenderCNC.Checked = true;
+                    if (global.Renderer == "cnc-ddraw") {
+                        selectedCNC();
 
                         int settingWidthCavern = iniInt(data.Res["Resolution"]["CavernScreenWidth"]);
                         int settingHeightCavern = iniInt(data.Res["Resolution"]["CavernScreenHeight"]);
@@ -710,18 +696,30 @@ namespace Worms2_Settings
                             rbShaderBC.Checked = true;
                         }
                     }
-                    if (global.OSWinXP && Renderer == "WndMode") {
-                        flwZoom.Enabled = false;
+                    int settingZoomEnable = iniInt(data.Res["Zooming"]["Enable"]);
+                    if (settingZoomEnable == 1) {
+                        int settingZoomMouse = iniInt(data.Res["Zooming"]["UseMouseWheel"]);
+                        int settingZoomKeyboard = iniInt(data.Res["Zooming"]["UseKeyboardZoom"]);
+                        int settingZoomTouch = iniInt(data.Res["Zooming"]["UseTouchscreenZoom"]);
+                        if (settingZoomMouse == 1) { cbZoomMouse.Checked = true; }
+                        if (settingZoomKeyboard == 1) { cbZoomKeyboard.Checked = true; }
+                        if (settingZoomTouch == 1) { cbZoomTouch.Checked = true; }
+                    }
+
+                    if (!File.Exists(dll.EO)) {
+                        lblHeadingExtended.Visible = false;
+                        flwExtended.Visible = false;
                     }
                     else {
-                        int settingZoomEnable = iniInt(data.Res["Zooming"]["Enable"]);
-                        if (settingZoomEnable == 1) {
-                            int settingZoomMouse = iniInt(data.Res["Zooming"]["UseMouseWheel"]);
-                            int settingZoomKeyboard = iniInt(data.Res["Zooming"]["UseKeyboardZoom"]);
-                            int settingZoomTouch = iniInt(data.Res["Zooming"]["UseTouchscreenZoom"]);
-                            if (settingZoomMouse == 1) { cbZoomMouse.Checked = true; }
-                            if (settingZoomKeyboard == 1) { cbZoomKeyboard.Checked = true; }
-                            if (settingZoomTouch == 1) { cbZoomTouch.Checked = true; }
+                        if (File.Exists(ini.EO)) {
+                            data.EO = parser.ReadFile(ini.EO);
+                            int settingExtendedChat = iniInt(data.EO["Settings"]["ExtendedChat"]);
+                            int settingBlood = iniInt(data.EO["Settings"]["RedBlood"]);
+                            if (settingExtendedChat == 1) { cbExtChat.Checked = true; }
+                            if (settingBlood == 1) { cbExtBlood.Checked = true; }
+                        }
+                        else {
+                            data.EO = new IniData();
                         }
                     }
                     processCheck();
@@ -735,47 +733,11 @@ namespace Worms2_Settings
                 Close();
             }
         }
-        private void rbRenderWnd_CheckedChanged(object sender, EventArgs e){
-            if (global.ready && rbRenderWnd.Checked){
-                global.ready = false;
-                //Hide additional Resolution controls
-                lblResOpen.Visible = false;
-                lblResCavern.Visible = false;
-                flwResCavern.Visible = false;
-                lblShader.Visible = false;
-                flwShader.Visible = false;
-                
-                if (cbRecommended.Checked) {
-                    cbRecommended.Checked = false;
-                    cbRecommended.Checked = true;
-                }
-                if (rbDisplayFullscreen.Checked) {
-                    rbDisplayFullscreen.Checked = false;
-                    rbDisplayWindowed.Checked = true;
-                }
-                rbDisplayFullscreen.Enabled = false;
-                if (global.OSWinXP) {
-                    flwZoom.Enabled = false;
-                    cbZoomMouse.Checked = false;
-                    cbZoomKeyboard.Checked = false;
-                    cbZoomTouch.Checked = false;
-                }
-                global.ready = true;
-                controlChange(sender, e);
-            }
-        }
 
-        private void rbRenderCNC_CheckedChanged(object sender, EventArgs e)
+        private void selectedCNC()
         {
-            if (global.ready && rbRenderCNC.Checked) {
+            if (global.ready) {
                 global.ready = false;
-                //Show additional Resolution controls
-                lblResOpen.Visible = true;
-                lblResCavern.Visible = true;
-                flwResCavern.Visible = true;
-                lblShader.Visible = true;
-                flwShader.Visible = true;
-
                 if (cbRecommended.Checked) {
                     cbRecommended.Checked = false;
                     cbRecommended.Checked = true;
@@ -792,20 +754,15 @@ namespace Worms2_Settings
                     txtHeightOpen.Text = curHeightOpen;
                     cbRecommended.Checked = false;
                 }
-                rbDisplayFullscreen.Enabled = true;
                 rbShaderBC.Checked = true; //Default shader
-                if (global.OSWinXP) {
-                    flwZoom.Enabled = true;
-                }
                 global.ready = true;
-                controlChange(sender, e);
             }
         }
 
         private void cbRecommended_CheckedChanged(object sender, EventArgs e)
         {
             if (cbRecommended.Checked) {
-                if (rbRenderCNC.Checked) {
+                if (global.Renderer == "cnc-ddraw") {
                     if (screenRes.height >= 1080) {
                         txtHeightOpen.Text = "1080";
                         float numMultiplier = (float)screenRes.height / 1080f;
@@ -908,50 +865,17 @@ namespace Worms2_Settings
                 //[Resolution]
                 data.Res["Resolution"]["ScreenWidth"] = txtWidthOpen.Text;
                 data.Res["Resolution"]["ScreenHeight"] = txtHeightOpen.Text;
-                if (flwResCavern.Visible) {
-                    data.Res["Resolution"]["CavernScreenWidth"] = txtWidthCavern.Text;
-                    data.Res["Resolution"]["CavernScreenHeight"] = txtHeightCavern.Text;
-                }
-                else {
-                    data.Res["Resolution"].RemoveKey("CavernScreenWidth");
-                    data.Res["Resolution"].RemoveKey("CavernScreenHeight");
-                }
+                data.Res["Resolution"]["CavernScreenWidth"] = txtWidthCavern.Text;
+                data.Res["Resolution"]["CavernScreenHeight"] = txtHeightCavern.Text;
+                
                 //[Resizing]
                 data.Res["Resizing"]["ProgressiveUpdate"] = "0";
 
-                if (rbRenderWnd.Checked) {
-                    if (txtWidthOpen.Text == screenRes.width.ToString() && txtHeightOpen.Text == screenRes.height.ToString()) { 
-                        rbDisplayBorderless.Checked = true;
-                    }
-                    else {
-                        rbDisplayWindowed.Checked = true;
-                    }
-                    //[Resizing]
-                    data.Res["Resizing"]["Enable"] = "1";
-                    data.Res["Resizing"]["AltEnter"] = "1";
-
-                    File.Delete(dll.CNC);
-                    if (!File.Exists(dll.Wnd)) {
-                        File.Copy("_" + dll.Wnd, dll.Wnd, true);
-                    }
-                    //wndmode.ini
-                    if (cbVsync.Checked) {
-                        data.Wnd["WINDOWMODE"]["VerticalSync"] = "1";
-                    }
-                    else {
-                        data.Wnd["WINDOWMODE"]["VerticalSync"] = "0";
-                    }
-                    parser.WriteFile(ini.Wnd, data.Wnd, UTF8withoutBOM);
-                }
-                else if (rbRenderCNC.Checked) {
+                if (global.Renderer == "cnc-ddraw") {
                     //[Resizing]
                     data.Res["Resizing"]["Enable"] = "0";
                     data.Res["Resizing"]["AltEnter"] = "0";
 
-                    File.Delete(dll.Wnd);
-                    if (!File.Exists(dll.CNC)) {
-                        File.Copy("_" + dll.CNC, dll.CNC, true);
-                    }   
                     //ddraw.ini
                     if (rbDisplayWindowed.Checked) {
                         data.CNC["ddraw"]["fullscreen"] = "false";
@@ -1015,6 +939,24 @@ namespace Worms2_Settings
                     }
                 }
                 parser.WriteFile(ini.Res, data.Res, UTF8withoutBOM);
+
+                //ExtendedOptions.ini
+                if (flwExtended.Visible) {
+                    //[Settings]
+                    if (cbExtChat.Checked) {
+                        data.EO["Settings"]["ExtendedChat"] = "1";
+                    }
+                    else {
+                        data.EO["Settings"]["ExtendedChat"] = "0";
+                    }
+                    if (cbExtBlood.Checked) {
+                        data.EO["Settings"]["RedBlood"] = "1";
+                    }
+                    else {
+                        data.EO["Settings"]["RedBlood"] = "0";
+                    }
+                    parser.WriteFile(ini.EO, data.EO, UTF8withoutBOM);
+                }
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message,"Error");
