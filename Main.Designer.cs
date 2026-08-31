@@ -70,12 +70,13 @@
             this.flwShader = new System.Windows.Forms.FlowLayoutPanel();
             this.rbShaderBC = new System.Windows.Forms.RadioButton();
             this.rbShaderNN = new System.Windows.Forms.RadioButton();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.lblHeadingExtended = new System.Windows.Forms.Label();
             this.flwExtended = new System.Windows.Forms.FlowLayoutPanel();
             this.cbExtChat = new System.Windows.Forms.CheckBox();
             this.cbExtBlood = new System.Windows.Forms.CheckBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.timerProcess = new System.Windows.Forms.Timer(this.components);
-            this.lblHeadingExtended = new System.Windows.Forms.Label();
+            this.cbExtBackflip = new System.Windows.Forms.CheckBox();
             this.tblDesign.SuspendLayout();
             this.flwDisplay.SuspendLayout();
             this.flwZoom.SuspendLayout();
@@ -196,7 +197,7 @@
             this.lblApplications.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblApplications.AutoSize = true;
             this.lblApplications.BackColor = System.Drawing.Color.Transparent;
-            this.lblApplications.Location = new System.Drawing.Point(16, 750);
+            this.lblApplications.Location = new System.Drawing.Point(16, 791);
             this.lblApplications.Margin = new System.Windows.Forms.Padding(3);
             this.lblApplications.Name = "lblApplications";
             this.lblApplications.Size = new System.Drawing.Size(161, 31);
@@ -326,7 +327,7 @@
             this.lblHeadingAudio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblHeadingAudio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblHeadingAudio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeadingAudio.Location = new System.Drawing.Point(16, 680);
+            this.lblHeadingAudio.Location = new System.Drawing.Point(16, 721);
             this.lblHeadingAudio.Margin = new System.Windows.Forms.Padding(3);
             this.lblHeadingAudio.Name = "lblHeadingAudio";
             this.lblHeadingAudio.Size = new System.Drawing.Size(161, 33);
@@ -340,7 +341,7 @@
             this.flwAudio.BackColor = System.Drawing.Color.Transparent;
             this.flwAudio.Controls.Add(this.btnVolume);
             this.flwAudio.Controls.Add(this.btnSoundbank);
-            this.flwAudio.Location = new System.Drawing.Point(183, 719);
+            this.flwAudio.Location = new System.Drawing.Point(183, 760);
             this.flwAudio.Name = "flwAudio";
             this.flwAudio.Size = new System.Drawing.Size(287, 94);
             this.flwAudio.TabIndex = 20;
@@ -405,7 +406,7 @@
             this.lblError.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(16, 819);
+            this.lblError.Location = new System.Drawing.Point(16, 860);
             this.lblError.Margin = new System.Windows.Forms.Padding(3);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(652, 31);
@@ -622,46 +623,13 @@
             this.rbShaderNN.Text = "Classic";
             this.rbShaderNN.UseVisualStyleBackColor = true;
             // 
-            // flwExtended
-            // 
-            this.flwExtended.AutoSize = true;
-            this.flwExtended.BackColor = System.Drawing.Color.Transparent;
-            this.flwExtended.Controls.Add(this.cbExtChat);
-            this.flwExtended.Controls.Add(this.cbExtBlood);
-            this.flwExtended.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwExtended.Location = new System.Drawing.Point(183, 516);
-            this.flwExtended.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.flwExtended.Name = "flwExtended";
-            this.flwExtended.Size = new System.Drawing.Size(362, 82);
-            this.flwExtended.TabIndex = 22;
-            // 
-            // cbExtChat
-            // 
-            this.cbExtChat.AutoSize = true;
-            this.cbExtChat.Location = new System.Drawing.Point(3, 3);
-            this.cbExtChat.Name = "cbExtChat";
-            this.cbExtChat.Size = new System.Drawing.Size(356, 35);
-            this.cbExtChat.TabIndex = 1;
-            this.cbExtChat.Text = "Extended chat box editing";
-            this.cbExtChat.UseVisualStyleBackColor = true;
-            // 
-            // cbExtBlood
-            // 
-            this.cbExtBlood.AutoSize = true;
-            this.cbExtBlood.Location = new System.Drawing.Point(3, 44);
-            this.cbExtBlood.Name = "cbExtBlood";
-            this.cbExtBlood.Size = new System.Drawing.Size(115, 35);
-            this.cbExtBlood.TabIndex = 3;
-            this.cbExtBlood.Text = "Blood";
-            this.cbExtBlood.UseVisualStyleBackColor = true;
-            // 
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSave.AutoSize = true;
             this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tblDesign.SetColumnSpan(this.btnSave, 2);
-            this.btnSave.Location = new System.Drawing.Point(231, 613);
+            this.btnSave.Location = new System.Drawing.Point(231, 654);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(10);
@@ -670,11 +638,6 @@
             this.btnSave.Text = "Save Changes";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // timerProcess
-            // 
-            this.timerProcess.Interval = 2000;
-            this.timerProcess.Tick += new System.EventHandler(this.timerProcess_Tick);
             // 
             // lblHeadingExtended
             // 
@@ -690,6 +653,55 @@
             this.lblHeadingExtended.TabIndex = 23;
             this.lblHeadingExtended.Text = "Game";
             this.lblHeadingExtended.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // flwExtended
+            // 
+            this.flwExtended.AutoSize = true;
+            this.flwExtended.BackColor = System.Drawing.Color.Transparent;
+            this.flwExtended.Controls.Add(this.cbExtChat);
+            this.flwExtended.Controls.Add(this.cbExtBackflip);
+            this.flwExtended.Controls.Add(this.cbExtBlood);
+            this.flwExtended.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flwExtended.Location = new System.Drawing.Point(183, 516);
+            this.flwExtended.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.flwExtended.Name = "flwExtended";
+            this.flwExtended.Size = new System.Drawing.Size(362, 123);
+            this.flwExtended.TabIndex = 22;
+            // 
+            // cbExtChat
+            // 
+            this.cbExtChat.AutoSize = true;
+            this.cbExtChat.Location = new System.Drawing.Point(3, 3);
+            this.cbExtChat.Name = "cbExtChat";
+            this.cbExtChat.Size = new System.Drawing.Size(356, 35);
+            this.cbExtChat.TabIndex = 1;
+            this.cbExtChat.Text = "Extended chat box editing";
+            this.cbExtChat.UseVisualStyleBackColor = true;
+            // 
+            // cbExtBlood
+            // 
+            this.cbExtBlood.AutoSize = true;
+            this.cbExtBlood.Location = new System.Drawing.Point(3, 85);
+            this.cbExtBlood.Name = "cbExtBlood";
+            this.cbExtBlood.Size = new System.Drawing.Size(115, 35);
+            this.cbExtBlood.TabIndex = 3;
+            this.cbExtBlood.Text = "Blood";
+            this.cbExtBlood.UseVisualStyleBackColor = true;
+            // 
+            // timerProcess
+            // 
+            this.timerProcess.Interval = 2000;
+            this.timerProcess.Tick += new System.EventHandler(this.timerProcess_Tick);
+            // 
+            // cbExtBackflip
+            // 
+            this.cbExtBackflip.AutoSize = true;
+            this.cbExtBackflip.Location = new System.Drawing.Point(3, 44);
+            this.cbExtBackflip.Name = "cbExtBackflip";
+            this.cbExtBackflip.Size = new System.Drawing.Size(142, 35);
+            this.cbExtBackflip.TabIndex = 4;
+            this.cbExtBackflip.Text = "Backflip";
+            this.cbExtBackflip.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -781,6 +793,7 @@
         private System.Windows.Forms.CheckBox cbExtChat;
         private System.Windows.Forms.CheckBox cbExtBlood;
         private System.Windows.Forms.Label lblHeadingExtended;
+        private System.Windows.Forms.CheckBox cbExtBackflip;
     }
 }
 

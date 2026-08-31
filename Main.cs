@@ -145,7 +145,7 @@ namespace Worms2_Settings
             }
             
             //Translation variables
-            string strSettings, strDisplay, strResolution, strRecommended, strOpen, strCavern, strWidth, strHeight, strMode, strModeWindowed, strModeFullscreen, strModeBorderless, strShader, strShaderSmooth, strShaderClassic, strVsync, strZoom, strMouseSW, strKeyboard, strTouchscreen, strSave, strAudio, strApplications, strVolume, strSoundbank, strGame, strExtendedChat, strBlood;
+            string strSettings, strDisplay, strResolution, strRecommended, strOpen, strCavern, strWidth, strHeight, strMode, strModeWindowed, strModeFullscreen, strModeBorderless, strShader, strShaderSmooth, strShaderClassic, strVsync, strZoom, strMouseSW, strKeyboard, strTouchscreen, strSave, strAudio, strApplications, strVolume, strSoundbank, strGame, strExtendedChat, strBackflip, strBlood;
             strVsync = "V-Sync";
             strShader = "Shader";
             strSoundbank = "SoundBank";
@@ -177,6 +177,7 @@ namespace Worms2_Settings
                     strSoundbank = "Editor zvukové banky";
                     strGame = "Hra";
                     strExtendedChat = "Rozšířená editace chatovacího okna";
+                    strBackflip = "Salto vzad";
                     strBlood = "Krev";
                     break;
                 case "de":
@@ -206,6 +207,7 @@ namespace Worms2_Settings
                     strSoundbank = "Stimmenbank";
                     strGame = "Spiel";
                     strExtendedChat = "Erweiterten Chat-Bereich bearbeiten";
+                    strBackflip = "Backflip";
                     strBlood = "Blut";
                     break;
                 case "es":
@@ -234,6 +236,7 @@ namespace Worms2_Settings
                     strSoundbank = "Banco de voces";
                     strGame = "Juego";
                     strExtendedChat = "Edición extendida chat box";
+                    strBackflip = "Salto mortal hacia atrás";
                     strBlood = "Sangre";
                     break;
                 case "es-419":
@@ -262,6 +265,7 @@ namespace Worms2_Settings
                     strSoundbank = "Banco de voces";
                     strGame = "Juego";
                     strExtendedChat = "Edición ampliada del recuadro de charla";
+                    strBackflip = "Salto mortal hacia atrás";
                     strBlood = "Sangre";
                     break;
                 case "fr":
@@ -290,6 +294,7 @@ namespace Worms2_Settings
                     strSoundbank = "Banque de sons";
                     strGame = "Jeu";
                     strExtendedChat = "Édition des boîtes de conversation";
+                    strBackflip = "Salto arrière";
                     strBlood = "Sang";
                     break;
                 case "it":
@@ -318,6 +323,7 @@ namespace Worms2_Settings
                     strSoundbank = "Banca di voci";
                     strGame = "Gioco";
                     strExtendedChat = "Ingrandisci finestra conversazione";
+                    strBackflip = "Salto mortale all'indietro";
                     strBlood = "Sangue";
                     break;
                 case "nl":
@@ -346,6 +352,7 @@ namespace Worms2_Settings
                     //strSoundbank = "SoundBank";
                     strGame = "Spel";
                     strExtendedChat = "Chat box editen";
+                    strBackflip = "Achterwaartse salto";
                     strBlood = "Bloed";
                     break;
                 case "pl":
@@ -375,6 +382,7 @@ namespace Worms2_Settings
                     strSoundbank = "Edytor SoundBanków";
                     strGame = "Gra";
                     strExtendedChat = "Rozszerzona edycja chatów";
+                    strBackflip = "Salto w tył";
                     strBlood = "Krew";
                     break;
                 case "pt":
@@ -404,6 +412,7 @@ namespace Worms2_Settings
                     strSoundbank = "Editor de Banco de Vozes";
                     strGame = "Jogo";
                     strExtendedChat = "Edição alargada da caixa de conversação";
+                    strBackflip = "Mortal para trás";
                     strBlood = "Sangue";
                     break;
                 case "pt-br":
@@ -433,6 +442,7 @@ namespace Worms2_Settings
                     strSoundbank = "Editor de Banco de Vozes";
                     strGame = "Jogo";
                     strExtendedChat = "Edição de caixa de bate-papo estendida";
+                    strBackflip = "Mortal para trás";
                     strBlood = "Sangue";
                     break;
                 case "ru":
@@ -463,6 +473,7 @@ namespace Worms2_Settings
                     //strSoundbank = "SoundBank";
                     strGame = "Игра";
                     strExtendedChat = "Расширенные настройки окна чата";
+                    strBackflip = "Сальто назад";
                     strBlood = "Кровь";
                     break;
                 case "sv":
@@ -491,6 +502,7 @@ namespace Worms2_Settings
                     //strSoundbank = "SoundBank";
                     strGame = "Spel";
                     strExtendedChat = "Utökad chat box editering";
+                    strBackflip = "Bakåtvolt";
                     strBlood = "Blod";
                     break;
                 case "zh-Hans":
@@ -520,6 +532,7 @@ namespace Worms2_Settings
                     strSoundbank = "音效库编辑器";
                     strGame = "游戏";
                     strExtendedChat = "扩展聊天框编辑";
+                    strBackflip = "后空翻";
                     strBlood = "血";
                     break;
                 default:
@@ -549,6 +562,7 @@ namespace Worms2_Settings
                     strSoundbank = "SoundBank Editor";
                     strGame = "Game";
                     strExtendedChat = "Extended chat box editing";
+                    strBackflip = "Backflip";
                     strBlood = "Blood";
                     break;
             }
@@ -583,6 +597,7 @@ namespace Worms2_Settings
             btnSoundbank.Text = strSoundbank;
             lblHeadingExtended.Text = strGame;
             cbExtChat.Text = strExtendedChat;
+            cbExtBackflip.Text = strBackflip;
             cbExtBlood.Text = strBlood;
 
             //Populate
@@ -714,12 +729,21 @@ namespace Worms2_Settings
                         if (File.Exists(ini.EO)) {
                             data.EO = parser.ReadFile(ini.EO);
                             int settingExtendedChat = iniInt(data.EO["Settings"]["ExtendedChat"]);
+                            int settingBackflip = iniInt(data.EO["Settings"]["Backflip"]);
                             int settingBlood = iniInt(data.EO["Settings"]["RedBlood"]);
                             if (settingExtendedChat == 1) { cbExtChat.Checked = true; }
+                            if (settingBackflip == 1) { cbExtBackflip.Checked = true; }
                             if (settingBlood == 1) { cbExtBlood.Checked = true; }
                         }
                         else {
+                            cbExtChat.Checked = true;
+                            cbExtBackflip.Checked = true;
+                            Encoding UTF8withoutBOM = new UTF8Encoding(false);
                             data.EO = new IniData();
+                            data.EO["Settings"]["ExtendedChat"] = "1";
+                            data.EO["Settings"]["Backflip"] = "1";
+                            data.EO["Settings"]["RedBlood"] = "0";
+                            parser.WriteFile(ini.EO, data.EO, UTF8withoutBOM);
                         }
                     }
                     processCheck();
@@ -860,6 +884,7 @@ namespace Worms2_Settings
                     }
                 }
 
+                string setCheckbox(bool value) => value ? "1" : "0";
                 var parser = new FileIniDataParser();
                 //ReSolution.ini
                 //[Resolution]
@@ -919,42 +944,18 @@ namespace Worms2_Settings
                 }
                 else {
                     data.Res["Zooming"]["Enable"] = "1";
-                    if (cbZoomMouse.Checked) {
-                        data.Res["Zooming"]["UseMouseWheel"] = "1";
-                    }
-                    else {
-                        data.Res["Zooming"]["UseMouseWheel"] = "0";
-                    }
-                    if (cbZoomKeyboard.Checked) {
-                        data.Res["Zooming"]["UseKeyboardZoom"] = "1";
-                    }
-                    else {
-                        data.Res["Zooming"]["UseKeyboardZoom"] = "0";
-                    }
-                    if (cbZoomTouch.Checked) {
-                        data.Res["Zooming"]["UseTouchscreenZoom"] = "1";
-                    }
-                    else {
-                        data.Res["Zooming"]["UseTouchscreenZoom"] = "0";
-                    }
+                    data.Res["Zooming"]["UseMouseWheel"] = setCheckbox(cbZoomMouse.Checked);
+                    data.Res["Zooming"]["UseKeyboardZoom"] = setCheckbox(cbZoomKeyboard.Checked);
+                    data.Res["Zooming"]["UseTouchscreenZoom"] = setCheckbox(cbZoomTouch.Checked);
                 }
                 parser.WriteFile(ini.Res, data.Res, UTF8withoutBOM);
 
                 //ExtendedOptions.ini
                 if (flwExtended.Visible) {
                     //[Settings]
-                    if (cbExtChat.Checked) {
-                        data.EO["Settings"]["ExtendedChat"] = "1";
-                    }
-                    else {
-                        data.EO["Settings"]["ExtendedChat"] = "0";
-                    }
-                    if (cbExtBlood.Checked) {
-                        data.EO["Settings"]["RedBlood"] = "1";
-                    }
-                    else {
-                        data.EO["Settings"]["RedBlood"] = "0";
-                    }
+                    data.EO["Settings"]["ExtendedChat"] = setCheckbox(cbExtChat.Checked);
+                    data.EO["Settings"]["Backflip"] = setCheckbox(cbExtBackflip.Checked);
+                    data.EO["Settings"]["RedBlood"] = setCheckbox(cbExtBlood.Checked);
                     parser.WriteFile(ini.EO, data.EO, UTF8withoutBOM);
                 }
             }
