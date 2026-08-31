@@ -18,9 +18,9 @@ namespace Worms2_Settings
         }
 
         public static class global{
-            //Renderer
+            //Wrapper
+            public static string Wrapper = "";
             //Ready var
-            public static string Renderer = "";
             public static bool ready = false;
             //Set sound effects
             public static System.Media.SoundPlayer sndOption = new System.Media.SoundPlayer(@"Data\\Wav\\Effects\\CrossImpact.wav");
@@ -145,7 +145,7 @@ namespace Worms2_Settings
             }
             
             //Translation variables
-            string strSettings, strDisplay, strResolution, strRecommended, strOpen, strCavern, strWidth, strHeight, strMode, strModeWindowed, strModeFullscreen, strModeBorderless, strShader, strShaderSmooth, strShaderClassic, strVsync, strZoom, strMouseSW, strKeyboard, strTouchscreen, strSave, strAudio, strApplications, strVolume, strSoundbank, strGame, strExtendedChat, strBackflip, strBlood;
+            string strSettings, strDisplay, strResolution, strRecommended, strOpen, strCavern, strWidth, strHeight, strMode, strModeWindowed, strModeFullscreen, strModeBorderless, strShader, strShaderSmooth, strShaderClassic, strVsync, strZoom, strMouseSW, strKeyboard, strTouchscreen, strSave, strAudio, strApplications, strVolume, strSoundbank, strGame, strExtendedChat, /*strBackflip,*/ strBlood;
             strVsync = "V-Sync";
             strShader = "Shader";
             strSoundbank = "SoundBank";
@@ -177,7 +177,7 @@ namespace Worms2_Settings
                     strSoundbank = "Editor zvukové banky";
                     strGame = "Hra";
                     strExtendedChat = "Rozšířená editace chatovacího okna";
-                    strBackflip = "Salto vzad";
+                    //strBackflip = "Salto vzad";
                     strBlood = "Krev";
                     break;
                 case "de":
@@ -207,7 +207,7 @@ namespace Worms2_Settings
                     strSoundbank = "Stimmenbank";
                     strGame = "Spiel";
                     strExtendedChat = "Erweiterten Chat-Bereich bearbeiten";
-                    strBackflip = "Backflip";
+                    //strBackflip = "Backflip";
                     strBlood = "Blut";
                     break;
                 case "es":
@@ -236,7 +236,7 @@ namespace Worms2_Settings
                     strSoundbank = "Banco de voces";
                     strGame = "Juego";
                     strExtendedChat = "Edición extendida chat box";
-                    strBackflip = "Salto mortal hacia atrás";
+                    //strBackflip = "Salto mortal hacia atrás";
                     strBlood = "Sangre";
                     break;
                 case "es-419":
@@ -265,7 +265,7 @@ namespace Worms2_Settings
                     strSoundbank = "Banco de voces";
                     strGame = "Juego";
                     strExtendedChat = "Edición ampliada del recuadro de charla";
-                    strBackflip = "Salto mortal hacia atrás";
+                    //strBackflip = "Salto mortal hacia atrás";
                     strBlood = "Sangre";
                     break;
                 case "fr":
@@ -294,7 +294,7 @@ namespace Worms2_Settings
                     strSoundbank = "Banque de sons";
                     strGame = "Jeu";
                     strExtendedChat = "Édition des boîtes de conversation";
-                    strBackflip = "Salto arrière";
+                    //strBackflip = "Salto arrière";
                     strBlood = "Sang";
                     break;
                 case "it":
@@ -323,7 +323,7 @@ namespace Worms2_Settings
                     strSoundbank = "Banca di voci";
                     strGame = "Gioco";
                     strExtendedChat = "Ingrandisci finestra conversazione";
-                    strBackflip = "Salto mortale all'indietro";
+                    //strBackflip = "Salto mortale all'indietro";
                     strBlood = "Sangue";
                     break;
                 case "nl":
@@ -352,7 +352,7 @@ namespace Worms2_Settings
                     //strSoundbank = "SoundBank";
                     strGame = "Spel";
                     strExtendedChat = "Chat box editen";
-                    strBackflip = "Achterwaartse salto";
+                    //strBackflip = "Achterwaartse salto";
                     strBlood = "Bloed";
                     break;
                 case "pl":
@@ -382,7 +382,7 @@ namespace Worms2_Settings
                     strSoundbank = "Edytor SoundBanków";
                     strGame = "Gra";
                     strExtendedChat = "Rozszerzona edycja chatów";
-                    strBackflip = "Salto w tył";
+                    //strBackflip = "Salto w tył";
                     strBlood = "Krew";
                     break;
                 case "pt":
@@ -412,7 +412,7 @@ namespace Worms2_Settings
                     strSoundbank = "Editor de Banco de Vozes";
                     strGame = "Jogo";
                     strExtendedChat = "Edição alargada da caixa de conversação";
-                    strBackflip = "Mortal para trás";
+                    //strBackflip = "Mortal para trás";
                     strBlood = "Sangue";
                     break;
                 case "pt-br":
@@ -442,7 +442,7 @@ namespace Worms2_Settings
                     strSoundbank = "Editor de Banco de Vozes";
                     strGame = "Jogo";
                     strExtendedChat = "Edição de caixa de bate-papo estendida";
-                    strBackflip = "Mortal para trás";
+                    //strBackflip = "Mortal para trás";
                     strBlood = "Sangue";
                     break;
                 case "ru":
@@ -473,7 +473,7 @@ namespace Worms2_Settings
                     //strSoundbank = "SoundBank";
                     strGame = "Игра";
                     strExtendedChat = "Расширенные настройки окна чата";
-                    strBackflip = "Сальто назад";
+                    //strBackflip = "Сальто назад";
                     strBlood = "Кровь";
                     break;
                 case "sv":
@@ -502,7 +502,7 @@ namespace Worms2_Settings
                     //strSoundbank = "SoundBank";
                     strGame = "Spel";
                     strExtendedChat = "Utökad chat box editering";
-                    strBackflip = "Bakåtvolt";
+                    //strBackflip = "Bakåtvolt";
                     strBlood = "Blod";
                     break;
                 case "zh-Hans":
@@ -532,7 +532,7 @@ namespace Worms2_Settings
                     strSoundbank = "音效库编辑器";
                     strGame = "游戏";
                     strExtendedChat = "扩展聊天框编辑";
-                    strBackflip = "后空翻";
+                    //strBackflip = "后空翻";
                     strBlood = "血";
                     break;
                 default:
@@ -562,7 +562,7 @@ namespace Worms2_Settings
                     strSoundbank = "SoundBank Editor";
                     strGame = "Game";
                     strExtendedChat = "Extended chat box editing";
-                    strBackflip = "Backflip";
+                    //strBackflip = "Backflip";
                     strBlood = "Blood";
                     break;
             }
@@ -597,7 +597,7 @@ namespace Worms2_Settings
             btnSoundbank.Text = strSoundbank;
             lblHeadingExtended.Text = strGame;
             cbExtChat.Text = strExtendedChat;
-            cbExtBackflip.Text = strBackflip;
+            //cbExtBackflip.Text = strBackflip;
             cbExtBlood.Text = strBlood;
 
             //Populate
@@ -636,9 +636,9 @@ namespace Worms2_Settings
             try {
                 //Check for all required files
                 if (File.Exists(dll.Res) && File.Exists(ini.Res) && File.Exists(dll.CNC) && File.Exists(ini.CNC)) {
-                    global.Renderer = "cnc-ddraw";
+                    global.Wrapper = "cnc-ddraw";
                 }
-                if (global.Renderer == "") { //Show error if a renderer could not be established
+                if (global.Wrapper == "") { //Show error if a Wrapper could not be established
                     showError(errFilesMissing, true, false);
                 }
                 else {
@@ -669,7 +669,7 @@ namespace Worms2_Settings
                     txtWidthOpen.Text = settingWidth.ToString();
                     txtHeightOpen.Text = settingHeight.ToString();
 
-                    if (global.Renderer == "cnc-ddraw") {
+                    if (global.Wrapper == "cnc-ddraw") {
                         selectedCNC();
 
                         int settingWidthCavern = iniInt(data.Res["Resolution"]["CavernScreenWidth"]);
@@ -690,6 +690,7 @@ namespace Worms2_Settings
                         string settingWindowed = iniStr(data.CNC["ddraw"]["windowed"]);
                         string settingVsync = iniStr(data.CNC["ddraw"]["vsync"]);
                         string settingShader = iniStr(data.CNC["ddraw"]["shader"]);
+                        string settingRenderer = iniStr(data.CNC["ddraw"]["renderer"]);
                         if (settingFullscreen == "true") {
                             if (settingWindowed == "true") {
                                 rbDisplayBorderless.Checked = true;
@@ -710,6 +711,12 @@ namespace Worms2_Settings
                         else {
                             rbShaderBC.Checked = true;
                         }
+                        if (settingRenderer == "direct3d9") {
+                            rbRenderD3D9.Checked = true;
+                        }
+                        else {
+                            rbRenderOGL.Checked = true;
+                        }
                     }
                     int settingZoomEnable = iniInt(data.Res["Zooming"]["Enable"]);
                     if (settingZoomEnable == 1) {
@@ -729,15 +736,15 @@ namespace Worms2_Settings
                         if (File.Exists(ini.EO)) {
                             data.EO = parser.ReadFile(ini.EO);
                             int settingExtendedChat = iniInt(data.EO["Settings"]["ExtendedChat"]);
-                            int settingBackflip = iniInt(data.EO["Settings"]["Backflip"]);
+                            //int settingBackflip = iniInt(data.EO["Settings"]["Backflip"]);
                             int settingBlood = iniInt(data.EO["Settings"]["RedBlood"]);
                             if (settingExtendedChat == 1) { cbExtChat.Checked = true; }
-                            if (settingBackflip == 1) { cbExtBackflip.Checked = true; }
+                            //if (settingBackflip == 1) { cbExtBackflip.Checked = true; }
                             if (settingBlood == 1) { cbExtBlood.Checked = true; }
                         }
                         else {
                             cbExtChat.Checked = true;
-                            cbExtBackflip.Checked = true;
+                            //cbExtBackflip.Checked = true;
                             Encoding UTF8withoutBOM = new UTF8Encoding(false);
                             data.EO = new IniData();
                             data.EO["Settings"]["ExtendedChat"] = "1";
@@ -778,7 +785,6 @@ namespace Worms2_Settings
                     txtHeightOpen.Text = curHeightOpen;
                     cbRecommended.Checked = false;
                 }
-                rbShaderBC.Checked = true; //Default shader
                 global.ready = true;
             }
         }
@@ -786,7 +792,7 @@ namespace Worms2_Settings
         private void cbRecommended_CheckedChanged(object sender, EventArgs e)
         {
             if (cbRecommended.Checked) {
-                if (global.Renderer == "cnc-ddraw") {
+                if (global.Wrapper == "cnc-ddraw") {
                     if (screenRes.height >= 1080) {
                         txtHeightOpen.Text = "1080";
                         float numMultiplier = (float)screenRes.height / 1080f;
@@ -896,7 +902,7 @@ namespace Worms2_Settings
                 //[Resizing]
                 data.Res["Resizing"]["ProgressiveUpdate"] = "0";
 
-                if (global.Renderer == "cnc-ddraw") {
+                if (global.Wrapper == "cnc-ddraw") {
                     //[Resizing]
                     data.Res["Resizing"]["Enable"] = "0";
                     data.Res["Resizing"]["AltEnter"] = "0";
@@ -932,6 +938,12 @@ namespace Worms2_Settings
                     else {
                         data.CNC["ddraw"]["shader"] = "Bicubic";
                     }
+                    if (rbRenderD3D9.Checked) {
+                        data.CNC["ddraw"]["renderer"] = "direct3d9";
+                    }
+                    else {
+                        data.CNC["ddraw"]["renderer"] = "opengl";
+                    }
                     parser.WriteFile(ini.CNC, data.CNC, UTF8withoutBOM);
                 }
                 
@@ -954,7 +966,8 @@ namespace Worms2_Settings
                 if (flwExtended.Visible) {
                     //[Settings]
                     data.EO["Settings"]["ExtendedChat"] = setCheckbox(cbExtChat.Checked);
-                    data.EO["Settings"]["Backflip"] = setCheckbox(cbExtBackflip.Checked);
+                    //data.EO["Settings"]["Backflip"] = setCheckbox(cbExtBackflip.Checked);
+                    data.EO["Settings"]["Backflip"] = "1";
                     data.EO["Settings"]["RedBlood"] = setCheckbox(cbExtBlood.Checked);
                     parser.WriteFile(ini.EO, data.EO, UTF8withoutBOM);
                 }
