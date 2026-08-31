@@ -145,8 +145,8 @@
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblDesign.Size = new System.Drawing.Size(684, 788);
-            this.tblDesign.TabIndex = 1;
+            this.tblDesign.Size = new System.Drawing.Size(563, 533);
+            this.tblDesign.TabIndex = 0;
             // 
             // flwDisplay
             // 
@@ -158,7 +158,7 @@
             this.flwDisplay.Location = new System.Drawing.Point(183, 183);
             this.flwDisplay.Name = "flwDisplay";
             this.flwDisplay.Size = new System.Drawing.Size(354, 82);
-            this.flwDisplay.TabIndex = 11;
+            this.flwDisplay.TabIndex = 4;
             // 
             // rbDisplayWindowed
             // 
@@ -167,7 +167,7 @@
             this.rbDisplayWindowed.Location = new System.Drawing.Point(3, 3);
             this.rbDisplayWindowed.Name = "rbDisplayWindowed";
             this.rbDisplayWindowed.Size = new System.Drawing.Size(171, 35);
-            this.rbDisplayWindowed.TabIndex = 1;
+            this.rbDisplayWindowed.TabIndex = 0;
             this.rbDisplayWindowed.Text = "Windowed";
             this.rbDisplayWindowed.UseVisualStyleBackColor = true;
             this.rbDisplayWindowed.CheckedChanged += new System.EventHandler(this.controlChange);
@@ -192,7 +192,7 @@
             this.rbDisplayBorderless.Location = new System.Drawing.Point(3, 44);
             this.rbDisplayBorderless.Name = "rbDisplayBorderless";
             this.rbDisplayBorderless.Size = new System.Drawing.Size(175, 35);
-            this.rbDisplayBorderless.TabIndex = 1;
+            this.rbDisplayBorderless.TabIndex = 2;
             this.rbDisplayBorderless.TabStop = true;
             this.rbDisplayBorderless.Text = "Borderless";
             this.rbDisplayBorderless.UseVisualStyleBackColor = true;
@@ -207,7 +207,7 @@
             this.lblApplications.Margin = new System.Windows.Forms.Padding(3);
             this.lblApplications.Name = "lblApplications";
             this.lblApplications.Size = new System.Drawing.Size(161, 31);
-            this.lblApplications.TabIndex = 19;
+            this.lblApplications.TabIndex = 12;
             this.lblApplications.Text = "Applications";
             this.lblApplications.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -221,7 +221,7 @@
             this.lblResolution.Margin = new System.Windows.Forms.Padding(3);
             this.lblResolution.Name = "lblResolution";
             this.lblResolution.Size = new System.Drawing.Size(153, 31);
-            this.lblResolution.TabIndex = 4;
+            this.lblResolution.TabIndex = 1;
             this.lblResolution.Text = "Resolution";
             this.lblResolution.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -235,7 +235,7 @@
             this.lblMode.Margin = new System.Windows.Forms.Padding(3);
             this.lblMode.Name = "lblMode";
             this.lblMode.Size = new System.Drawing.Size(85, 31);
-            this.lblMode.TabIndex = 10;
+            this.lblMode.TabIndex = 4;
             this.lblMode.Text = "Mode";
             // 
             // lblVsync
@@ -248,7 +248,7 @@
             this.lblVsync.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
             this.lblVsync.Name = "lblVsync";
             this.lblVsync.Size = new System.Drawing.Size(108, 31);
-            this.lblVsync.TabIndex = 12;
+            this.lblVsync.TabIndex = 5;
             this.lblVsync.Text = "V-Sync";
             // 
             // lblZoom
@@ -261,7 +261,7 @@
             this.lblZoom.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.lblZoom.Name = "lblZoom";
             this.lblZoom.Size = new System.Drawing.Size(87, 31);
-            this.lblZoom.TabIndex = 15;
+            this.lblZoom.TabIndex = 8;
             this.lblZoom.Text = "Zoom";
             // 
             // flwZoom
@@ -276,7 +276,7 @@
             this.flwZoom.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.flwZoom.Name = "flwZoom";
             this.flwZoom.Size = new System.Drawing.Size(282, 123);
-            this.flwZoom.TabIndex = 16;
+            this.flwZoom.TabIndex = 8;
             // 
             // cbZoomMouse
             // 
@@ -284,7 +284,7 @@
             this.cbZoomMouse.Location = new System.Drawing.Point(3, 3);
             this.cbZoomMouse.Name = "cbZoomMouse";
             this.cbZoomMouse.Size = new System.Drawing.Size(276, 35);
-            this.cbZoomMouse.TabIndex = 1;
+            this.cbZoomMouse.TabIndex = 0;
             this.cbZoomMouse.Text = "Mouse scroll wheel";
             this.cbZoomMouse.UseVisualStyleBackColor = true;
             this.cbZoomMouse.CheckedChanged += new System.EventHandler(this.controlChange);
@@ -295,7 +295,7 @@
             this.cbZoomKeyboard.Location = new System.Drawing.Point(3, 44);
             this.cbZoomKeyboard.Name = "cbZoomKeyboard";
             this.cbZoomKeyboard.Size = new System.Drawing.Size(220, 35);
-            this.cbZoomKeyboard.TabIndex = 2;
+            this.cbZoomKeyboard.TabIndex = 1;
             this.cbZoomKeyboard.Text = "Keyboard (+/-)";
             this.cbZoomKeyboard.UseVisualStyleBackColor = true;
             this.cbZoomKeyboard.CheckedChanged += new System.EventHandler(this.controlChange);
@@ -306,7 +306,7 @@
             this.cbZoomTouch.Location = new System.Drawing.Point(3, 85);
             this.cbZoomTouch.Name = "cbZoomTouch";
             this.cbZoomTouch.Size = new System.Drawing.Size(204, 35);
-            this.cbZoomTouch.TabIndex = 3;
+            this.cbZoomTouch.TabIndex = 2;
             this.cbZoomTouch.Text = "Touchscreen";
             this.cbZoomTouch.UseVisualStyleBackColor = true;
             this.cbZoomTouch.CheckedChanged += new System.EventHandler(this.controlChange);
@@ -322,7 +322,7 @@
             this.lblHeadingDisplay.Margin = new System.Windows.Forms.Padding(3);
             this.lblHeadingDisplay.Name = "lblHeadingDisplay";
             this.lblHeadingDisplay.Size = new System.Drawing.Size(161, 33);
-            this.lblHeadingDisplay.TabIndex = 1;
+            this.lblHeadingDisplay.TabIndex = 0;
             this.lblHeadingDisplay.Text = "Display";
             this.lblHeadingDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -337,7 +337,7 @@
             this.lblHeadingAudio.Margin = new System.Windows.Forms.Padding(3);
             this.lblHeadingAudio.Name = "lblHeadingAudio";
             this.lblHeadingAudio.Size = new System.Drawing.Size(161, 33);
-            this.lblHeadingAudio.TabIndex = 18;
+            this.lblHeadingAudio.TabIndex = 11;
             this.lblHeadingAudio.Text = "Audio";
             this.lblHeadingAudio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -350,7 +350,7 @@
             this.flwAudio.Location = new System.Drawing.Point(183, 769);
             this.flwAudio.Name = "flwAudio";
             this.flwAudio.Size = new System.Drawing.Size(287, 94);
-            this.flwAudio.TabIndex = 20;
+            this.flwAudio.TabIndex = 12;
             // 
             // btnVolume
             // 
@@ -362,7 +362,7 @@
             this.btnVolume.Location = new System.Drawing.Point(3, 3);
             this.btnVolume.Name = "btnVolume";
             this.btnVolume.Size = new System.Drawing.Size(253, 41);
-            this.btnVolume.TabIndex = 1;
+            this.btnVolume.TabIndex = 0;
             this.btnVolume.Text = "Volume Settings";
             this.btnVolume.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVolume.UseVisualStyleBackColor = false;
@@ -378,7 +378,7 @@
             this.btnSoundbank.Location = new System.Drawing.Point(3, 50);
             this.btnSoundbank.Name = "btnSoundbank";
             this.btnSoundbank.Size = new System.Drawing.Size(281, 41);
-            this.btnSoundbank.TabIndex = 2;
+            this.btnSoundbank.TabIndex = 1;
             this.btnSoundbank.Text = "Sound Bank Editor";
             this.btnSoundbank.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSoundbank.UseVisualStyleBackColor = false;
@@ -392,7 +392,7 @@
             this.flwVsync.Location = new System.Drawing.Point(183, 271);
             this.flwVsync.Name = "flwVsync";
             this.flwVsync.Size = new System.Drawing.Size(34, 33);
-            this.flwVsync.TabIndex = 13;
+            this.flwVsync.TabIndex = 5;
             // 
             // cbVsync
             // 
@@ -415,7 +415,7 @@
             this.lblError.Location = new System.Drawing.Point(16, 869);
             this.lblError.Margin = new System.Windows.Forms.Padding(3);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(652, 31);
+            this.lblError.Size = new System.Drawing.Size(531, 31);
             this.lblError.TabIndex = 0;
             this.lblError.Visible = false;
             // 
@@ -431,7 +431,7 @@
             this.flwResOpen.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.flwResOpen.Name = "flwResOpen";
             this.flwResOpen.Size = new System.Drawing.Size(350, 44);
-            this.flwResOpen.TabIndex = 7;
+            this.flwResOpen.TabIndex = 2;
             // 
             // lblWidthOpen
             // 
@@ -441,7 +441,7 @@
             this.lblWidthOpen.Margin = new System.Windows.Forms.Padding(3);
             this.lblWidthOpen.Name = "lblWidthOpen";
             this.lblWidthOpen.Size = new System.Drawing.Size(83, 31);
-            this.lblWidthOpen.TabIndex = 1;
+            this.lblWidthOpen.TabIndex = 0;
             this.lblWidthOpen.Text = "Width";
             // 
             // txtWidthOpen
@@ -450,7 +450,7 @@
             this.txtWidthOpen.Location = new System.Drawing.Point(92, 3);
             this.txtWidthOpen.Name = "txtWidthOpen";
             this.txtWidthOpen.Size = new System.Drawing.Size(75, 38);
-            this.txtWidthOpen.TabIndex = 2;
+            this.txtWidthOpen.TabIndex = 1;
             this.txtWidthOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtWidthOpen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRes_KeyPress);
             // 
@@ -462,7 +462,7 @@
             this.lblHeightOpen.Margin = new System.Windows.Forms.Padding(3);
             this.lblHeightOpen.Name = "lblHeightOpen";
             this.lblHeightOpen.Size = new System.Drawing.Size(93, 31);
-            this.lblHeightOpen.TabIndex = 3;
+            this.lblHeightOpen.TabIndex = 2;
             this.lblHeightOpen.Text = "Height";
             // 
             // txtHeightOpen
@@ -471,7 +471,7 @@
             this.txtHeightOpen.Location = new System.Drawing.Point(272, 3);
             this.txtHeightOpen.Name = "txtHeightOpen";
             this.txtHeightOpen.Size = new System.Drawing.Size(75, 38);
-            this.txtHeightOpen.TabIndex = 4;
+            this.txtHeightOpen.TabIndex = 3;
             this.txtHeightOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtHeightOpen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRes_KeyPress);
             // 
@@ -487,7 +487,7 @@
             this.flwResCavern.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.flwResCavern.Name = "flwResCavern";
             this.flwResCavern.Size = new System.Drawing.Size(350, 44);
-            this.flwResCavern.TabIndex = 9;
+            this.flwResCavern.TabIndex = 3;
             // 
             // lblWidthCavern
             // 
@@ -497,7 +497,7 @@
             this.lblWidthCavern.Margin = new System.Windows.Forms.Padding(3);
             this.lblWidthCavern.Name = "lblWidthCavern";
             this.lblWidthCavern.Size = new System.Drawing.Size(83, 31);
-            this.lblWidthCavern.TabIndex = 1;
+            this.lblWidthCavern.TabIndex = 0;
             this.lblWidthCavern.Text = "Width";
             // 
             // txtWidthCavern
@@ -506,7 +506,7 @@
             this.txtWidthCavern.Location = new System.Drawing.Point(92, 3);
             this.txtWidthCavern.Name = "txtWidthCavern";
             this.txtWidthCavern.Size = new System.Drawing.Size(75, 38);
-            this.txtWidthCavern.TabIndex = 2;
+            this.txtWidthCavern.TabIndex = 1;
             this.txtWidthCavern.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblHeightCavern
@@ -517,7 +517,7 @@
             this.lblHeightCavern.Margin = new System.Windows.Forms.Padding(3);
             this.lblHeightCavern.Name = "lblHeightCavern";
             this.lblHeightCavern.Size = new System.Drawing.Size(93, 31);
-            this.lblHeightCavern.TabIndex = 3;
+            this.lblHeightCavern.TabIndex = 2;
             this.lblHeightCavern.Text = "Height";
             // 
             // txtHeightCavern
@@ -526,7 +526,7 @@
             this.txtHeightCavern.Location = new System.Drawing.Point(272, 3);
             this.txtHeightCavern.Name = "txtHeightCavern";
             this.txtHeightCavern.Size = new System.Drawing.Size(75, 38);
-            this.txtHeightCavern.TabIndex = 4;
+            this.txtHeightCavern.TabIndex = 3;
             this.txtHeightCavern.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblResOpen
@@ -539,7 +539,7 @@
             this.lblResOpen.Margin = new System.Windows.Forms.Padding(3);
             this.lblResOpen.Name = "lblResOpen";
             this.lblResOpen.Size = new System.Drawing.Size(80, 31);
-            this.lblResOpen.TabIndex = 6;
+            this.lblResOpen.TabIndex = 2;
             this.lblResOpen.Text = "Open";
             this.lblResOpen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -553,7 +553,7 @@
             this.lblResCavern.Margin = new System.Windows.Forms.Padding(3);
             this.lblResCavern.Name = "lblResCavern";
             this.lblResCavern.Size = new System.Drawing.Size(102, 31);
-            this.lblResCavern.TabIndex = 8;
+            this.lblResCavern.TabIndex = 3;
             this.lblResCavern.Text = "Cavern";
             this.lblResCavern.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -566,7 +566,7 @@
             this.flwRes.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.flwRes.Name = "flwRes";
             this.flwRes.Size = new System.Drawing.Size(280, 41);
-            this.flwRes.TabIndex = 5;
+            this.flwRes.TabIndex = 1;
             // 
             // cbRecommended
             // 
@@ -575,7 +575,7 @@
             this.cbRecommended.Location = new System.Drawing.Point(3, 3);
             this.cbRecommended.Name = "cbRecommended";
             this.cbRecommended.Size = new System.Drawing.Size(274, 35);
-            this.cbRecommended.TabIndex = 1;
+            this.cbRecommended.TabIndex = 0;
             this.cbRecommended.Text = "Use recommended";
             this.cbRecommended.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.cbRecommended.UseVisualStyleBackColor = true;
@@ -591,7 +591,7 @@
             this.lblShader.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
             this.lblShader.Name = "lblShader";
             this.lblShader.Size = new System.Drawing.Size(107, 31);
-            this.lblShader.TabIndex = 13;
+            this.lblShader.TabIndex = 6;
             this.lblShader.Text = "Shader";
             // 
             // flwShader
@@ -603,7 +603,7 @@
             this.flwShader.Location = new System.Drawing.Point(183, 310);
             this.flwShader.Name = "flwShader";
             this.flwShader.Size = new System.Drawing.Size(284, 41);
-            this.flwShader.TabIndex = 14;
+            this.flwShader.TabIndex = 6;
             // 
             // rbShaderBC
             // 
@@ -613,7 +613,7 @@
             this.rbShaderBC.Location = new System.Drawing.Point(3, 3);
             this.rbShaderBC.Name = "rbShaderBC";
             this.rbShaderBC.Size = new System.Drawing.Size(138, 35);
-            this.rbShaderBC.TabIndex = 1;
+            this.rbShaderBC.TabIndex = 0;
             this.rbShaderBC.TabStop = true;
             this.rbShaderBC.Text = "Smooth";
             this.rbShaderBC.UseVisualStyleBackColor = true;
@@ -635,12 +635,12 @@
             this.btnSave.AutoSize = true;
             this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tblDesign.SetColumnSpan(this.btnSave, 2);
-            this.btnSave.Location = new System.Drawing.Point(231, 663);
+            this.btnSave.Location = new System.Drawing.Point(170, 663);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(10);
             this.btnSave.Size = new System.Drawing.Size(222, 61);
-            this.btnSave.TabIndex = 17;
+            this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save Changes";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -656,7 +656,7 @@
             this.lblHeadingExtended.Margin = new System.Windows.Forms.Padding(3);
             this.lblHeadingExtended.Name = "lblHeadingExtended";
             this.lblHeadingExtended.Size = new System.Drawing.Size(161, 33);
-            this.lblHeadingExtended.TabIndex = 23;
+            this.lblHeadingExtended.TabIndex = 9;
             this.lblHeadingExtended.Text = "Game";
             this.lblHeadingExtended.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -671,7 +671,7 @@
             this.flwExtended.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.flwExtended.Name = "flwExtended";
             this.flwExtended.Size = new System.Drawing.Size(362, 82);
-            this.flwExtended.TabIndex = 22;
+            this.flwExtended.TabIndex = 9;
             // 
             // cbExtChat
             // 
@@ -679,7 +679,7 @@
             this.cbExtChat.Location = new System.Drawing.Point(3, 3);
             this.cbExtChat.Name = "cbExtChat";
             this.cbExtChat.Size = new System.Drawing.Size(356, 35);
-            this.cbExtChat.TabIndex = 1;
+            this.cbExtChat.TabIndex = 0;
             this.cbExtChat.Text = "Extended chat box editing";
             this.cbExtChat.UseVisualStyleBackColor = true;
             // 
@@ -689,7 +689,7 @@
             this.cbExtBlood.Location = new System.Drawing.Point(3, 44);
             this.cbExtBlood.Name = "cbExtBlood";
             this.cbExtBlood.Size = new System.Drawing.Size(115, 35);
-            this.cbExtBlood.TabIndex = 3;
+            this.cbExtBlood.TabIndex = 1;
             this.cbExtBlood.Text = "Blood";
             this.cbExtBlood.UseVisualStyleBackColor = true;
             // 
@@ -708,7 +708,7 @@
             this.lblRenderer.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
             this.lblRenderer.Name = "lblRenderer";
             this.lblRenderer.Size = new System.Drawing.Size(135, 31);
-            this.lblRenderer.TabIndex = 24;
+            this.lblRenderer.TabIndex = 7;
             this.lblRenderer.Text = "Renderer";
             // 
             // flwRenderer
@@ -720,7 +720,7 @@
             this.flwRenderer.Location = new System.Drawing.Point(183, 357);
             this.flwRenderer.Name = "flwRenderer";
             this.flwRenderer.Size = new System.Drawing.Size(333, 41);
-            this.flwRenderer.TabIndex = 25;
+            this.flwRenderer.TabIndex = 7;
             // 
             // rbRenderOGL
             // 
@@ -730,7 +730,7 @@
             this.rbRenderOGL.Location = new System.Drawing.Point(3, 3);
             this.rbRenderOGL.Name = "rbRenderOGL";
             this.rbRenderOGL.Size = new System.Drawing.Size(147, 35);
-            this.rbRenderOGL.TabIndex = 1;
+            this.rbRenderOGL.TabIndex = 0;
             this.rbRenderOGL.TabStop = true;
             this.rbRenderOGL.Text = "OpenGL";
             this.rbRenderOGL.UseVisualStyleBackColor = true;
@@ -753,7 +753,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(684, 788);
+            this.ClientSize = new System.Drawing.Size(563, 533);
             this.Controls.Add(this.tblDesign);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
