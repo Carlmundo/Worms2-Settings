@@ -791,6 +791,7 @@ namespace Worms2_Settings
                         }
                         else {
                             cbExtChat.Checked = true;
+                            cbFastCPU.Checked = true;
                             //cbExtBackflip.Checked = true;
                             Encoding UTF8withoutBOM = new UTF8Encoding(false);
                             data.EO = new IniData();
