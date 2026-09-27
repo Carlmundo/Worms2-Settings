@@ -75,11 +75,12 @@
             this.flwExtended = new System.Windows.Forms.FlowLayoutPanel();
             this.cbExtChat = new System.Windows.Forms.CheckBox();
             this.cbExtBlood = new System.Windows.Forms.CheckBox();
-            this.timerProcess = new System.Windows.Forms.Timer(this.components);
             this.lblRenderer = new System.Windows.Forms.Label();
             this.flwRenderer = new System.Windows.Forms.FlowLayoutPanel();
             this.rbRenderOGL = new System.Windows.Forms.RadioButton();
             this.rbRenderD3D9 = new System.Windows.Forms.RadioButton();
+            this.timerProcess = new System.Windows.Forms.Timer(this.components);
+            this.cbFastCPU = new System.Windows.Forms.CheckBox();
             this.tblDesign.SuspendLayout();
             this.flwDisplay.SuspendLayout();
             this.flwZoom.SuspendLayout();
@@ -145,7 +146,7 @@
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblDesign.Size = new System.Drawing.Size(563, 533);
+            this.tblDesign.Size = new System.Drawing.Size(563, 815);
             this.tblDesign.TabIndex = 0;
             // 
             // flwDisplay
@@ -203,7 +204,7 @@
             this.lblApplications.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblApplications.AutoSize = true;
             this.lblApplications.BackColor = System.Drawing.Color.Transparent;
-            this.lblApplications.Location = new System.Drawing.Point(16, 800);
+            this.lblApplications.Location = new System.Drawing.Point(16, 841);
             this.lblApplications.Margin = new System.Windows.Forms.Padding(3);
             this.lblApplications.Name = "lblApplications";
             this.lblApplications.Size = new System.Drawing.Size(161, 31);
@@ -333,7 +334,7 @@
             this.lblHeadingAudio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblHeadingAudio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblHeadingAudio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeadingAudio.Location = new System.Drawing.Point(16, 730);
+            this.lblHeadingAudio.Location = new System.Drawing.Point(16, 771);
             this.lblHeadingAudio.Margin = new System.Windows.Forms.Padding(3);
             this.lblHeadingAudio.Name = "lblHeadingAudio";
             this.lblHeadingAudio.Size = new System.Drawing.Size(161, 33);
@@ -347,7 +348,7 @@
             this.flwAudio.BackColor = System.Drawing.Color.Transparent;
             this.flwAudio.Controls.Add(this.btnVolume);
             this.flwAudio.Controls.Add(this.btnSoundbank);
-            this.flwAudio.Location = new System.Drawing.Point(183, 769);
+            this.flwAudio.Location = new System.Drawing.Point(183, 810);
             this.flwAudio.Name = "flwAudio";
             this.flwAudio.Size = new System.Drawing.Size(287, 94);
             this.flwAudio.TabIndex = 12;
@@ -412,7 +413,7 @@
             this.lblError.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(16, 869);
+            this.lblError.Location = new System.Drawing.Point(16, 910);
             this.lblError.Margin = new System.Windows.Forms.Padding(3);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(531, 31);
@@ -635,7 +636,7 @@
             this.btnSave.AutoSize = true;
             this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tblDesign.SetColumnSpan(this.btnSave, 2);
-            this.btnSave.Location = new System.Drawing.Point(170, 663);
+            this.btnSave.Location = new System.Drawing.Point(170, 704);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(10);
@@ -666,11 +667,12 @@
             this.flwExtended.BackColor = System.Drawing.Color.Transparent;
             this.flwExtended.Controls.Add(this.cbExtChat);
             this.flwExtended.Controls.Add(this.cbExtBlood);
+            this.flwExtended.Controls.Add(this.cbFastCPU);
             this.flwExtended.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flwExtended.Location = new System.Drawing.Point(183, 566);
             this.flwExtended.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.flwExtended.Name = "flwExtended";
-            this.flwExtended.Size = new System.Drawing.Size(362, 82);
+            this.flwExtended.Size = new System.Drawing.Size(362, 123);
             this.flwExtended.TabIndex = 9;
             // 
             // cbExtChat
@@ -692,11 +694,6 @@
             this.cbExtBlood.TabIndex = 1;
             this.cbExtBlood.Text = "Blood";
             this.cbExtBlood.UseVisualStyleBackColor = true;
-            // 
-            // timerProcess
-            // 
-            this.timerProcess.Interval = 2000;
-            this.timerProcess.Tick += new System.EventHandler(this.timerProcess_Tick);
             // 
             // lblRenderer
             // 
@@ -746,6 +743,21 @@
             this.rbRenderD3D9.Text = "Direct3D 9";
             this.rbRenderD3D9.UseVisualStyleBackColor = true;
             // 
+            // timerProcess
+            // 
+            this.timerProcess.Interval = 2000;
+            this.timerProcess.Tick += new System.EventHandler(this.timerProcess_Tick);
+            // 
+            // cbFastCPU
+            // 
+            this.cbFastCPU.AutoSize = true;
+            this.cbFastCPU.Location = new System.Drawing.Point(3, 85);
+            this.cbFastCPU.Name = "cbFastCPU";
+            this.cbFastCPU.Size = new System.Drawing.Size(257, 35);
+            this.cbFastCPU.TabIndex = 2;
+            this.cbFastCPU.Text = "Faster CPU turns";
+            this.cbFastCPU.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -753,7 +765,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(563, 533);
+            this.ClientSize = new System.Drawing.Size(563, 815);
             this.Controls.Add(this.tblDesign);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -842,6 +854,7 @@
         private System.Windows.Forms.FlowLayoutPanel flwRenderer;
         private System.Windows.Forms.RadioButton rbRenderOGL;
         private System.Windows.Forms.RadioButton rbRenderD3D9;
+        private System.Windows.Forms.CheckBox cbFastCPU;
     }
 }
 

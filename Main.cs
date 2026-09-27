@@ -132,7 +132,7 @@ namespace Worms2_Settings
 
             //Check Language
             string langFile = "language.txt";
-            string[] langArr = { "cs", "de", "en", "es", "es-419", "fr", "it", "nl", "pl", "pt", "pt-br", "ru", "sv", "zh-Hans" };
+            string[] langArr = { "cs", "de", "en", "es", "es-419", "fr", "is", "it", "nl", "pl", "pt", "pt-br", "ru", "sv", "zh-Hans" };
             string langVal;
             if (File.Exists(langFile)) {
                 langVal = File.ReadAllText(langFile).Trim();
@@ -145,7 +145,7 @@ namespace Worms2_Settings
             }
             
             //Translation variables
-            string strSettings, strDisplay, strResolution, strRecommended, strOpen, strCavern, strWidth, strHeight, strMode, strModeWindowed, strModeFullscreen, strModeBorderless, strShader, strShaderSmooth, strShaderClassic, strVsync, strZoom, strMouseSW, strKeyboard, strTouchscreen, strSave, strAudio, strApplications, strVolume, strSoundbank, strGame, strExtendedChat, /*strBackflip,*/ strBlood;
+            string strSettings, strDisplay, strResolution, strRecommended, strOpen, strCavern, strWidth, strHeight, strMode, strModeWindowed, strModeFullscreen, strModeBorderless, strShader, strShaderSmooth, strShaderClassic, strVsync, strZoom, strMouseSW, strKeyboard, strTouchscreen, strSave, strAudio, strApplications, strVolume, strSoundbank, strGame, strExtendedChat, /*strBackflip,*/ strBlood, strFastCPU;
             strVsync = "V-Sync";
             strShader = "Shader";
             strSoundbank = "SoundBank";
@@ -179,6 +179,7 @@ namespace Worms2_Settings
                     strExtendedChat = "Rozšířená editace chatovacího okna";
                     //strBackflip = "Salto vzad";
                     strBlood = "Krev";
+                    strFastCPU = "Rychlejší tahy počítače";
                     break;
                 case "de":
                     strSettings = "Einstellungen";
@@ -209,6 +210,7 @@ namespace Worms2_Settings
                     strExtendedChat = "Erweiterten Chat-Bereich bearbeiten";
                     //strBackflip = "Backflip";
                     strBlood = "Blut";
+                    strFastCPU = "Schneller denkender Computerspieler";
                     break;
                 case "es":
                     strSettings = "Configuraciones";
@@ -238,6 +240,7 @@ namespace Worms2_Settings
                     strExtendedChat = "Edición extendida chat box";
                     //strBackflip = "Salto mortal hacia atrás";
                     strBlood = "Sangre";
+                    strFastCPU = "Jugador del ordenador que piensa más rápido";
                     break;
                 case "es-419":
                     strSettings = "Ajustes";
@@ -267,6 +270,7 @@ namespace Worms2_Settings
                     strExtendedChat = "Edición ampliada del recuadro de charla";
                     //strBackflip = "Salto mortal hacia atrás";
                     strBlood = "Sangre";
+                    strFastCPU = "Jugador de la computadora que piensa más rápido";
                     break;
                 case "fr":
                     strSettings = "Paramètres";
@@ -296,6 +300,37 @@ namespace Worms2_Settings
                     strExtendedChat = "Édition des boîtes de conversation";
                     //strBackflip = "Salto arrière";
                     strBlood = "Sang";
+                    strFastCPU = "Joueur ordinateur qui réfléchit plus vite";
+                    break;
+                case "is": //Credit: rubinho146 & friends
+                    strSettings = "Stillingar";
+                    strDisplay = "Skjár";
+                    strResolution = "Upplausn";
+                    strRecommended = "Nota ráðlagt";
+                    strOpen = "Opinn";
+                    strCavern = "Hellir";
+                    strWidth = "Breidd";
+                    strHeight = "Hæð";
+                    strMode = "Hamur";
+                    strModeWindowed = "Gluggahamur";
+                    strModeFullscreen = "Fullskjár";
+                    strModeBorderless = "Rammafrír";
+                    strShader = "Skyggir";
+                    strShaderSmooth = "Mýkt";
+                    strShaderClassic = "Upprunalegt";
+                    strZoom = "Aðdráttur";
+                    strMouseSW = "Músarhjól";
+                    strKeyboard = "Lyklaborð";
+                    strTouchscreen = "Snertiskjár";
+                    strSave = "Vista breytingar";
+                    strAudio = "Hljóð";
+                    strApplications = "Forrit";
+                    strVolume = "Hljóðstillingar";
+                    strSoundbank = "Hljóðsafnsritill";
+                    strGame = "Leikur";
+                    strExtendedChat = "Aukin stýring á spjallglugga";
+                    strBlood = "Blóð";
+                    strFastCPU = "Hraðari tölvuleikir";
                     break;
                 case "it":
                     strSettings = "Impostazioni";
@@ -325,6 +360,7 @@ namespace Worms2_Settings
                     strExtendedChat = "Ingrandisci finestra conversazione";
                     //strBackflip = "Salto mortale all'indietro";
                     strBlood = "Sangue";
+                    strFastCPU = "Giocatore del computer più veloce a pensare";
                     break;
                 case "nl":
                     strSettings = "Instellingen";
@@ -354,6 +390,7 @@ namespace Worms2_Settings
                     strExtendedChat = "Chat box editen";
                     //strBackflip = "Achterwaartse salto";
                     strBlood = "Bloed";
+                    strFastCPU = "Sneller denkende computerspeler";
                     break;
                 case "pl":
                     //Credit: Dawid8
@@ -384,6 +421,7 @@ namespace Worms2_Settings
                     strExtendedChat = "Rozszerzona edycja chatów";
                     //strBackflip = "Salto w tył";
                     strBlood = "Krew";
+                    strFastCPU = "Szybsze tury komputera";
                     break;
                 case "pt":
                     //Credit: rubinho146
@@ -414,6 +452,7 @@ namespace Worms2_Settings
                     strExtendedChat = "Edição alargada da caixa de conversação";
                     //strBackflip = "Mortal para trás";
                     strBlood = "Sangue";
+                    strFastCPU = "Turnos rápidos para o CPU";
                     break;
                 case "pt-br":
                     //Credit: rubinho146
@@ -444,6 +483,7 @@ namespace Worms2_Settings
                     strExtendedChat = "Edição de caixa de bate-papo estendida";
                     //strBackflip = "Mortal para trás";
                     strBlood = "Sangue";
+                    strFastCPU = "Turnos rápidos para o CPU";
                     break;
                 case "ru":
                     strSettings = "Настройки";
@@ -475,6 +515,7 @@ namespace Worms2_Settings
                     strExtendedChat = "Расширенные настройки окна чата";
                     //strBackflip = "Сальто назад";
                     strBlood = "Кровь";
+                    strFastCPU = "Быстрее думающий компьютерный игрок";
                     break;
                 case "sv":
                     strSettings = "Inställningar";
@@ -504,6 +545,7 @@ namespace Worms2_Settings
                     strExtendedChat = "Utökad chat box editering";
                     //strBackflip = "Bakåtvolt";
                     strBlood = "Blod";
+                    strFastCPU = "Snabbare tänkande datorspelare";
                     break;
                 case "zh-Hans":
                     strSettings = "设置";
@@ -534,6 +576,7 @@ namespace Worms2_Settings
                     strExtendedChat = "扩展聊天框编辑";
                     //strBackflip = "后空翻";
                     strBlood = "血";
+                    strFastCPU = "电脑即刻行动";
                     break;
                 default:
                     strSettings = "Settings";
@@ -564,6 +607,7 @@ namespace Worms2_Settings
                     strExtendedChat = "Extended chat box editing";
                     //strBackflip = "Backflip";
                     strBlood = "Blood";
+                    strFastCPU = "Faster CPU turns";
                     break;
             }
 
@@ -599,6 +643,7 @@ namespace Worms2_Settings
             cbExtChat.Text = strExtendedChat;
             //cbExtBackflip.Text = strBackflip;
             cbExtBlood.Text = strBlood;
+            cbFastCPU.Text = strFastCPU;
 
             //Populate
             populate();
@@ -738,9 +783,11 @@ namespace Worms2_Settings
                             int settingExtendedChat = iniInt(data.EO["Settings"]["ExtendedChat"]);
                             //int settingBackflip = iniInt(data.EO["Settings"]["Backflip"]);
                             int settingBlood = iniInt(data.EO["Settings"]["RedBlood"]);
+                            int settingFastCPU = iniInt(data.EO["Settings"]["FastCPU"]);
                             if (settingExtendedChat == 1) { cbExtChat.Checked = true; }
                             //if (settingBackflip == 1) { cbExtBackflip.Checked = true; }
                             if (settingBlood == 1) { cbExtBlood.Checked = true; }
+                            if (settingFastCPU == 1) { cbFastCPU.Checked = true; }
                         }
                         else {
                             cbExtChat.Checked = true;
@@ -750,6 +797,7 @@ namespace Worms2_Settings
                             data.EO["Settings"]["ExtendedChat"] = "1";
                             data.EO["Settings"]["Backflip"] = "1";
                             data.EO["Settings"]["RedBlood"] = "0";
+                            data.EO["Settings"]["FastCPU"] = "1";
                             parser.WriteFile(ini.EO, data.EO, UTF8withoutBOM);
                         }
                     }
@@ -969,6 +1017,7 @@ namespace Worms2_Settings
                     //data.EO["Settings"]["Backflip"] = setCheckbox(cbExtBackflip.Checked);
                     data.EO["Settings"]["Backflip"] = "1";
                     data.EO["Settings"]["RedBlood"] = setCheckbox(cbExtBlood.Checked);
+                    data.EO["Settings"]["FastCPU"] = setCheckbox(cbFastCPU.Checked);
                     parser.WriteFile(ini.EO, data.EO, UTF8withoutBOM);
                 }
             }
