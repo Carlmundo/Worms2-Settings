@@ -330,7 +330,7 @@ namespace Worms2_Settings
                     strGame = "Leikur";
                     strExtendedChat = "Aukin stýring á spjallglugga";
                     strBlood = "Blóð";
-                    strFastCPU = "Hraðari tölvuleikir";
+                    strFastCPU = "Fljótlegri umferð fyrir CPU-leikarann";
                     break;
                 case "it":
                     strSettings = "Impostazioni";
