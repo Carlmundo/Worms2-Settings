@@ -796,7 +796,6 @@ namespace Worms2_Settings
                             Encoding UTF8withoutBOM = new UTF8Encoding(false);
                             data.EO = new IniData();
                             data.EO["Settings"]["ExtendedChat"] = "1";
-                            data.EO["Settings"]["Backflip"] = "1";
                             data.EO["Settings"]["RedBlood"] = "0";
                             data.EO["Settings"]["FastCPU"] = "1";
                             parser.WriteFile(ini.EO, data.EO, UTF8withoutBOM);
@@ -1016,7 +1015,6 @@ namespace Worms2_Settings
                     //[Settings]
                     data.EO["Settings"]["ExtendedChat"] = setCheckbox(cbExtChat.Checked);
                     //data.EO["Settings"]["Backflip"] = setCheckbox(cbExtBackflip.Checked);
-                    data.EO["Settings"]["Backflip"] = "1";
                     data.EO["Settings"]["RedBlood"] = setCheckbox(cbExtBlood.Checked);
                     data.EO["Settings"]["FastCPU"] = setCheckbox(cbFastCPU.Checked);
                     parser.WriteFile(ini.EO, data.EO, UTF8withoutBOM);
