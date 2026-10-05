@@ -768,9 +768,11 @@ namespace Worms2_Settings
                         int settingZoomMouse = iniInt(data.Res["Zooming"]["UseMouseWheel"]);
                         int settingZoomKeyboard = iniInt(data.Res["Zooming"]["UseKeyboardZoom"]);
                         int settingZoomTouch = iniInt(data.Res["Zooming"]["UseTouchscreenZoom"]);
+                        int settingZoomUI = iniInt(data.Res["Zooming"]["SeparateUI"]);
                         if (settingZoomMouse == 1) { cbZoomMouse.Checked = true; }
                         if (settingZoomKeyboard == 1) { cbZoomKeyboard.Checked = true; }
                         if (settingZoomTouch == 1) { cbZoomTouch.Checked = true; }
+                        if (settingZoomUI == 1) { cbZoomUI.Checked = true; }
                     }
 
                     if (!File.Exists(dll.EO)) {
@@ -992,21 +994,29 @@ namespace Worms2_Settings
                     else {
                         data.CNC["ddraw"]["renderer"] = "opengl";
                     }
-                    parser.WriteFile(ini.CNC, data.CNC, UTF8withoutBOM);
+                    if (cbZoomUI.Checked) {
+                        data.CNC["ddraw"]["vhack"] = "false";
+                    }
+                    else {
+                        data.CNC["ddraw"]["vhack"] = "true";
+                    }
+                        parser.WriteFile(ini.CNC, data.CNC, UTF8withoutBOM);
                 }
                 
                 //[Zooming]
-                if (!cbZoomMouse.Checked && !cbZoomKeyboard.Checked && !cbZoomTouch.Checked) {
+                if (!cbZoomMouse.Checked && !cbZoomKeyboard.Checked && !cbZoomTouch.Checked && !cbZoomUI.Checked) {
                     data.Res["Zooming"]["Enable"] = "0";
                     data.Res["Zooming"]["UseMouseWheel"] = "0";
                     data.Res["Zooming"]["UseKeyboardZoom"] = "0";
                     data.Res["Zooming"]["UseTouchscreenZoom"] = "0";
+                    data.Res["Zooming"]["SeparateUI"] = "0";
                 }
                 else {
                     data.Res["Zooming"]["Enable"] = "1";
                     data.Res["Zooming"]["UseMouseWheel"] = setCheckbox(cbZoomMouse.Checked);
                     data.Res["Zooming"]["UseKeyboardZoom"] = setCheckbox(cbZoomKeyboard.Checked);
                     data.Res["Zooming"]["UseTouchscreenZoom"] = setCheckbox(cbZoomTouch.Checked);
+                    data.Res["Zooming"]["SeparateUI"] = setCheckbox(cbZoomUI.Checked);
                 }
                 parser.WriteFile(ini.Res, data.Res, UTF8withoutBOM);
 
@@ -1054,6 +1064,17 @@ namespace Worms2_Settings
             string resVal = (sender as TextBox).Text;
             if (resVal[0].ToString() == "0") {
                 (sender as TextBox).Text = resVal.TrimStart(new Char[] { '0' });
+            }
+        }
+
+        private void cbZoomUI_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbZoomUI.Checked) {
+                rbShaderNN.Checked = true;
+                flwShader.Enabled = false;
+            }
+            else {
+                flwShader.Enabled = true;
             }
         }
     }

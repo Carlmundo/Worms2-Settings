@@ -75,12 +75,13 @@
             this.flwExtended = new System.Windows.Forms.FlowLayoutPanel();
             this.cbExtChat = new System.Windows.Forms.CheckBox();
             this.cbExtBlood = new System.Windows.Forms.CheckBox();
+            this.cbFastCPU = new System.Windows.Forms.CheckBox();
             this.lblRenderer = new System.Windows.Forms.Label();
             this.flwRenderer = new System.Windows.Forms.FlowLayoutPanel();
             this.rbRenderOGL = new System.Windows.Forms.RadioButton();
             this.rbRenderD3D9 = new System.Windows.Forms.RadioButton();
             this.timerProcess = new System.Windows.Forms.Timer(this.components);
-            this.cbFastCPU = new System.Windows.Forms.CheckBox();
+            this.cbZoomUI = new System.Windows.Forms.CheckBox();
             this.tblDesign.SuspendLayout();
             this.flwDisplay.SuspendLayout();
             this.flwZoom.SuspendLayout();
@@ -107,8 +108,8 @@
             this.tblDesign.Controls.Add(this.lblResolution, 0, 1);
             this.tblDesign.Controls.Add(this.lblMode, 0, 4);
             this.tblDesign.Controls.Add(this.lblVsync, 0, 5);
-            this.tblDesign.Controls.Add(this.lblZoom, 0, 8);
-            this.tblDesign.Controls.Add(this.flwZoom, 1, 8);
+            this.tblDesign.Controls.Add(this.lblZoom, 0, 7);
+            this.tblDesign.Controls.Add(this.flwZoom, 1, 7);
             this.tblDesign.Controls.Add(this.lblHeadingDisplay, 0, 0);
             this.tblDesign.Controls.Add(this.lblHeadingAudio, 0, 12);
             this.tblDesign.Controls.Add(this.flwAudio, 1, 13);
@@ -119,13 +120,13 @@
             this.tblDesign.Controls.Add(this.lblResOpen, 0, 2);
             this.tblDesign.Controls.Add(this.lblResCavern, 0, 3);
             this.tblDesign.Controls.Add(this.flwRes, 1, 1);
-            this.tblDesign.Controls.Add(this.lblShader, 0, 6);
-            this.tblDesign.Controls.Add(this.flwShader, 1, 6);
             this.tblDesign.Controls.Add(this.btnSave, 0, 11);
             this.tblDesign.Controls.Add(this.lblHeadingExtended, 0, 9);
             this.tblDesign.Controls.Add(this.flwExtended, 1, 10);
-            this.tblDesign.Controls.Add(this.lblRenderer, 0, 7);
-            this.tblDesign.Controls.Add(this.flwRenderer, 1, 7);
+            this.tblDesign.Controls.Add(this.lblRenderer, 0, 6);
+            this.tblDesign.Controls.Add(this.flwRenderer, 1, 6);
+            this.tblDesign.Controls.Add(this.lblShader, 0, 8);
+            this.tblDesign.Controls.Add(this.flwShader, 1, 8);
             this.tblDesign.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblDesign.Location = new System.Drawing.Point(0, 0);
             this.tblDesign.Name = "tblDesign";
@@ -138,7 +139,6 @@
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -146,7 +146,9 @@
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblDesign.Size = new System.Drawing.Size(563, 815);
+            this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tblDesign.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblDesign.Size = new System.Drawing.Size(502, 612);
             this.tblDesign.TabIndex = 0;
             // 
             // flwDisplay
@@ -204,7 +206,7 @@
             this.lblApplications.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblApplications.AutoSize = true;
             this.lblApplications.BackColor = System.Drawing.Color.Transparent;
-            this.lblApplications.Location = new System.Drawing.Point(16, 841);
+            this.lblApplications.Location = new System.Drawing.Point(16, 879);
             this.lblApplications.Margin = new System.Windows.Forms.Padding(3);
             this.lblApplications.Name = "lblApplications";
             this.lblApplications.Size = new System.Drawing.Size(161, 31);
@@ -258,11 +260,11 @@
             this.lblZoom.AutoSize = true;
             this.lblZoom.BackColor = System.Drawing.Color.Transparent;
             this.lblZoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblZoom.Location = new System.Drawing.Point(90, 409);
+            this.lblZoom.Location = new System.Drawing.Point(90, 359);
             this.lblZoom.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.lblZoom.Name = "lblZoom";
             this.lblZoom.Size = new System.Drawing.Size(87, 31);
-            this.lblZoom.TabIndex = 8;
+            this.lblZoom.TabIndex = 7;
             this.lblZoom.Text = "Zoom";
             // 
             // flwZoom
@@ -272,12 +274,13 @@
             this.flwZoom.Controls.Add(this.cbZoomMouse);
             this.flwZoom.Controls.Add(this.cbZoomKeyboard);
             this.flwZoom.Controls.Add(this.cbZoomTouch);
+            this.flwZoom.Controls.Add(this.cbZoomUI);
             this.flwZoom.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwZoom.Location = new System.Drawing.Point(183, 404);
+            this.flwZoom.Location = new System.Drawing.Point(183, 354);
             this.flwZoom.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.flwZoom.Name = "flwZoom";
-            this.flwZoom.Size = new System.Drawing.Size(282, 123);
-            this.flwZoom.TabIndex = 8;
+            this.flwZoom.Size = new System.Drawing.Size(299, 164);
+            this.flwZoom.TabIndex = 7;
             // 
             // cbZoomMouse
             // 
@@ -334,7 +337,7 @@
             this.lblHeadingAudio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblHeadingAudio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblHeadingAudio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeadingAudio.Location = new System.Drawing.Point(16, 771);
+            this.lblHeadingAudio.Location = new System.Drawing.Point(16, 809);
             this.lblHeadingAudio.Margin = new System.Windows.Forms.Padding(3);
             this.lblHeadingAudio.Name = "lblHeadingAudio";
             this.lblHeadingAudio.Size = new System.Drawing.Size(161, 33);
@@ -348,7 +351,7 @@
             this.flwAudio.BackColor = System.Drawing.Color.Transparent;
             this.flwAudio.Controls.Add(this.btnVolume);
             this.flwAudio.Controls.Add(this.btnSoundbank);
-            this.flwAudio.Location = new System.Drawing.Point(183, 810);
+            this.flwAudio.Location = new System.Drawing.Point(183, 848);
             this.flwAudio.Name = "flwAudio";
             this.flwAudio.Size = new System.Drawing.Size(287, 94);
             this.flwAudio.TabIndex = 12;
@@ -413,10 +416,10 @@
             this.lblError.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(16, 910);
+            this.lblError.Location = new System.Drawing.Point(16, 948);
             this.lblError.Margin = new System.Windows.Forms.Padding(3);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(531, 31);
+            this.lblError.Size = new System.Drawing.Size(529, 31);
             this.lblError.TabIndex = 0;
             this.lblError.Visible = false;
             // 
@@ -588,11 +591,11 @@
             this.lblShader.AutoSize = true;
             this.lblShader.BackColor = System.Drawing.Color.Transparent;
             this.lblShader.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShader.Location = new System.Drawing.Point(70, 314);
+            this.lblShader.Location = new System.Drawing.Point(70, 525);
             this.lblShader.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
             this.lblShader.Name = "lblShader";
             this.lblShader.Size = new System.Drawing.Size(107, 31);
-            this.lblShader.TabIndex = 6;
+            this.lblShader.TabIndex = 8;
             this.lblShader.Text = "Shader";
             // 
             // flwShader
@@ -601,10 +604,10 @@
             this.flwShader.BackColor = System.Drawing.Color.Transparent;
             this.flwShader.Controls.Add(this.rbShaderBC);
             this.flwShader.Controls.Add(this.rbShaderNN);
-            this.flwShader.Location = new System.Drawing.Point(183, 310);
+            this.flwShader.Location = new System.Drawing.Point(183, 521);
             this.flwShader.Name = "flwShader";
             this.flwShader.Size = new System.Drawing.Size(284, 41);
-            this.flwShader.TabIndex = 6;
+            this.flwShader.TabIndex = 8;
             // 
             // rbShaderBC
             // 
@@ -636,7 +639,7 @@
             this.btnSave.AutoSize = true;
             this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tblDesign.SetColumnSpan(this.btnSave, 2);
-            this.btnSave.Location = new System.Drawing.Point(170, 704);
+            this.btnSave.Location = new System.Drawing.Point(169, 742);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(10);
@@ -653,7 +656,7 @@
             this.lblHeadingExtended.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblHeadingExtended.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblHeadingExtended.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeadingExtended.Location = new System.Drawing.Point(16, 530);
+            this.lblHeadingExtended.Location = new System.Drawing.Point(16, 568);
             this.lblHeadingExtended.Margin = new System.Windows.Forms.Padding(3);
             this.lblHeadingExtended.Name = "lblHeadingExtended";
             this.lblHeadingExtended.Size = new System.Drawing.Size(161, 33);
@@ -669,7 +672,7 @@
             this.flwExtended.Controls.Add(this.cbExtBlood);
             this.flwExtended.Controls.Add(this.cbFastCPU);
             this.flwExtended.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwExtended.Location = new System.Drawing.Point(183, 566);
+            this.flwExtended.Location = new System.Drawing.Point(183, 604);
             this.flwExtended.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.flwExtended.Name = "flwExtended";
             this.flwExtended.Size = new System.Drawing.Size(362, 123);
@@ -695,17 +698,27 @@
             this.cbExtBlood.Text = "Blood";
             this.cbExtBlood.UseVisualStyleBackColor = true;
             // 
+            // cbFastCPU
+            // 
+            this.cbFastCPU.AutoSize = true;
+            this.cbFastCPU.Location = new System.Drawing.Point(3, 85);
+            this.cbFastCPU.Name = "cbFastCPU";
+            this.cbFastCPU.Size = new System.Drawing.Size(257, 35);
+            this.cbFastCPU.TabIndex = 2;
+            this.cbFastCPU.Text = "Faster CPU turns";
+            this.cbFastCPU.UseVisualStyleBackColor = true;
+            // 
             // lblRenderer
             // 
             this.lblRenderer.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblRenderer.AutoSize = true;
             this.lblRenderer.BackColor = System.Drawing.Color.Transparent;
             this.lblRenderer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRenderer.Location = new System.Drawing.Point(42, 362);
+            this.lblRenderer.Location = new System.Drawing.Point(42, 314);
             this.lblRenderer.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
             this.lblRenderer.Name = "lblRenderer";
             this.lblRenderer.Size = new System.Drawing.Size(135, 31);
-            this.lblRenderer.TabIndex = 7;
+            this.lblRenderer.TabIndex = 6;
             this.lblRenderer.Text = "Renderer";
             // 
             // flwRenderer
@@ -714,10 +727,10 @@
             this.flwRenderer.BackColor = System.Drawing.Color.Transparent;
             this.flwRenderer.Controls.Add(this.rbRenderOGL);
             this.flwRenderer.Controls.Add(this.rbRenderD3D9);
-            this.flwRenderer.Location = new System.Drawing.Point(183, 357);
+            this.flwRenderer.Location = new System.Drawing.Point(183, 310);
             this.flwRenderer.Name = "flwRenderer";
             this.flwRenderer.Size = new System.Drawing.Size(333, 41);
-            this.flwRenderer.TabIndex = 7;
+            this.flwRenderer.TabIndex = 6;
             // 
             // rbRenderOGL
             // 
@@ -748,15 +761,16 @@
             this.timerProcess.Interval = 2000;
             this.timerProcess.Tick += new System.EventHandler(this.timerProcess_Tick);
             // 
-            // cbFastCPU
+            // cbZoomUI
             // 
-            this.cbFastCPU.AutoSize = true;
-            this.cbFastCPU.Location = new System.Drawing.Point(3, 85);
-            this.cbFastCPU.Name = "cbFastCPU";
-            this.cbFastCPU.Size = new System.Drawing.Size(257, 35);
-            this.cbFastCPU.TabIndex = 2;
-            this.cbFastCPU.Text = "Faster CPU turns";
-            this.cbFastCPU.UseVisualStyleBackColor = true;
+            this.cbZoomUI.AutoSize = true;
+            this.cbZoomUI.Location = new System.Drawing.Point(3, 126);
+            this.cbZoomUI.Name = "cbZoomUI";
+            this.cbZoomUI.Size = new System.Drawing.Size(293, 35);
+            this.cbZoomUI.TabIndex = 3;
+            this.cbZoomUI.Text = "Hold Ctrl to Zoom UI";
+            this.cbZoomUI.UseVisualStyleBackColor = true;
+            this.cbZoomUI.CheckedChanged += new System.EventHandler(this.cbZoomUI_CheckedChanged);
             // 
             // Main
             // 
@@ -765,7 +779,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(563, 815);
+            this.ClientSize = new System.Drawing.Size(502, 612);
             this.Controls.Add(this.tblDesign);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -855,6 +869,7 @@
         private System.Windows.Forms.RadioButton rbRenderOGL;
         private System.Windows.Forms.RadioButton rbRenderD3D9;
         private System.Windows.Forms.CheckBox cbFastCPU;
+        private System.Windows.Forms.CheckBox cbZoomUI;
     }
 }
 
