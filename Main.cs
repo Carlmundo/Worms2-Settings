@@ -145,7 +145,7 @@ namespace Worms2_Settings
             }
             
             //Translation variables
-            string strSettings, strDisplay, strResolution, strRecommended, strOpen, strCavern, strWidth, strHeight, strMode, strModeWindowed, strModeFullscreen, strModeBorderless, strShader, strShaderSmooth, strShaderClassic, strVsync, strZoom, strMouseSW, strKeyboard, strTouchscreen, strSave, strAudio, strApplications, strVolume, strSoundbank, strGame, strExtendedChat, /*strBackflip,*/ strBlood, strFastCPU;
+            string strSettings, strDisplay, strResolution, strRecommended, strOpen, strCavern, strWidth, strHeight, strMode, strModeWindowed, strModeFullscreen, strModeBorderless, strShader, strShaderSmooth, strShaderClassic, strVsync, strZoom, strZoomUI, strMouseSW, strKeyboard, strTouchscreen, strSave, strAudio, strApplications, strVolume, strSoundbank, strGame, strExtendedChat, /*strBackflip,*/ strBlood, strFastCPU;
             strVsync = "V-Sync";
             strShader = "Shader";
             strSoundbank = "SoundBank";
@@ -167,6 +167,7 @@ namespace Worms2_Settings
                     strShaderSmooth = "Vyhlazený";
                     strShaderClassic = "Klasický";
                     strZoom = "Přiblížení";
+                    strZoomUI = "Přiblížení rozhraní (Podržte Ctrl)";
                     strMouseSW = "Skrolováním kolečkem myši";
                     strKeyboard = "Klávesnicí";
                     strTouchscreen = "Dotykem obrazovky";
@@ -198,6 +199,7 @@ namespace Worms2_Settings
                     strShaderClassic = "Klassisch";
                     strVsync = "Bildschirmsynchronisation";
                     strZoom = "Zoomen";
+                    strZoomUI = "UI-Zoom (Strg gedrückt halten)";
                     strMouseSW = "Mäusen mit Drehrad";
                     strKeyboard = "Tastatur";
                     strTouchscreen = "Berührungsbildschirm";
@@ -228,6 +230,7 @@ namespace Worms2_Settings
                     strShaderSmooth = "Suavizado";
                     strShaderClassic = "Clásico";
                     strZoom = "Zoom";
+                    strZoomUI = "Zoom de la interfaz (Mantén Ctrl pulsado)";
                     strMouseSW = "Rueda de desplazamiento";
                     strKeyboard = "Teclado";
                     strTouchscreen = "Pantalla Táctil";
@@ -258,6 +261,7 @@ namespace Worms2_Settings
                     strShaderSmooth = "Suavizado";
                     strShaderClassic = "Clásico";
                     strZoom = "Zoom";
+                    strZoomUI = "Zoom de la interfaz (Mantén Ctrl presionado)";
                     strMouseSW = "Rueda de desplazamiento";
                     strKeyboard = "Teclado";
                     strTouchscreen = "Pantalla Táctil";
@@ -288,6 +292,7 @@ namespace Worms2_Settings
                     strShaderSmooth = "Lissé";
                     strShaderClassic = "Classique";
                     strZoom = "Zoom";
+                    strZoomUI = "Zoom de l’interface (Maintenir Ctrl)";
                     strMouseSW = "Molette de souris";
                     strKeyboard = "Clavier";
                     strTouchscreen = "Écran tactile";
@@ -319,6 +324,7 @@ namespace Worms2_Settings
                     strShaderSmooth = "Mýkt";
                     strShaderClassic = "Upprunalegt";
                     strZoom = "Aðdráttur";
+                    strZoomUI = "Stækka viðmót (Halda inni Ctrl-hnappi)";
                     strMouseSW = "Músarhjól";
                     strKeyboard = "Lyklaborð";
                     strTouchscreen = "Snertiskjár";
@@ -348,6 +354,7 @@ namespace Worms2_Settings
                     strShaderSmooth = "Smussato";
                     strShaderClassic = "Classico";
                     strZoom = "Zoom";
+                    strZoomUI = "Zoom dell'interfaccia (Tieni premuto Ctrl)";
                     strMouseSW = "Rotella scorrimento mouse";
                     strKeyboard = "Tastiera";
                     strTouchscreen = "Touch screen";
@@ -378,6 +385,7 @@ namespace Worms2_Settings
                     strShaderSmooth = "Vloeiend";
                     strShaderClassic = "Klassiek";
                     strZoom = "Zoom";
+                    strZoomUI = "Interfacezoom (Houd Ctrl ingedrukt)";
                     strMouseSW = "Scrollwieltje";
                     strKeyboard = "Toetsenbord";
                     strTouchscreen = "Aanraakscherm";
@@ -393,7 +401,7 @@ namespace Worms2_Settings
                     strFastCPU = "Sneller denkende computerspeler";
                     break;
                 case "pl":
-                    //Credit: Dawid8
+                    //Credit: Dawid8 + darekols
                     strSettings = "Ustawienia";
                     strDisplay = "Obraz";
                     strResolution = "Rozdzielczość";
@@ -409,7 +417,8 @@ namespace Worms2_Settings
                     strShaderSmooth = "Wygładzony";
                     strShaderClassic = "Klasyczny";
                     strZoom = "Przybliżenie";
-                    strMouseSW = "Mouse scroll wheel";
+                    strZoomUI = "Przytrzymaj Ctrl, aby skalować rozmiar UI";
+                    strMouseSW = "Rolka myszki";
                     strKeyboard = "Klawiatura";
                     strTouchscreen = "Ekran dotykowy";
                     strSave = "Zapisz";
@@ -440,6 +449,7 @@ namespace Worms2_Settings
                     strShaderSmooth = "Suave";
                     strShaderClassic = "Clássico";
                     strZoom = "Zoom";
+                    strZoomUI = "Ampliar Interface (Segurar Tecla Ctrl)";
                     strMouseSW = "Roda do Rato";
                     strKeyboard = "Teclado";
                     strTouchscreen = "Ecrã tátil";
@@ -471,6 +481,7 @@ namespace Worms2_Settings
                     strShaderSmooth = "Suave";
                     strShaderClassic = "Clássico";
                     strZoom = "Zoom";
+                    strZoomUI = "Ampliar Interface (Segurar Tecla Ctrl)";
                     strMouseSW = "Roda do Mouse";
                     strKeyboard = "Teclado";
                     strTouchscreen = "Tela tátil";
@@ -503,6 +514,7 @@ namespace Worms2_Settings
                     strShaderClassic = "Классический";
                     strVsync = "Вертикальная синхронизация";
                     strZoom = "давать крупный план";
+                    strZoomUI = "Масштаб интерфейса (Удерживайте Ctrl)";
                     strMouseSW = "колесом прокрутки";
                     strKeyboard = "Клавиатура";
                     strTouchscreen = "Сенсорный экран";
@@ -533,6 +545,7 @@ namespace Worms2_Settings
                     strShaderSmooth = "Utjämnad";
                     strShaderClassic = "Klassisk";
                     strZoom = "Zoom";
+                    strZoomUI = "Gränssnittszoom (Håll Ctrl)";
                     strMouseSW = "Skrollhjul";
                     strKeyboard = "Tangentbord";
                     strTouchscreen = "Pekskärm";
@@ -564,6 +577,7 @@ namespace Worms2_Settings
                     strShaderSmooth = "平滑";
                     strShaderClassic = "经典";
                     strZoom = "缩放";
+                    strZoomUI = "按住Ctrl键缩放界面";
                     strMouseSW = "鼠标滚轮";
                     strKeyboard = "键盘";
                     strTouchscreen = "触摸屏";
@@ -595,6 +609,7 @@ namespace Worms2_Settings
                     strShaderSmooth = "Smooth";
                     strShaderClassic = "Original";
                     strZoom = "Zoom";
+                    strZoomUI = "Hold Ctrl to Zoom UI";
                     strMouseSW = "Mouse scroll wheel";
                     strKeyboard = "Keyboard";
                     strTouchscreen = "Touchscreen";
@@ -634,6 +649,7 @@ namespace Worms2_Settings
             cbZoomMouse.Text = strMouseSW;
             cbZoomKeyboard.Text = strKeyboard;
             cbZoomTouch.Text = strTouchscreen;
+            cbZoomUI.Text = strZoomUI;
             btnSave.Text = strSave;
             lblHeadingAudio.Text = strAudio;
             lblApplications.Text = strApplications;
