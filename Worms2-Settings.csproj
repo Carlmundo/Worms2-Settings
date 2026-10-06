@@ -55,6 +55,13 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <IntermediateOutputPath>obj\$(Configuration)\$(TargetFrameworkVersion)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFrameworkVersion)' == 'v3.0' ">
+    <AssemblyName>settings_netf3</AssemblyName>
+    <AppConfig>app.netf3.config</AppConfig>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="INIFileParser, Version=2.5.2.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL">
       <HintPath>packages\ini-parser.2.5.2\lib\net20\INIFileParser.dll</HintPath>
@@ -89,6 +96,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="app.netf3.config" />
     <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -112,4 +120,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="BuildBothFrameworks">
+    <MSBuild Projects="$(MSBuildProjectFullPath)" Targets="Build"
+             Properties="Configuration=Release;TargetFrameworkVersion=v3.0" />
+    <MSBuild Projects="$(MSBuildProjectFullPath)" Targets="Build"
+             Properties="Configuration=Release;TargetFrameworkVersion=v4.6.2" />
+  </Target>
 </Project>
