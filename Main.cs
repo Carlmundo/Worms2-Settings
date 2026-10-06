@@ -167,7 +167,7 @@ namespace Worms2_Settings
                     strShaderSmooth = "Vyhlazený";
                     strShaderClassic = "Klasický";
                     strZoom = "Přiblížení";
-                    strZoomUI = "Přiblížení rozhraní (Podržte Ctrl)";
+                    strZoomUI = "Podrž Ctrl pro přiblížení rozhraní";
                     strMouseSW = "Skrolováním kolečkem myši";
                     strKeyboard = "Klávesnicí";
                     strTouchscreen = "Dotykem obrazovky";
